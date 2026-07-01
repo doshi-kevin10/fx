@@ -1,0 +1,45 @@
+# Math — Linear algebra & vectors
+
+- id: dot-product
+  name: Dot Product
+  aliases: [scalar product, inner product]
+  domain: math
+  subdomain: linear algebra
+  tags: [vector, projection, angle, scalar]
+  latex: "\\vec{a} \\cdot \\vec{b} = |\\vec{a}|\\,|\\vec{b}|\\cos\\theta"
+  description: >
+    Scalar product of two vectors, equal to the product of their magnitudes and the cosine of the angle between them.
+  source: https://en.wikipedia.org/wiki/Dot_product
+
+- id: cross-product-magnitude
+  name: Cross Product Magnitude
+  aliases: [vector product, cross product]
+  domain: math
+  subdomain: linear algebra
+  tags: [vector, area, perpendicular]
+  latex: "|\\vec{a} \\times \\vec{b}| = |\\vec{a}|\\,|\\vec{b}|\\sin\\theta"
+  description: >
+    Magnitude of the cross product of two vectors, equal to the area of the parallelogram they span.
+  source: https://en.wikipedia.org/wiki/Cross_product
+
+- id: determinant-2x2
+  name: Determinant of a 2x2 Matrix
+  aliases: [2x2 determinant, matrix determinant]
+  domain: math
+  subdomain: linear algebra
+  tags: [matrix, determinant, invertibility]
+  latex: "\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc"
+  description: >
+    Determinant of a 2x2 matrix; nonzero iff the matrix is invertible.
+  source: https://en.wikipedia.org/wiki/Determinant
+
+- id: eigenvalue-equation
+  name: Eigenvalue Equation
+  aliases: [eigenvector equation, characteristic equation, Av = lambda v]
+  domain: math
+  subdomain: linear algebra
+  tags: [matrix, eigenvalue, eigenvector, linear transformation]
+  latex: "A\\vec{v} = \\lambda \\vec{v}"
+  description: >
+    Defines an eigenvector v of a matrix A with eigenvalue lambda, scaled but not rotated by A.
+  source: https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors

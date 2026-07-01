@@ -1,0 +1,54 @@
+# Physics — Waves & optics
+
+- id: wave-speed
+  name: Wave Speed
+  aliases: [v = f lambda, wave equation, frequency wavelength]
+  domain: physics
+  subdomain: waves
+  tags: [wave, frequency, wavelength, speed]
+  latex: "v = f\\lambda"
+  description: >
+    Speed of a wave as the product of its frequency and wavelength.
+  relation: "v = f * lambda"
+  variables:
+    - { key: v, symbol: "v", meaning: wave speed, unit: "m/s" }
+    - { key: f, symbol: "f", meaning: frequency, unit: Hz }
+    - { key: lambda, symbol: "\\lambda", meaning: wavelength, unit: m }
+  source: https://en.wikipedia.org/wiki/Wavelength
+
+- id: snells-law
+  name: Snell's Law
+  aliases: [law of refraction, snell law, refraction angles]
+  domain: physics
+  subdomain: optics
+  tags: [refraction, light, index of refraction, angle]
+  latex: "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2"
+  description: >
+    Relates the angles of incidence and refraction to the refractive indices of two media.
+  source: https://en.wikipedia.org/wiki/Snell%27s_law
+
+- id: thin-lens-equation
+  name: Thin Lens Equation
+  aliases: [lens equation, focal length, object image distance]
+  domain: physics
+  subdomain: optics
+  tags: [lens, focal length, optics, image]
+  latex: "\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}"
+  description: >
+    Relates the focal length of a thin lens to the object and image distances.
+  variables:
+    - { symbol: "f", meaning: focal length }
+    - { symbol: "d_o", meaning: object distance }
+    - { symbol: "d_i", meaning: image distance }
+  source: https://en.wikipedia.org/wiki/Lens
+
+- id: doppler-effect
+  name: Doppler Effect (Sound)
+  aliases: [doppler shift, frequency shift, observed frequency]
+  domain: physics
+  subdomain: waves
+  tags: [frequency, relative motion, sound, shift]
+  latex: "f' = f\\,\\frac{v \\pm v_o}{v \\mp v_s}"
+  description: >
+    Observed frequency of a wave shifts with the relative motion of source and observer.
+  source: https://en.wikipedia.org/wiki/Doppler_effect

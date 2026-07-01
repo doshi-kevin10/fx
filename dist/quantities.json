@@ -1,0 +1,453 @@
+{
+  "vocabulary": [
+    {
+      "id": "AMOUNT_OF_SUBSTANCE",
+      "labels": [
+        "amount of substance"
+      ],
+      "formulaIds": [
+        "ideal-gas-law"
+      ]
+    },
+    {
+      "id": "AMOUNT_OF_SUBSTANCE^-1 LENGTH^2 MASS TEMPERATURE^-1 TIME^-2",
+      "labels": [
+        "gas constant"
+      ],
+      "formulaIds": [
+        "ideal-gas-law"
+      ]
+    },
+    {
+      "id": "CURRENT",
+      "labels": [
+        "current"
+      ],
+      "formulaIds": [
+        "ohms-law"
+      ]
+    },
+    {
+      "id": "CURRENT TIME",
+      "labels": [
+        "charge",
+        "the two charges"
+      ],
+      "formulaIds": [
+        "coulombs-law",
+        "lorentz-force"
+      ]
+    },
+    {
+      "id": "CURRENT^-1 LENGTH MASS TIME^-3",
+      "labels": [
+        "electric field"
+      ],
+      "formulaIds": [
+        "lorentz-force"
+      ]
+    },
+    {
+      "id": "CURRENT^-1 LENGTH^2 MASS TIME^-2",
+      "labels": [
+        "magnetic flux"
+      ],
+      "formulaIds": [
+        "faradays-law-induction"
+      ]
+    },
+    {
+      "id": "CURRENT^-1 LENGTH^2 MASS TIME^-3",
+      "labels": [
+        "induced emf",
+        "voltage"
+      ],
+      "formulaIds": [
+        "faradays-law-induction",
+        "ohms-law"
+      ]
+    },
+    {
+      "id": "CURRENT^-1 MASS TIME^-2",
+      "labels": [
+        "magnetic field"
+      ],
+      "formulaIds": [
+        "lorentz-force"
+      ]
+    },
+    {
+      "id": "CURRENT^-2 LENGTH^2 MASS TIME^-3",
+      "labels": [
+        "resistance"
+      ],
+      "formulaIds": [
+        "ohms-law"
+      ]
+    },
+    {
+      "id": "LENGTH",
+      "labels": [
+        "displacement from equilibrium",
+        "distance",
+        "height",
+        "peak wavelength",
+        "pendulum length",
+        "schwarzschild radius",
+        "semi-major axis",
+        "separation",
+        "wavelength"
+      ],
+      "formulaIds": [
+        "coulombs-law",
+        "gravitational-potential-energy",
+        "hookes-law",
+        "keplers-third-law",
+        "luminosity-distance-flux",
+        "newtons-law-of-gravitation",
+        "schwarzschild-radius",
+        "simple-pendulum-period",
+        "wave-speed",
+        "wiens-displacement-law"
+      ]
+    },
+    {
+      "id": "LENGTH MASS TIME^-1",
+      "labels": [
+        "momentum"
+      ],
+      "formulaIds": [
+        "linear-momentum"
+      ]
+    },
+    {
+      "id": "LENGTH MASS TIME^-2",
+      "labels": [
+        "net force"
+      ],
+      "formulaIds": [
+        "newtons-second-law"
+      ]
+    },
+    {
+      "id": "LENGTH TIME^-1",
+      "labels": [
+        "final velocity",
+        "initial velocity",
+        "recession velocity",
+        "speed",
+        "speed of light",
+        "velocity",
+        "wave speed"
+      ],
+      "formulaIds": [
+        "hubbles-law",
+        "kinematic-velocity",
+        "kinetic-energy",
+        "linear-momentum",
+        "lorentz-force",
+        "mass-energy-equivalence",
+        "schwarzschild-radius",
+        "wave-speed"
+      ]
+    },
+    {
+      "id": "LENGTH TIME^-2",
+      "labels": [
+        "acceleration",
+        "gravitational acceleration"
+      ],
+      "formulaIds": [
+        "gravitational-potential-energy",
+        "kinematic-velocity",
+        "newtons-second-law",
+        "simple-pendulum-period"
+      ]
+    },
+    {
+      "id": "LENGTH^-1 MASS TIME^-2",
+      "labels": [
+        "pressure"
+      ],
+      "formulaIds": [
+        "ideal-gas-law"
+      ]
+    },
+    {
+      "id": "LENGTH^2 MASS",
+      "labels": [
+        "moment of inertia"
+      ],
+      "formulaIds": [
+        "rotational-kinetic-energy"
+      ]
+    },
+    {
+      "id": "LENGTH^2 MASS TEMPERATURE^-1 TIME^-2",
+      "labels": [
+        "change in entropy"
+      ],
+      "formulaIds": [
+        "gibbs-free-energy"
+      ]
+    },
+    {
+      "id": "LENGTH^2 MASS TIME^-1",
+      "labels": [
+        "planck constant"
+      ],
+      "formulaIds": [
+        "photon-energy"
+      ]
+    },
+    {
+      "id": "LENGTH^2 MASS TIME^-2",
+      "labels": [
+        "change in enthalpy",
+        "change in gibbs free energy",
+        "change in internal energy",
+        "energy",
+        "heat",
+        "heat added to the system",
+        "kinetic energy",
+        "photon energy",
+        "potential energy",
+        "rotational kinetic energy",
+        "work done by the system"
+      ],
+      "formulaIds": [
+        "first-law-thermodynamics",
+        "gibbs-free-energy",
+        "gravitational-potential-energy",
+        "heat-conduction-fourier",
+        "kinetic-energy",
+        "mass-energy-equivalence",
+        "photon-energy",
+        "rotational-kinetic-energy"
+      ]
+    },
+    {
+      "id": "LENGTH^2 MASS TIME^-3",
+      "labels": [
+        "luminosity"
+      ],
+      "formulaIds": [
+        "luminosity-distance-flux"
+      ]
+    },
+    {
+      "id": "LENGTH^3",
+      "labels": [
+        "volume"
+      ],
+      "formulaIds": [
+        "ideal-gas-law"
+      ]
+    },
+    {
+      "id": "MASS",
+      "labels": [
+        "central mass",
+        "mass",
+        "the two masses"
+      ],
+      "formulaIds": [
+        "gravitational-potential-energy",
+        "heat-conduction-fourier",
+        "keplers-third-law",
+        "kinetic-energy",
+        "linear-momentum",
+        "mass-energy-equivalence",
+        "newtons-law-of-gravitation",
+        "newtons-second-law",
+        "schwarzschild-radius"
+      ]
+    },
+    {
+      "id": "MASS TIME^-2",
+      "labels": [
+        "spring constant"
+      ],
+      "formulaIds": [
+        "hookes-law"
+      ]
+    },
+    {
+      "id": "MASS TIME^-3",
+      "labels": [
+        "flux",
+        "radiant emittance"
+      ],
+      "formulaIds": [
+        "luminosity-distance-flux",
+        "stefan-boltzmann-law"
+      ]
+    },
+    {
+      "id": "TEMPERATURE",
+      "labels": [
+        "absolute temperature",
+        "temperature",
+        "temperature change"
+      ],
+      "formulaIds": [
+        "gibbs-free-energy",
+        "heat-conduction-fourier",
+        "ideal-gas-law",
+        "stefan-boltzmann-law",
+        "wiens-displacement-law"
+      ]
+    },
+    {
+      "id": "TIME",
+      "labels": [
+        "orbital period",
+        "period",
+        "time"
+      ],
+      "formulaIds": [
+        "keplers-third-law",
+        "kinematic-velocity",
+        "simple-pendulum-period"
+      ]
+    },
+    {
+      "id": "TIME^-1",
+      "labels": [
+        "angular velocity",
+        "frequency"
+      ],
+      "formulaIds": [
+        "photon-energy",
+        "rotational-kinetic-energy",
+        "wave-speed"
+      ]
+    }
+  ],
+  "fingerprints": {
+    "coulombs-law": [
+      "CURRENT TIME",
+      "LENGTH"
+    ],
+    "faradays-law-induction": [
+      "CURRENT^-1 LENGTH^2 MASS TIME^-2",
+      "CURRENT^-1 LENGTH^2 MASS TIME^-3"
+    ],
+    "first-law-thermodynamics": [
+      "LENGTH^2 MASS TIME^-2"
+    ],
+    "gibbs-free-energy": [
+      "LENGTH^2 MASS TEMPERATURE^-1 TIME^-2",
+      "LENGTH^2 MASS TIME^-2",
+      "TEMPERATURE"
+    ],
+    "gravitational-potential-energy": [
+      "LENGTH",
+      "LENGTH TIME^-2",
+      "LENGTH^2 MASS TIME^-2",
+      "MASS"
+    ],
+    "heat-conduction-fourier": [
+      "LENGTH^2 MASS TIME^-2",
+      "MASS",
+      "TEMPERATURE"
+    ],
+    "hookes-law": [
+      "LENGTH",
+      "MASS TIME^-2"
+    ],
+    "hubbles-law": [
+      "LENGTH TIME^-1"
+    ],
+    "ideal-gas-law": [
+      "AMOUNT_OF_SUBSTANCE",
+      "AMOUNT_OF_SUBSTANCE^-1 LENGTH^2 MASS TEMPERATURE^-1 TIME^-2",
+      "LENGTH^-1 MASS TIME^-2",
+      "LENGTH^3",
+      "TEMPERATURE"
+    ],
+    "keplers-third-law": [
+      "LENGTH",
+      "MASS",
+      "TIME"
+    ],
+    "kinematic-velocity": [
+      "LENGTH TIME^-1",
+      "LENGTH TIME^-2",
+      "TIME"
+    ],
+    "kinetic-energy": [
+      "LENGTH TIME^-1",
+      "LENGTH^2 MASS TIME^-2",
+      "MASS"
+    ],
+    "linear-momentum": [
+      "LENGTH MASS TIME^-1",
+      "LENGTH TIME^-1",
+      "MASS"
+    ],
+    "lorentz-force": [
+      "CURRENT TIME",
+      "CURRENT^-1 LENGTH MASS TIME^-3",
+      "CURRENT^-1 MASS TIME^-2",
+      "LENGTH TIME^-1"
+    ],
+    "luminosity-distance-flux": [
+      "LENGTH",
+      "LENGTH^2 MASS TIME^-3",
+      "MASS TIME^-3"
+    ],
+    "mass-energy-equivalence": [
+      "LENGTH TIME^-1",
+      "LENGTH^2 MASS TIME^-2",
+      "MASS"
+    ],
+    "newtons-law-of-gravitation": [
+      "LENGTH",
+      "MASS"
+    ],
+    "newtons-second-law": [
+      "LENGTH MASS TIME^-2",
+      "LENGTH TIME^-2",
+      "MASS"
+    ],
+    "ohms-law": [
+      "CURRENT",
+      "CURRENT^-1 LENGTH^2 MASS TIME^-3",
+      "CURRENT^-2 LENGTH^2 MASS TIME^-3"
+    ],
+    "photon-energy": [
+      "LENGTH^2 MASS TIME^-1",
+      "LENGTH^2 MASS TIME^-2",
+      "TIME^-1"
+    ],
+    "rotational-kinetic-energy": [
+      "LENGTH^2 MASS",
+      "LENGTH^2 MASS TIME^-2",
+      "TIME^-1"
+    ],
+    "schwarzschild-radius": [
+      "LENGTH",
+      "LENGTH TIME^-1",
+      "MASS"
+    ],
+    "simple-pendulum-period": [
+      "LENGTH",
+      "LENGTH TIME^-2",
+      "TIME"
+    ],
+    "stefan-boltzmann-law": [
+      "MASS TIME^-3",
+      "TEMPERATURE"
+    ],
+    "wave-speed": [
+      "LENGTH",
+      "LENGTH TIME^-1",
+      "TIME^-1"
+    ],
+    "wiens-displacement-law": [
+      "LENGTH",
+      "TEMPERATURE"
+    ]
+  }
+}

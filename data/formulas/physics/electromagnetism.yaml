@@ -1,0 +1,84 @@
+# Physics — Electromagnetism
+
+- id: ohms-law
+  name: Ohm's Law
+  aliases: [V=IR, voltage current resistance, ohms law]
+  domain: physics
+  subdomain: electromagnetism
+  tags: [voltage, current, resistance, circuit]
+  latex: "V = IR"
+  description: >
+    Voltage across a resistor equals the current through it times its resistance.
+  relation: "V = I * R"
+  variables:
+    - { key: V, symbol: "V", meaning: voltage, unit: V }
+    - { key: I, symbol: "I", meaning: current, unit: A }
+    - { key: R, symbol: "R", meaning: resistance, unit: "ohm" }
+  source: https://en.wikipedia.org/wiki/Ohm%27s_law
+
+- id: coulombs-law
+  name: Coulomb's Law
+  aliases: [electrostatic force, force between charges, coulomb force]
+  domain: physics
+  subdomain: electromagnetism
+  tags: [electric charge, force, inverse square, electrostatics]
+  latex: "F = k_e\\,\\frac{q_1 q_2}{r^{2}}"
+  description: >
+    Electrostatic force between two point charges, inversely proportional to the square of their separation.
+  variables:
+    - { symbol: "k_e", meaning: Coulomb constant }
+    - { symbol: "q_1, q_2", meaning: the two charges, unit: C }
+    - { symbol: "r", meaning: separation, unit: m }
+  source: https://en.wikipedia.org/wiki/Coulomb%27s_law
+
+- id: electric-power
+  name: Electric Power
+  aliases: [P=IV, power dissipated, electrical power]
+  domain: physics
+  subdomain: electromagnetism
+  tags: [power, voltage, current, circuit]
+  latex: "P = IV = I^{2}R"
+  description: >
+    Power delivered to or dissipated by an electrical component.
+  source: https://en.wikipedia.org/wiki/Electric_power
+
+- id: lorentz-force
+  name: Lorentz Force
+  aliases: [electromagnetic force, force on a moving charge]
+  domain: physics
+  subdomain: electromagnetism
+  tags: [electric field, magnetic field, charge, force]
+  latex: "\\vec{F} = q\\left(\\vec{E} + \\vec{v} \\times \\vec{B}\\right)"
+  description: >
+    Total electromagnetic force on a point charge moving through electric and magnetic fields.
+  variables:
+    - { symbol: "q", meaning: charge, unit: C }
+    - { symbol: "\\vec{E}", meaning: electric field, unit: "V/m" }
+    - { symbol: "\\vec{B}", meaning: magnetic field, unit: T }
+    - { symbol: "\\vec{v}", meaning: velocity, unit: "m/s" }
+  source: https://en.wikipedia.org/wiki/Lorentz_force
+
+- id: capacitance
+  name: Capacitance
+  aliases: [C = Q/V, capacitor charge, capacitance definition]
+  domain: physics
+  subdomain: electromagnetism
+  tags: [capacitor, charge, voltage]
+  latex: "C = \\frac{Q}{V}"
+  description: >
+    Capacitance as the ratio of stored charge to the voltage across a capacitor.
+  source: https://en.wikipedia.org/wiki/Capacitance
+
+- id: faradays-law-induction
+  name: Faraday's Law of Induction
+  aliases: [electromagnetic induction, induced emf, changing flux]
+  domain: physics
+  subdomain: electromagnetism
+  tags: [induction, magnetic flux, emf, maxwell]
+  latex: "\\varepsilon = -\\frac{d\\Phi_B}{dt}"
+  description: >
+    Induced electromotive force equals the negative rate of change of magnetic flux through a loop.
+  variables:
+    - { symbol: "\\varepsilon", meaning: induced emf, unit: V }
+    - { symbol: "\\Phi_B", meaning: magnetic flux, unit: Wb }
+  source: https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction

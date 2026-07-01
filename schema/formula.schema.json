@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://formulize.dev/schema/formula.schema.json",
+  "title": "Formula",
+  "description": "One named formula. Source of truth is one YAML file per formula under data/formulas/<domain>/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "domain", "latex"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique, stable, kebab-case identifier used as the primary key.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 80
+    },
+    "name": {
+      "type": "string",
+      "description": "Canonical display name.",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "aliases": {
+      "type": "array",
+      "description": "Searchable alternate names, abbreviations, and notation variants. Invest here for search accuracy.",
+      "items": { "type": "string", "minLength": 1 },
+      "default": []
+    },
+    "domain": {
+      "type": "string",
+      "description": "Top-level subject domain.",
+      "enum": ["math", "physics", "astrophysics", "chemistry"]
+    },
+    "subdomain": {
+      "type": "string",
+      "description": "Free-form grouping within a domain (e.g. mechanics, thermodynamics).",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "tags": {
+      "type": "array",
+      "description": "Freeform keywords; feed the semantic search surface.",
+      "items": { "type": "string", "minLength": 1 },
+      "default": []
+    },
+    "latex": {
+      "type": "string",
+      "description": "The payload. Must render without error in KaTeX (mhchem extension loaded).",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "description": "One or two sentences; feeds semantic search and the UI.",
+      "maxLength": 600
+    },
+    "relation": {
+      "type": "string",
+      "description": "Machine-readable ASCII infix relation, parseable by math.js, using variables[].key symbols. Enables dimensional checking and quantity indexing. Optional.",
+      "minLength": 1
+    },
+    "variables": {
+      "type": "array",
+      "description": "Symbol glossary powering the variables UI panel.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["symbol", "meaning"],
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Stable ASCII identifier used in `relation`.",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "symbol": { "type": "string", "minLength": 1 },
+          "meaning": { "type": "string", "minLength": 1 },
+          "unit": { "type": "string" }
+        }
+      },
+      "default": []
+    },
+    "source": {
+      "type": "string",
+      "description": "Optional citation URL.",
+      "format": "uri"
+    },
+    "contributor": {
+      "type": "string",
+      "description": "Optional GitHub handle of the contributor."
+    }
+  }
+}

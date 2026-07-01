@@ -1,0 +1,84 @@
+# Physics — Modern (relativity & quantum)
+
+- id: mass-energy-equivalence
+  name: Mass–Energy Equivalence
+  aliases: [E=mc^2, E = mc2, einstein energy, rest energy]
+  domain: physics
+  subdomain: relativity
+  tags: [energy, mass, relativity, speed of light]
+  latex: "E = mc^{2}"
+  description: >
+    Rest energy of a body equals its mass times the speed of light squared.
+  variables:
+    - { symbol: "E", meaning: energy, unit: J }
+    - { symbol: "m", meaning: mass, unit: kg }
+    - { symbol: "c", meaning: speed of light, unit: "m/s" }
+  source: https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence
+
+- id: photon-energy
+  name: Photon Energy
+  aliases: [E=hf, planck relation, quantum of energy, E = h nu]
+  domain: physics
+  subdomain: quantum
+  tags: [photon, energy, frequency, planck constant]
+  latex: "E = hf"
+  description: >
+    Energy of a photon is proportional to its frequency via the Planck constant.
+  relation: "E = h * f"
+  variables:
+    - { key: E, symbol: "E", meaning: photon energy, unit: J }
+    - { key: h, symbol: "h", meaning: Planck constant, unit: "J s" }
+    - { key: f, symbol: "f", meaning: frequency, unit: Hz }
+  source: https://en.wikipedia.org/wiki/Photon_energy
+
+- id: de-broglie-wavelength
+  name: de Broglie Wavelength
+  aliases: [matter wave, wavelength of a particle, de broglie]
+  domain: physics
+  subdomain: quantum
+  tags: [wavelength, momentum, matter wave, quantum]
+  latex: "\\lambda = \\frac{h}{p}"
+  description: >
+    Wavelength associated with a particle of momentum p, foundational to wave–particle duality.
+  source: https://en.wikipedia.org/wiki/Matter_wave
+
+- id: heisenberg-uncertainty
+  name: Heisenberg Uncertainty Principle
+  aliases: [uncertainty principle, position momentum uncertainty]
+  domain: physics
+  subdomain: quantum
+  tags: [uncertainty, position, momentum, quantum, planck]
+  latex: "\\Delta x\\,\\Delta p \\ge \\frac{\\hbar}{2}"
+  description: >
+    A fundamental limit on the simultaneous precision of a particle's position and momentum.
+  variables:
+    - { symbol: "\\Delta x", meaning: position uncertainty }
+    - { symbol: "\\Delta p", meaning: momentum uncertainty }
+    - { symbol: "\\hbar", meaning: reduced Planck constant }
+  source: https://en.wikipedia.org/wiki/Uncertainty_principle
+
+- id: schrodinger-equation-time-dependent
+  name: Time-Dependent Schrödinger Equation
+  aliases: [schrodinger equation, wave function evolution, quantum state equation]
+  domain: physics
+  subdomain: quantum
+  tags: [quantum, wave function, hamiltonian, evolution]
+  latex: "i\\hbar\\,\\frac{\\partial}{\\partial t}\\Psi = \\hat{H}\\Psi"
+  description: >
+    Governs the time evolution of the quantum wave function under the Hamiltonian operator.
+  variables:
+    - { symbol: "\\Psi", meaning: wave function }
+    - { symbol: "\\hat{H}", meaning: Hamiltonian operator }
+    - { symbol: "\\hbar", meaning: reduced Planck constant }
+  source: https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation
+
+- id: lorentz-factor
+  name: Lorentz Factor
+  aliases: [gamma factor, time dilation factor, relativistic factor]
+  domain: physics
+  subdomain: relativity
+  tags: [relativity, velocity, speed of light, time dilation]
+  latex: "\\gamma = \\frac{1}{\\sqrt{1 - \\dfrac{v^{2}}{c^{2}}}}"
+  description: >
+    The factor by which time, length, and relativistic mass change for an object in motion.
+  source: https://en.wikipedia.org/wiki/Lorentz_factor

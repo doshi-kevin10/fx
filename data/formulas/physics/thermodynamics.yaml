@@ -1,0 +1,76 @@
+# Physics — Thermodynamics
+
+- id: ideal-gas-law
+  name: Ideal Gas Law
+  aliases: [PV=nRT, PV = nRT, equation of state, ideal gas equation]
+  domain: physics
+  subdomain: thermodynamics
+  tags: [gas, pressure, volume, temperature, moles]
+  latex: "PV = nRT"
+  description: >
+    Relates pressure, volume, temperature, and amount of an ideal gas.
+  relation: "P * V = n * R * T"
+  variables:
+    - { key: P, symbol: "P", meaning: pressure, unit: Pa }
+    - { key: V, symbol: "V", meaning: volume, unit: "m^3" }
+    - { key: n, symbol: "n", meaning: amount of substance, unit: mol }
+    - { key: R, symbol: "R", meaning: gas constant, unit: "J/(mol K)" }
+    - { key: T, symbol: "T", meaning: absolute temperature, unit: K }
+  source: https://en.wikipedia.org/wiki/Ideal_gas_law
+
+- id: first-law-thermodynamics
+  name: First Law of Thermodynamics
+  aliases: [conservation of energy heat, dU = Q - W, internal energy change]
+  domain: physics
+  subdomain: thermodynamics
+  tags: [energy, heat, work, internal energy, conservation]
+  latex: "\\Delta U = Q - W"
+  description: >
+    Change in a system's internal energy equals heat added to it minus work done by it.
+  variables:
+    - { symbol: "\\Delta U", meaning: change in internal energy, unit: J }
+    - { symbol: "Q", meaning: heat added to the system, unit: J }
+    - { symbol: "W", meaning: work done by the system, unit: J }
+  source: https://en.wikipedia.org/wiki/First_law_of_thermodynamics
+
+- id: entropy-change
+  name: Entropy Change (Reversible)
+  aliases: [entropy, dS = dQ/T, clausius entropy]
+  domain: physics
+  subdomain: thermodynamics
+  tags: [entropy, heat, temperature, second law]
+  latex: "\\Delta S = \\int \\frac{dQ_{\\text{rev}}}{T}"
+  description: >
+    Entropy change of a system along a reversible path, integrating heat transfer over temperature.
+  source: https://en.wikipedia.org/wiki/Entropy
+
+- id: stefan-boltzmann-law
+  name: Stefan–Boltzmann Law
+  aliases: [blackbody radiated power, stefan boltzmann, radiated power]
+  domain: physics
+  subdomain: thermodynamics
+  tags: [radiation, blackbody, temperature, power, luminosity]
+  latex: "j^{\\star} = \\sigma T^{4}"
+  description: >
+    Power radiated per unit area by a black body scales with the fourth power of its temperature.
+  variables:
+    - { symbol: "j^{\\star}", meaning: radiant emittance, unit: "W/m^2" }
+    - { symbol: "\\sigma", meaning: Stefan–Boltzmann constant }
+    - { symbol: "T", meaning: absolute temperature, unit: K }
+  source: https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law
+
+- id: heat-conduction-fourier
+  name: Heat Equation (Thermal Energy)
+  aliases: [specific heat, Q = m c delta T, sensible heat]
+  domain: physics
+  subdomain: thermodynamics
+  tags: [heat, specific heat capacity, temperature change]
+  latex: "Q = mc\\,\\Delta T"
+  description: >
+    Heat required to change the temperature of a mass with specific heat capacity c.
+  variables:
+    - { symbol: "Q", meaning: heat, unit: J }
+    - { symbol: "m", meaning: mass, unit: kg }
+    - { symbol: "c", meaning: specific heat capacity, unit: "J/(kg·K)" }
+    - { symbol: "\\Delta T", meaning: temperature change, unit: K }
+  source: https://en.wikipedia.org/wiki/Heat_capacity

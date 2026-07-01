@@ -1,0 +1,10 @@
+node_modules/
+dist/lib/
+dist/embeddings.json
+demo/dist/
+*.log
+.DS_Store
+.vite/
+coverage/
+# Model weights cached locally during build
+.transformers-cache/

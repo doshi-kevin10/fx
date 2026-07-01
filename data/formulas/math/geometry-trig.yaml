@@ -1,0 +1,74 @@
+# Math — Geometry & trigonometry
+
+- id: pythagorean-theorem
+  name: Pythagorean Theorem
+  aliases: [pythagoras, a^2 + b^2 = c^2, right triangle theorem]
+  domain: math
+  subdomain: geometry
+  tags: [triangle, right angle, hypotenuse, distance]
+  latex: "a^{2} + b^{2} = c^{2}"
+  description: >
+    In a right triangle, the square of the hypotenuse equals the sum of squares of the legs.
+  variables:
+    - { symbol: "a", meaning: leg }
+    - { symbol: "b", meaning: leg }
+    - { symbol: "c", meaning: hypotenuse }
+  source: https://en.wikipedia.org/wiki/Pythagorean_theorem
+
+- id: law-of-cosines
+  name: Law of Cosines
+  aliases: [cosine rule, generalized pythagorean theorem]
+  domain: math
+  subdomain: trigonometry
+  tags: [triangle, angle, side length]
+  latex: "c^{2} = a^{2} + b^{2} - 2ab\\cos C"
+  description: >
+    Relates the lengths of a triangle's sides to the cosine of one of its angles.
+  source: https://en.wikipedia.org/wiki/Law_of_cosines
+
+- id: law-of-sines
+  name: Law of Sines
+  aliases: [sine rule, sine law]
+  domain: math
+  subdomain: trigonometry
+  tags: [triangle, angle, side length, circumradius]
+  latex: "\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}"
+  description: >
+    The ratio of a triangle's side length to the sine of its opposite angle is constant.
+  source: https://en.wikipedia.org/wiki/Law_of_sines
+
+- id: pythagorean-trig-identity
+  name: Pythagorean Trigonometric Identity
+  aliases: [sin^2 + cos^2 = 1, fundamental trig identity]
+  domain: math
+  subdomain: trigonometry
+  tags: [identity, sine, cosine]
+  latex: "\\sin^{2}\\theta + \\cos^{2}\\theta = 1"
+  description: >
+    The fundamental relationship between sine and cosine of the same angle.
+  source: https://en.wikipedia.org/wiki/Pythagorean_trigonometric_identity
+
+- id: area-of-circle
+  name: Area of a Circle
+  aliases: [circle area, pi r squared]
+  domain: math
+  subdomain: geometry
+  tags: [circle, area, radius]
+  latex: "A = \\pi r^{2}"
+  description: >
+    Area enclosed by a circle of radius r.
+  variables:
+    - { symbol: "A", meaning: area }
+    - { symbol: "r", meaning: radius }
+  source: https://en.wikipedia.org/wiki/Area_of_a_circle
+
+- id: distance-formula
+  name: Distance Formula
+  aliases: [euclidean distance, distance between two points]
+  domain: math
+  subdomain: geometry
+  tags: [coordinates, euclidean, length]
+  latex: "d = \\sqrt{(x_2 - x_1)^{2} + (y_2 - y_1)^{2}}"
+  description: >
+    Straight-line distance between two points in the Cartesian plane.
+  source: https://en.wikipedia.org/wiki/Distance

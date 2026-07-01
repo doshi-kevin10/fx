@@ -1,0 +1,45 @@
+Formulize — third-party licensing notice
+=========================================
+
+Formulize itself is licensed under the MIT License (see LICENSE).
+
+Runtime dependencies and their licenses:
+
+  katex                    MIT
+  fuse.js                  Apache-2.0
+  mathjax-full             Apache-2.0
+  @huggingface/transformers  Apache-2.0
+  fflate                   MIT
+
+Build-time / dev only (not shipped in the runtime bundle):
+
+  mathjs                   Apache-2.0   (used by build scripts to reason about
+                                        units/dimensions; never imported by the
+                                        published library entry points)
+  tsx, vite, vitest, etc.  MIT
+
+LGPL COMPONENT — Word/OMML export
+---------------------------------
+  mathml2omml              LGPL-3.0-or-later
+
+The Word (.docx) export converts MathML to OMML using `mathml2omml`, which is
+licensed under LGPL-3.0-or-later. To keep Formulize's own MIT code unaffected,
+this dependency is:
+
+  * ISOLATED behind the `OmmlConverter` interface (src/core/omml.ts), and
+  * DYNAMICALLY imported (never statically bundled into the core entry points),
+    so it is only loaded if and when a user invokes Word export.
+
+Because mathml2omml is used as a separate, dynamically-loaded library (not
+modified and not statically linked into the MIT code), Formulize as a whole
+remains distributable under MIT while `mathml2omml` remains under LGPL-3.0.
+Consumers who wish to avoid LGPL entirely can:
+
+  * inject a permissive converter via `setOmmlConverter(...)`, or
+  * simply not use the Word export capability (all other formats — LaTeX,
+    MathML, SVG, PNG, Unicode — are LGPL-free), or
+  * rely on the guaranteed .docx text fallback, which does not require the
+    converter.
+
+If mathml2omml is unavailable at runtime, Word export degrades gracefully to a
+valid .docx containing the formula as text; nothing throws.

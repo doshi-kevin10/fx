@@ -1,0 +1,59 @@
+# Math — Probability & statistics
+
+- id: bayes-theorem
+  name: Bayes' Theorem
+  aliases: [bayes rule, bayes law, posterior probability]
+  domain: math
+  subdomain: probability
+  tags: [conditional probability, posterior, prior, inference]
+  latex: "P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}"
+  description: >
+    Updates the probability of A given observed evidence B from the reverse conditional and priors.
+  source: https://en.wikipedia.org/wiki/Bayes%27_theorem
+
+- id: normal-distribution-pdf
+  name: Normal Distribution
+  aliases: [gaussian distribution, gaussian pdf, bell curve, normal density]
+  domain: math
+  subdomain: statistics
+  tags: [probability density, gaussian, mean, variance]
+  latex: "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\, e^{-\\frac{(x-\\mu)^{2}}{2\\sigma^{2}}}"
+  description: >
+    Probability density function of a normal (Gaussian) distribution with mean mu and standard deviation sigma.
+  variables:
+    - { symbol: "\\mu", meaning: mean }
+    - { symbol: "\\sigma", meaning: standard deviation }
+  source: https://en.wikipedia.org/wiki/Normal_distribution
+
+- id: binomial-coefficient
+  name: Binomial Coefficient
+  aliases: [n choose k, combinations, choose function]
+  domain: math
+  subdomain: combinatorics
+  tags: [counting, combinations, factorial]
+  latex: "\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!}"
+  description: >
+    Number of ways to choose k items from n without regard to order.
+  source: https://en.wikipedia.org/wiki/Binomial_coefficient
+
+- id: standard-deviation
+  name: Standard Deviation
+  aliases: [population standard deviation, sigma, spread]
+  domain: math
+  subdomain: statistics
+  tags: [variance, dispersion, mean]
+  latex: "\\sigma = \\sqrt{\\frac{1}{N}\\sum_{i=1}^{N}(x_i - \\mu)^{2}}"
+  description: >
+    Population standard deviation, the root-mean-square deviation from the mean.
+  source: https://en.wikipedia.org/wiki/Standard_deviation
+
+- id: expected-value-discrete
+  name: Expected Value (Discrete)
+  aliases: [expectation, mean of a random variable, "E[X]"]
+  domain: math
+  subdomain: probability
+  tags: [expectation, mean, random variable, weighted average]
+  latex: "E[X] = \\sum_{i} x_i\\, p_i"
+  description: >
+    Probability-weighted average of the values of a discrete random variable.
+  source: https://en.wikipedia.org/wiki/Expected_value

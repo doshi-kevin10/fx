@@ -1,0 +1,50 @@
+# Chemistry — physical & analytical relations
+
+- id: ph-definition
+  name: pH Definition
+  aliases: [pH, hydrogen ion concentration, acidity]
+  domain: chemistry
+  subdomain: acids and bases
+  tags: [acid, base, logarithm, concentration]
+  latex: "\\mathrm{pH} = -\\log_{10}[\\ce{H+}]"
+  description: >
+    The pH of a solution as the negative base-10 logarithm of the hydrogen ion activity.
+  source: https://en.wikipedia.org/wiki/PH
+
+- id: henderson-hasselbalch
+  name: Henderson–Hasselbalch Equation
+  aliases: [buffer equation, henderson hasselbalch, pH of a buffer]
+  domain: chemistry
+  subdomain: acids and bases
+  tags: [buffer, pKa, equilibrium, acid]
+  latex: "\\mathrm{pH} = \\mathrm{p}K_a + \\log_{10}\\frac{[\\text{A}^-]}{[\\text{HA}]}"
+  description: >
+    Relates the pH of a buffer to the acid dissociation constant and the ratio of conjugate base to acid.
+  source: https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation
+
+- id: gibbs-free-energy
+  name: Gibbs Free Energy
+  aliases: [gibbs energy, delta G, spontaneity]
+  domain: chemistry
+  subdomain: thermochemistry
+  tags: [thermodynamics, enthalpy, entropy, spontaneity]
+  latex: "\\Delta G = \\Delta H - T\\,\\Delta S"
+  description: >
+    Change in Gibbs free energy predicts reaction spontaneity from enthalpy, temperature, and entropy.
+  variables:
+    - { symbol: "\\Delta G", meaning: change in Gibbs free energy, unit: J }
+    - { symbol: "\\Delta H", meaning: change in enthalpy, unit: J }
+    - { symbol: "T", meaning: absolute temperature, unit: K }
+    - { symbol: "\\Delta S", meaning: change in entropy, unit: "J/K" }
+  source: https://en.wikipedia.org/wiki/Gibbs_free_energy
+
+- id: nernst-equation
+  name: Nernst Equation
+  aliases: [cell potential, electrode potential, nernst]
+  domain: chemistry
+  subdomain: electrochemistry
+  tags: [electrochemistry, redox, potential, equilibrium]
+  latex: "E = E^{\\circ} - \\frac{RT}{nF}\\ln Q"
+  description: >
+    Gives the potential of an electrochemical cell away from standard conditions via the reaction quotient.
+  source: https://en.wikipedia.org/wiki/Nernst_equation

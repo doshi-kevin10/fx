@@ -1,0 +1,69 @@
+# Math — Calculus
+
+- id: derivative-definition
+  name: Definition of the Derivative
+  aliases: [derivative limit definition, difference quotient, first principles]
+  domain: math
+  subdomain: calculus
+  tags: [limit, slope, rate of change, differentiation]
+  latex: "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}"
+  description: >
+    The derivative of a function as the limit of the difference quotient.
+  source: https://en.wikipedia.org/wiki/Derivative
+
+- id: fundamental-theorem-of-calculus
+  name: Fundamental Theorem of Calculus
+  aliases: [FTC, ftc, evaluating a definite integral, antiderivative theorem]
+  domain: math
+  subdomain: calculus
+  tags: [integral, antiderivative, definite integral]
+  latex: "\\int_{a}^{b} f(x)\\,dx = F(b) - F(a)"
+  description: >
+    A definite integral equals the difference of an antiderivative F evaluated at the bounds.
+  variables:
+    - { symbol: "F", meaning: antiderivative of f }
+  source: https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus
+
+- id: chain-rule
+  name: Chain Rule
+  aliases: [derivative of a composition, composite function derivative]
+  domain: math
+  subdomain: calculus
+  tags: [differentiation, composition, derivative]
+  latex: "\\frac{d}{dx} f(g(x)) = f'(g(x))\\, g'(x)"
+  description: >
+    Derivative of a composition of two functions.
+  source: https://en.wikipedia.org/wiki/Chain_rule
+
+- id: product-rule
+  name: Product Rule
+  aliases: [derivative of a product, Leibniz product rule]
+  domain: math
+  subdomain: calculus
+  tags: [differentiation, derivative]
+  latex: "(uv)' = u'v + uv'"
+  description: >
+    Derivative of the product of two functions.
+  source: https://en.wikipedia.org/wiki/Product_rule
+
+- id: integration-by-parts
+  name: Integration by Parts
+  aliases: [parts integration, IBP]
+  domain: math
+  subdomain: calculus
+  tags: [integral, product rule, antiderivative]
+  latex: "\\int u\\,dv = uv - \\int v\\,du"
+  description: >
+    Integration analogue of the product rule, used to integrate products of functions.
+  source: https://en.wikipedia.org/wiki/Integration_by_parts
+
+- id: taylor-series
+  name: Taylor Series
+  aliases: [taylor expansion, power series expansion, maclaurin series]
+  domain: math
+  subdomain: calculus
+  tags: [series, approximation, expansion, analytic function]
+  latex: "f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}\\,(x-a)^{n}"
+  description: >
+    Represents an infinitely differentiable function as an infinite sum of terms about a point a.
+  source: https://en.wikipedia.org/wiki/Taylor_series

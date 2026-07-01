@@ -1,0 +1,88 @@
+# Math — Algebra & sequences
+# Each list item is one formula. See CONTRIBUTING.md for the schema.
+
+- id: quadratic-formula
+  name: Quadratic Formula
+  aliases: [quadratic roots, roots of a quadratic, ax^2+bx+c]
+  domain: math
+  subdomain: algebra
+  tags: [polynomial, roots, discriminant, second degree]
+  latex: "x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}"
+  description: >
+    Roots of a quadratic equation ax^2 + bx + c = 0 in terms of its coefficients.
+  variables:
+    - { symbol: "x", meaning: solutions (roots) }
+    - { symbol: "a", meaning: quadratic coefficient }
+    - { symbol: "b", meaning: linear coefficient }
+    - { symbol: "c", meaning: constant term }
+  source: https://en.wikipedia.org/wiki/Quadratic_formula
+
+- id: binomial-theorem
+  name: Binomial Theorem
+  aliases: [binomial expansion, (a+b)^n expansion]
+  domain: math
+  subdomain: algebra
+  tags: [combinatorics, expansion, polynomial, binomial coefficient]
+  latex: "(a+b)^{n} = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^{k}"
+  description: >
+    Expansion of a binomial raised to a non-negative integer power using binomial coefficients.
+  source: https://en.wikipedia.org/wiki/Binomial_theorem
+
+- id: geometric-series-sum
+  name: Sum of a Geometric Series
+  aliases: [geometric series, geometric sum, sum of geometric progression]
+  domain: math
+  subdomain: sequences
+  tags: [series, sum, convergence, ratio]
+  latex: "\\sum_{k=0}^{n-1} ar^{k} = a\\,\\frac{1 - r^{n}}{1 - r}"
+  description: >
+    Closed form for the sum of the first n terms of a geometric series with ratio r not equal to 1.
+  variables:
+    - { symbol: "a", meaning: first term }
+    - { symbol: "r", meaning: common ratio }
+    - { symbol: "n", meaning: number of terms }
+  source: https://en.wikipedia.org/wiki/Geometric_series
+
+- id: arithmetic-series-sum
+  name: Sum of an Arithmetic Series
+  aliases: [arithmetic sum, sum of arithmetic progression, Gauss sum]
+  domain: math
+  subdomain: sequences
+  tags: [series, sum, progression]
+  latex: "\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}"
+  description: >
+    Sum of the first n positive integers; the simplest arithmetic series.
+  source: https://en.wikipedia.org/wiki/Arithmetic_progression
+
+- id: eulers-identity
+  name: Euler's Identity
+  aliases: [euler identity, "e^{i pi} + 1 = 0", most beautiful equation]
+  domain: math
+  subdomain: complex analysis
+  tags: [complex numbers, exponential, pi, imaginary unit]
+  latex: "e^{i\\pi} + 1 = 0"
+  description: >
+    The special case of Euler's formula relating e, i, pi, 1, and 0 in a single equation.
+  source: https://en.wikipedia.org/wiki/Euler%27s_identity
+
+- id: eulers-formula
+  name: Euler's Formula
+  aliases: [euler formula, "e^{ix}", complex exponential]
+  domain: math
+  subdomain: complex analysis
+  tags: [complex numbers, exponential, trigonometry]
+  latex: "e^{ix} = \\cos x + i\\sin x"
+  description: >
+    Relates the complex exponential to sine and cosine, foundational to complex analysis.
+  source: https://en.wikipedia.org/wiki/Euler%27s_formula
+
+- id: logarithm-change-of-base
+  name: Change of Base Formula
+  aliases: [change of base, log base conversion]
+  domain: math
+  subdomain: algebra
+  tags: [logarithm, base]
+  latex: "\\log_{b} x = \\frac{\\log_{k} x}{\\log_{k} b}"
+  description: >
+    Converts a logarithm in one base to a ratio of logarithms in any other base k.
+  source: https://en.wikipedia.org/wiki/Logarithm

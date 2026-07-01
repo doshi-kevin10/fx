@@ -1,0 +1,209 @@
+# Physics — Classical mechanics
+
+- id: newtons-second-law
+  name: Newton's Second Law
+  aliases: [F=ma, force equals mass times acceleration, second law of motion]
+  domain: physics
+  subdomain: mechanics
+  tags: [force, mass, acceleration, dynamics]
+  latex: "\\vec{F} = m\\vec{a}"
+  description: >
+    The net force on a body equals its mass times its acceleration.
+  relation: "F = m * a"
+  variables:
+    - { key: F, symbol: "\\vec{F}", meaning: net force, unit: N }
+    - { key: m, symbol: "m", meaning: mass, unit: kg }
+    - { key: a, symbol: "\\vec{a}", meaning: acceleration, unit: "m/s^2" }
+  source: https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion
+
+- id: kinetic-energy
+  name: Kinetic Energy
+  aliases: [KE, translational kinetic energy, energy of motion, one half m v squared]
+  domain: physics
+  subdomain: mechanics
+  tags: [energy, motion, mass, velocity]
+  latex: "E_k = \\tfrac{1}{2} m v^{2}"
+  description: >
+    Energy a body possesses due to its translational motion.
+  relation: "E_k = 1/2 * m * v^2"
+  variables:
+    - { key: E_k, symbol: "E_k", meaning: kinetic energy, unit: J }
+    - { key: m, symbol: "m", meaning: mass, unit: kg }
+    - { key: v, symbol: "v", meaning: speed, unit: "m/s" }
+  source: https://en.wikipedia.org/wiki/Kinetic_energy
+
+- id: rotational-kinetic-energy
+  name: Rotational Kinetic Energy
+  aliases: [rotational KE, angular kinetic energy, energy of a rotating body, energy of a spinning object]
+  domain: physics
+  subdomain: mechanics
+  tags: [energy, rotation, moment of inertia, rigid body, angular velocity]
+  latex: "E_k = \\tfrac{1}{2} I \\omega^{2}"
+  description: >
+    Kinetic energy of a rigid body rotating about a fixed axis, in terms of its moment of inertia and angular velocity.
+  relation: "E_k = 1/2 * I * omega^2"
+  variables:
+    - { key: E_k, symbol: "E_k", meaning: rotational kinetic energy, unit: J }
+    - { key: I, symbol: "I", meaning: moment of inertia, unit: "kg m^2" }
+    - { key: omega, symbol: "\\omega", meaning: angular velocity, unit: "rad/s" }
+  source: https://en.wikipedia.org/wiki/Rotational_energy
+
+- id: gravitational-potential-energy
+  name: Gravitational Potential Energy (Near Earth)
+  aliases: [GPE, potential energy, mgh, height energy]
+  domain: physics
+  subdomain: mechanics
+  tags: [energy, gravity, height, potential]
+  latex: "U = mgh"
+  description: >
+    Potential energy of a mass at height h in a uniform gravitational field near Earth's surface.
+  relation: "U = m * g * h"
+  variables:
+    - { key: U, symbol: "U", meaning: potential energy, unit: J }
+    - { key: m, symbol: "m", meaning: mass, unit: kg }
+    - { key: g, symbol: "g", meaning: gravitational acceleration, unit: "m/s^2" }
+    - { key: h, symbol: "h", meaning: height, unit: m }
+  source: https://en.wikipedia.org/wiki/Gravitational_energy
+
+- id: work-done
+  name: Work Done by a Force
+  aliases: [work, mechanical work, force times distance]
+  domain: physics
+  subdomain: mechanics
+  tags: [energy, force, displacement]
+  latex: "W = \\vec{F} \\cdot \\vec{d} = Fd\\cos\\theta"
+  description: >
+    Work done by a constant force over a displacement, depending on the angle between them.
+  source: https://en.wikipedia.org/wiki/Work_(physics)
+
+- id: linear-momentum
+  name: Linear Momentum
+  aliases: [momentum, p=mv]
+  domain: physics
+  subdomain: mechanics
+  tags: [momentum, mass, velocity, conservation]
+  latex: "\\vec{p} = m\\vec{v}"
+  description: >
+    Momentum of a body as the product of its mass and velocity.
+  relation: "p = m * v"
+  variables:
+    - { key: p, symbol: "\\vec{p}", meaning: momentum, unit: "kg m/s" }
+    - { key: m, symbol: "m", meaning: mass, unit: kg }
+    - { key: v, symbol: "\\vec{v}", meaning: velocity, unit: "m/s" }
+  source: https://en.wikipedia.org/wiki/Momentum
+
+- id: impulse-momentum-theorem
+  name: Impulse
+  aliases: [impulse momentum theorem, change in momentum, J = F t]
+  domain: physics
+  subdomain: mechanics
+  tags: [momentum, force, time, collision]
+  latex: "\\vec{J} = \\vec{F}\\,\\Delta t = \\Delta \\vec{p}"
+  description: >
+    Impulse equals force times the time interval and equals the change in momentum.
+  source: https://en.wikipedia.org/wiki/Impulse_(physics)
+
+- id: hookes-law
+  name: Hooke's Law
+  aliases: [spring force, F=-kx, elastic force]
+  domain: physics
+  subdomain: mechanics
+  tags: [spring, elasticity, restoring force, oscillation]
+  latex: "F = -kx"
+  description: >
+    Restoring force of an ideal spring, proportional and opposite to its displacement.
+  variables:
+    - { symbol: "k", meaning: spring constant, unit: "N/m" }
+    - { symbol: "x", meaning: displacement from equilibrium, unit: m }
+  source: https://en.wikipedia.org/wiki/Hooke%27s_law
+
+- id: newtons-law-of-gravitation
+  name: Newton's Law of Universal Gravitation
+  aliases: [universal gravitation, gravitational force, gravity between two masses]
+  domain: physics
+  subdomain: mechanics
+  tags: [gravity, force, mass, inverse square]
+  latex: "F = G\\,\\frac{m_1 m_2}{r^{2}}"
+  description: >
+    Attractive gravitational force between two point masses, inversely proportional to the square of their separation.
+  variables:
+    - { symbol: "G", meaning: gravitational constant, unit: "N·m^2/kg^2" }
+    - { symbol: "m_1, m_2", meaning: the two masses, unit: kg }
+    - { symbol: "r", meaning: separation, unit: m }
+  source: https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation
+
+- id: centripetal-acceleration
+  name: Centripetal Acceleration
+  aliases: [centripetal, circular motion acceleration, v squared over r]
+  domain: physics
+  subdomain: mechanics
+  tags: [circular motion, acceleration, radius]
+  latex: "a_c = \\frac{v^{2}}{r}"
+  description: >
+    Center-directed acceleration of a body in uniform circular motion.
+  source: https://en.wikipedia.org/wiki/Centripetal_force
+
+- id: torque
+  name: Torque
+  aliases: [moment of force, rotational force, tau = r F]
+  domain: physics
+  subdomain: mechanics
+  tags: [rotation, force, lever arm, moment]
+  latex: "\\vec{\\tau} = \\vec{r} \\times \\vec{F}"
+  description: >
+    Rotational analogue of force, the cross product of the lever arm and the applied force.
+  source: https://en.wikipedia.org/wiki/Torque
+
+- id: angular-momentum
+  name: Angular Momentum
+  aliases: [L = I omega, rotational momentum, spin momentum]
+  domain: physics
+  subdomain: mechanics
+  tags: [rotation, momentum, moment of inertia, conservation]
+  latex: "L = I\\omega"
+  description: >
+    Angular momentum of a rigid body as the product of its moment of inertia and angular velocity.
+  source: https://en.wikipedia.org/wiki/Angular_momentum
+
+- id: kinematic-velocity
+  name: Kinematic Equation (Velocity)
+  aliases: [v = u + at, SUVAT, equation of motion, first kinematic equation]
+  domain: physics
+  subdomain: mechanics
+  tags: [kinematics, acceleration, velocity, motion, suvat]
+  latex: "v = u + at"
+  description: >
+    Final velocity under constant acceleration, given initial velocity and elapsed time.
+  relation: "v = u + a * t"
+  variables:
+    - { key: v, symbol: "v", meaning: final velocity, unit: "m/s" }
+    - { key: u, symbol: "u", meaning: initial velocity, unit: "m/s" }
+    - { key: a, symbol: "a", meaning: acceleration, unit: "m/s^2" }
+    - { key: t, symbol: "t", meaning: time, unit: s }
+  source: https://en.wikipedia.org/wiki/Equations_of_motion
+
+- id: kinematic-displacement
+  name: Kinematic Equation (Displacement)
+  aliases: [s = ut + half a t squared, SUVAT displacement, second kinematic equation]
+  domain: physics
+  subdomain: mechanics
+  tags: [kinematics, displacement, acceleration, motion, suvat]
+  latex: "s = ut + \\tfrac{1}{2} a t^{2}"
+  description: >
+    Displacement under constant acceleration from initial velocity over time t.
+  source: https://en.wikipedia.org/wiki/Equations_of_motion
+
+- id: simple-pendulum-period
+  name: Period of a Simple Pendulum
+  aliases: [pendulum period, simple harmonic pendulum, swing period]
+  domain: physics
+  subdomain: mechanics
+  tags: [oscillation, pendulum, period, simple harmonic motion]
+  latex: "T = 2\\pi \\sqrt{\\frac{L}{g}}"
+  description: >
+    Period of small-amplitude oscillations of a simple pendulum of length L.
+  variables:
+    - { symbol: "T", meaning: period, unit: s }
+    - { symbol: "L", meaning: pendulum length, unit: m }
+    - { symbol: "g", meaning: gravitational acceleration, unit: "m/s^2" }
+  source: https://en.wikipedia.org/wiki/Pendulum

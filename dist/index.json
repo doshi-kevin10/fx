@@ -1,0 +1,2263 @@
+[
+  {
+    "id": "ammonia-synthesis",
+    "name": "Haber Process (Ammonia Synthesis)",
+    "aliases": [
+      "haber bosch",
+      "ammonia synthesis",
+      "nitrogen fixation",
+      "N2 + 3H2"
+    ],
+    "domain": "chemistry",
+    "subdomain": "reactions",
+    "tags": [
+      "equilibrium",
+      "catalysis",
+      "ammonia",
+      "industrial"
+    ],
+    "latex": "\\ce{N2 + 3 H2 <=> 2 NH3}",
+    "description": "Reversible industrial synthesis of ammonia from nitrogen and hydrogen gas.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Haber_process"
+  },
+  {
+    "id": "angular-momentum",
+    "name": "Angular Momentum",
+    "aliases": [
+      "L = I omega",
+      "rotational momentum",
+      "spin momentum"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "rotation",
+      "momentum",
+      "moment of inertia",
+      "conservation"
+    ],
+    "latex": "L = I\\omega",
+    "description": "Angular momentum of a rigid body as the product of its moment of inertia and angular velocity.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Angular_momentum"
+  },
+  {
+    "id": "area-of-circle",
+    "name": "Area of a Circle",
+    "aliases": [
+      "circle area",
+      "pi r squared"
+    ],
+    "domain": "math",
+    "subdomain": "geometry",
+    "tags": [
+      "circle",
+      "area",
+      "radius"
+    ],
+    "latex": "A = \\pi r^{2}",
+    "description": "Area enclosed by a circle of radius r.",
+    "variables": [
+      {
+        "symbol": "A",
+        "meaning": "area"
+      },
+      {
+        "symbol": "r",
+        "meaning": "radius"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Area_of_a_circle"
+  },
+  {
+    "id": "arithmetic-series-sum",
+    "name": "Sum of an Arithmetic Series",
+    "aliases": [
+      "arithmetic sum",
+      "sum of arithmetic progression",
+      "Gauss sum"
+    ],
+    "domain": "math",
+    "subdomain": "sequences",
+    "tags": [
+      "series",
+      "sum",
+      "progression"
+    ],
+    "latex": "\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}",
+    "description": "Sum of the first n positive integers; the simplest arithmetic series.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Arithmetic_progression"
+  },
+  {
+    "id": "bayes-theorem",
+    "name": "Bayes' Theorem",
+    "aliases": [
+      "bayes rule",
+      "bayes law",
+      "posterior probability"
+    ],
+    "domain": "math",
+    "subdomain": "probability",
+    "tags": [
+      "conditional probability",
+      "posterior",
+      "prior",
+      "inference"
+    ],
+    "latex": "P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}",
+    "description": "Updates the probability of A given observed evidence B from the reverse conditional and priors.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Bayes%27_theorem"
+  },
+  {
+    "id": "binomial-coefficient",
+    "name": "Binomial Coefficient",
+    "aliases": [
+      "n choose k",
+      "combinations",
+      "choose function"
+    ],
+    "domain": "math",
+    "subdomain": "combinatorics",
+    "tags": [
+      "counting",
+      "combinations",
+      "factorial"
+    ],
+    "latex": "\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!}",
+    "description": "Number of ways to choose k items from n without regard to order.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Binomial_coefficient"
+  },
+  {
+    "id": "binomial-theorem",
+    "name": "Binomial Theorem",
+    "aliases": [
+      "binomial expansion",
+      "(a+b)^n expansion"
+    ],
+    "domain": "math",
+    "subdomain": "algebra",
+    "tags": [
+      "combinatorics",
+      "expansion",
+      "polynomial",
+      "binomial coefficient"
+    ],
+    "latex": "(a+b)^{n} = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^{k}",
+    "description": "Expansion of a binomial raised to a non-negative integer power using binomial coefficients.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Binomial_theorem"
+  },
+  {
+    "id": "capacitance",
+    "name": "Capacitance",
+    "aliases": [
+      "C = Q/V",
+      "capacitor charge",
+      "capacitance definition"
+    ],
+    "domain": "physics",
+    "subdomain": "electromagnetism",
+    "tags": [
+      "capacitor",
+      "charge",
+      "voltage"
+    ],
+    "latex": "C = \\frac{Q}{V}",
+    "description": "Capacitance as the ratio of stored charge to the voltage across a capacitor.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Capacitance"
+  },
+  {
+    "id": "centripetal-acceleration",
+    "name": "Centripetal Acceleration",
+    "aliases": [
+      "centripetal",
+      "circular motion acceleration",
+      "v squared over r"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "circular motion",
+      "acceleration",
+      "radius"
+    ],
+    "latex": "a_c = \\frac{v^{2}}{r}",
+    "description": "Center-directed acceleration of a body in uniform circular motion.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Centripetal_force"
+  },
+  {
+    "id": "chain-rule",
+    "name": "Chain Rule",
+    "aliases": [
+      "derivative of a composition",
+      "composite function derivative"
+    ],
+    "domain": "math",
+    "subdomain": "calculus",
+    "tags": [
+      "differentiation",
+      "composition",
+      "derivative"
+    ],
+    "latex": "\\frac{d}{dx} f(g(x)) = f'(g(x))\\, g'(x)",
+    "description": "Derivative of a composition of two functions.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Chain_rule"
+  },
+  {
+    "id": "chandrasekhar-mass",
+    "name": "Chandrasekhar Mass",
+    "aliases": [
+      "chandrasekhar limit",
+      "white dwarf mass limit"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "stellar",
+    "tags": [
+      "white dwarf",
+      "degeneracy",
+      "stellar evolution",
+      "mass limit"
+    ],
+    "latex": "M_{\\text{Ch}} \\approx 1.44\\, M_{\\odot}",
+    "description": "Maximum mass of a stable white dwarf supported by electron degeneracy pressure.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Chandrasekhar_limit"
+  },
+  {
+    "id": "combustion-of-methane",
+    "name": "Combustion of Methane",
+    "aliases": [
+      "methane burning",
+      "CH4 combustion",
+      "natural gas combustion"
+    ],
+    "domain": "chemistry",
+    "subdomain": "reactions",
+    "tags": [
+      "combustion",
+      "hydrocarbon",
+      "redox",
+      "oxidation"
+    ],
+    "latex": "\\ce{CH4 + 2 O2 -> CO2 + 2 H2O}",
+    "description": "Complete combustion of methane in oxygen, producing carbon dioxide and water.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Methane"
+  },
+  {
+    "id": "coulombs-law",
+    "name": "Coulomb's Law",
+    "aliases": [
+      "electrostatic force",
+      "force between charges",
+      "coulomb force"
+    ],
+    "domain": "physics",
+    "subdomain": "electromagnetism",
+    "tags": [
+      "electric charge",
+      "force",
+      "inverse square",
+      "electrostatics"
+    ],
+    "latex": "F = k_e\\,\\frac{q_1 q_2}{r^{2}}",
+    "description": "Electrostatic force between two point charges, inversely proportional to the square of their separation.",
+    "variables": [
+      {
+        "symbol": "k_e",
+        "meaning": "Coulomb constant"
+      },
+      {
+        "symbol": "q_1, q_2",
+        "meaning": "the two charges",
+        "unit": "C"
+      },
+      {
+        "symbol": "r",
+        "meaning": "separation",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Coulomb%27s_law"
+  },
+  {
+    "id": "cross-product-magnitude",
+    "name": "Cross Product Magnitude",
+    "aliases": [
+      "vector product",
+      "cross product"
+    ],
+    "domain": "math",
+    "subdomain": "linear algebra",
+    "tags": [
+      "vector",
+      "area",
+      "perpendicular"
+    ],
+    "latex": "|\\vec{a} \\times \\vec{b}| = |\\vec{a}|\\,|\\vec{b}|\\sin\\theta",
+    "description": "Magnitude of the cross product of two vectors, equal to the area of the parallelogram they span.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Cross_product"
+  },
+  {
+    "id": "de-broglie-wavelength",
+    "name": "de Broglie Wavelength",
+    "aliases": [
+      "matter wave",
+      "wavelength of a particle",
+      "de broglie"
+    ],
+    "domain": "physics",
+    "subdomain": "quantum",
+    "tags": [
+      "wavelength",
+      "momentum",
+      "matter wave",
+      "quantum"
+    ],
+    "latex": "\\lambda = \\frac{h}{p}",
+    "description": "Wavelength associated with a particle of momentum p, foundational to wave–particle duality.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Matter_wave"
+  },
+  {
+    "id": "derivative-definition",
+    "name": "Definition of the Derivative",
+    "aliases": [
+      "derivative limit definition",
+      "difference quotient",
+      "first principles"
+    ],
+    "domain": "math",
+    "subdomain": "calculus",
+    "tags": [
+      "limit",
+      "slope",
+      "rate of change",
+      "differentiation"
+    ],
+    "latex": "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}",
+    "description": "The derivative of a function as the limit of the difference quotient.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Derivative"
+  },
+  {
+    "id": "determinant-2x2",
+    "name": "Determinant of a 2x2 Matrix",
+    "aliases": [
+      "2x2 determinant",
+      "matrix determinant"
+    ],
+    "domain": "math",
+    "subdomain": "linear algebra",
+    "tags": [
+      "matrix",
+      "determinant",
+      "invertibility"
+    ],
+    "latex": "\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc",
+    "description": "Determinant of a 2x2 matrix; nonzero iff the matrix is invertible.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Determinant"
+  },
+  {
+    "id": "distance-formula",
+    "name": "Distance Formula",
+    "aliases": [
+      "euclidean distance",
+      "distance between two points"
+    ],
+    "domain": "math",
+    "subdomain": "geometry",
+    "tags": [
+      "coordinates",
+      "euclidean",
+      "length"
+    ],
+    "latex": "d = \\sqrt{(x_2 - x_1)^{2} + (y_2 - y_1)^{2}}",
+    "description": "Straight-line distance between two points in the Cartesian plane.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Distance"
+  },
+  {
+    "id": "doppler-effect",
+    "name": "Doppler Effect (Sound)",
+    "aliases": [
+      "doppler shift",
+      "frequency shift",
+      "observed frequency"
+    ],
+    "domain": "physics",
+    "subdomain": "waves",
+    "tags": [
+      "frequency",
+      "relative motion",
+      "sound",
+      "shift"
+    ],
+    "latex": "f' = f\\,\\frac{v \\pm v_o}{v \\mp v_s}",
+    "description": "Observed frequency of a wave shifts with the relative motion of source and observer.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Doppler_effect"
+  },
+  {
+    "id": "dot-product",
+    "name": "Dot Product",
+    "aliases": [
+      "scalar product",
+      "inner product"
+    ],
+    "domain": "math",
+    "subdomain": "linear algebra",
+    "tags": [
+      "vector",
+      "projection",
+      "angle",
+      "scalar"
+    ],
+    "latex": "\\vec{a} \\cdot \\vec{b} = |\\vec{a}|\\,|\\vec{b}|\\cos\\theta",
+    "description": "Scalar product of two vectors, equal to the product of their magnitudes and the cosine of the angle between them.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Dot_product"
+  },
+  {
+    "id": "eigenvalue-equation",
+    "name": "Eigenvalue Equation",
+    "aliases": [
+      "eigenvector equation",
+      "characteristic equation",
+      "Av = lambda v"
+    ],
+    "domain": "math",
+    "subdomain": "linear algebra",
+    "tags": [
+      "matrix",
+      "eigenvalue",
+      "eigenvector",
+      "linear transformation"
+    ],
+    "latex": "A\\vec{v} = \\lambda \\vec{v}",
+    "description": "Defines an eigenvector v of a matrix A with eigenvalue lambda, scaled but not rotated by A.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors"
+  },
+  {
+    "id": "electric-power",
+    "name": "Electric Power",
+    "aliases": [
+      "P=IV",
+      "power dissipated",
+      "electrical power"
+    ],
+    "domain": "physics",
+    "subdomain": "electromagnetism",
+    "tags": [
+      "power",
+      "voltage",
+      "current",
+      "circuit"
+    ],
+    "latex": "P = IV = I^{2}R",
+    "description": "Power delivered to or dissipated by an electrical component.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Electric_power"
+  },
+  {
+    "id": "entropy-change",
+    "name": "Entropy Change (Reversible)",
+    "aliases": [
+      "entropy",
+      "dS = dQ/T",
+      "clausius entropy"
+    ],
+    "domain": "physics",
+    "subdomain": "thermodynamics",
+    "tags": [
+      "entropy",
+      "heat",
+      "temperature",
+      "second law"
+    ],
+    "latex": "\\Delta S = \\int \\frac{dQ_{\\text{rev}}}{T}",
+    "description": "Entropy change of a system along a reversible path, integrating heat transfer over temperature.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Entropy"
+  },
+  {
+    "id": "escape-velocity",
+    "name": "Escape Velocity",
+    "aliases": [
+      "escape speed",
+      "gravitational escape"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "orbital mechanics",
+    "tags": [
+      "gravity",
+      "velocity",
+      "orbit",
+      "energy"
+    ],
+    "latex": "v_e = \\sqrt{\\frac{2GM}{r}}",
+    "description": "Minimum speed needed to escape a body's gravitational field without further propulsion.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Escape_velocity"
+  },
+  {
+    "id": "eulers-formula",
+    "name": "Euler's Formula",
+    "aliases": [
+      "euler formula",
+      "e^{ix}",
+      "complex exponential"
+    ],
+    "domain": "math",
+    "subdomain": "complex analysis",
+    "tags": [
+      "complex numbers",
+      "exponential",
+      "trigonometry"
+    ],
+    "latex": "e^{ix} = \\cos x + i\\sin x",
+    "description": "Relates the complex exponential to sine and cosine, foundational to complex analysis.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Euler%27s_formula"
+  },
+  {
+    "id": "eulers-identity",
+    "name": "Euler's Identity",
+    "aliases": [
+      "euler identity",
+      "e^{i pi} + 1 = 0",
+      "most beautiful equation"
+    ],
+    "domain": "math",
+    "subdomain": "complex analysis",
+    "tags": [
+      "complex numbers",
+      "exponential",
+      "pi",
+      "imaginary unit"
+    ],
+    "latex": "e^{i\\pi} + 1 = 0",
+    "description": "The special case of Euler's formula relating e, i, pi, 1, and 0 in a single equation.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Euler%27s_identity"
+  },
+  {
+    "id": "expected-value-discrete",
+    "name": "Expected Value (Discrete)",
+    "aliases": [
+      "expectation",
+      "mean of a random variable",
+      "E[X]"
+    ],
+    "domain": "math",
+    "subdomain": "probability",
+    "tags": [
+      "expectation",
+      "mean",
+      "random variable",
+      "weighted average"
+    ],
+    "latex": "E[X] = \\sum_{i} x_i\\, p_i",
+    "description": "Probability-weighted average of the values of a discrete random variable.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Expected_value"
+  },
+  {
+    "id": "faradays-law-induction",
+    "name": "Faraday's Law of Induction",
+    "aliases": [
+      "electromagnetic induction",
+      "induced emf",
+      "changing flux"
+    ],
+    "domain": "physics",
+    "subdomain": "electromagnetism",
+    "tags": [
+      "induction",
+      "magnetic flux",
+      "emf",
+      "maxwell"
+    ],
+    "latex": "\\varepsilon = -\\frac{d\\Phi_B}{dt}",
+    "description": "Induced electromotive force equals the negative rate of change of magnetic flux through a loop.",
+    "variables": [
+      {
+        "symbol": "\\varepsilon",
+        "meaning": "induced emf",
+        "unit": "V"
+      },
+      {
+        "symbol": "\\Phi_B",
+        "meaning": "magnetic flux",
+        "unit": "Wb"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction"
+  },
+  {
+    "id": "first-law-thermodynamics",
+    "name": "First Law of Thermodynamics",
+    "aliases": [
+      "conservation of energy heat",
+      "dU = Q - W",
+      "internal energy change"
+    ],
+    "domain": "physics",
+    "subdomain": "thermodynamics",
+    "tags": [
+      "energy",
+      "heat",
+      "work",
+      "internal energy",
+      "conservation"
+    ],
+    "latex": "\\Delta U = Q - W",
+    "description": "Change in a system's internal energy equals heat added to it minus work done by it.",
+    "variables": [
+      {
+        "symbol": "\\Delta U",
+        "meaning": "change in internal energy",
+        "unit": "J"
+      },
+      {
+        "symbol": "Q",
+        "meaning": "heat added to the system",
+        "unit": "J"
+      },
+      {
+        "symbol": "W",
+        "meaning": "work done by the system",
+        "unit": "J"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/First_law_of_thermodynamics"
+  },
+  {
+    "id": "fundamental-theorem-of-calculus",
+    "name": "Fundamental Theorem of Calculus",
+    "aliases": [
+      "FTC",
+      "ftc",
+      "evaluating a definite integral",
+      "antiderivative theorem"
+    ],
+    "domain": "math",
+    "subdomain": "calculus",
+    "tags": [
+      "integral",
+      "antiderivative",
+      "definite integral"
+    ],
+    "latex": "\\int_{a}^{b} f(x)\\,dx = F(b) - F(a)",
+    "description": "A definite integral equals the difference of an antiderivative F evaluated at the bounds.",
+    "variables": [
+      {
+        "symbol": "F",
+        "meaning": "antiderivative of f"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus"
+  },
+  {
+    "id": "geometric-series-sum",
+    "name": "Sum of a Geometric Series",
+    "aliases": [
+      "geometric series",
+      "geometric sum",
+      "sum of geometric progression"
+    ],
+    "domain": "math",
+    "subdomain": "sequences",
+    "tags": [
+      "series",
+      "sum",
+      "convergence",
+      "ratio"
+    ],
+    "latex": "\\sum_{k=0}^{n-1} ar^{k} = a\\,\\frac{1 - r^{n}}{1 - r}",
+    "description": "Closed form for the sum of the first n terms of a geometric series with ratio r not equal to 1.",
+    "variables": [
+      {
+        "symbol": "a",
+        "meaning": "first term"
+      },
+      {
+        "symbol": "r",
+        "meaning": "common ratio"
+      },
+      {
+        "symbol": "n",
+        "meaning": "number of terms"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Geometric_series"
+  },
+  {
+    "id": "gibbs-free-energy",
+    "name": "Gibbs Free Energy",
+    "aliases": [
+      "gibbs energy",
+      "delta G",
+      "spontaneity"
+    ],
+    "domain": "chemistry",
+    "subdomain": "thermochemistry",
+    "tags": [
+      "thermodynamics",
+      "enthalpy",
+      "entropy",
+      "spontaneity"
+    ],
+    "latex": "\\Delta G = \\Delta H - T\\,\\Delta S",
+    "description": "Change in Gibbs free energy predicts reaction spontaneity from enthalpy, temperature, and entropy.",
+    "variables": [
+      {
+        "symbol": "\\Delta G",
+        "meaning": "change in Gibbs free energy",
+        "unit": "J"
+      },
+      {
+        "symbol": "\\Delta H",
+        "meaning": "change in enthalpy",
+        "unit": "J"
+      },
+      {
+        "symbol": "T",
+        "meaning": "absolute temperature",
+        "unit": "K"
+      },
+      {
+        "symbol": "\\Delta S",
+        "meaning": "change in entropy",
+        "unit": "J/K"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Gibbs_free_energy"
+  },
+  {
+    "id": "gravitational-potential-energy",
+    "name": "Gravitational Potential Energy (Near Earth)",
+    "aliases": [
+      "GPE",
+      "potential energy",
+      "mgh",
+      "height energy"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "energy",
+      "gravity",
+      "height",
+      "potential"
+    ],
+    "latex": "U = mgh",
+    "description": "Potential energy of a mass at height h in a uniform gravitational field near Earth's surface.",
+    "variables": [
+      {
+        "key": "U",
+        "symbol": "U",
+        "meaning": "potential energy",
+        "unit": "J"
+      },
+      {
+        "key": "m",
+        "symbol": "m",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "key": "g",
+        "symbol": "g",
+        "meaning": "gravitational acceleration",
+        "unit": "m/s^2"
+      },
+      {
+        "key": "h",
+        "symbol": "h",
+        "meaning": "height",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Gravitational_energy",
+    "relation": "U = m * g * h",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "heat-conduction-fourier",
+    "name": "Heat Equation (Thermal Energy)",
+    "aliases": [
+      "specific heat",
+      "Q = m c delta T",
+      "sensible heat"
+    ],
+    "domain": "physics",
+    "subdomain": "thermodynamics",
+    "tags": [
+      "heat",
+      "specific heat capacity",
+      "temperature change"
+    ],
+    "latex": "Q = mc\\,\\Delta T",
+    "description": "Heat required to change the temperature of a mass with specific heat capacity c.",
+    "variables": [
+      {
+        "symbol": "Q",
+        "meaning": "heat",
+        "unit": "J"
+      },
+      {
+        "symbol": "m",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "symbol": "c",
+        "meaning": "specific heat capacity",
+        "unit": "J/(kg·K)"
+      },
+      {
+        "symbol": "\\Delta T",
+        "meaning": "temperature change",
+        "unit": "K"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Heat_capacity"
+  },
+  {
+    "id": "heisenberg-uncertainty",
+    "name": "Heisenberg Uncertainty Principle",
+    "aliases": [
+      "uncertainty principle",
+      "position momentum uncertainty"
+    ],
+    "domain": "physics",
+    "subdomain": "quantum",
+    "tags": [
+      "uncertainty",
+      "position",
+      "momentum",
+      "quantum",
+      "planck"
+    ],
+    "latex": "\\Delta x\\,\\Delta p \\ge \\frac{\\hbar}{2}",
+    "description": "A fundamental limit on the simultaneous precision of a particle's position and momentum.",
+    "variables": [
+      {
+        "symbol": "\\Delta x",
+        "meaning": "position uncertainty"
+      },
+      {
+        "symbol": "\\Delta p",
+        "meaning": "momentum uncertainty"
+      },
+      {
+        "symbol": "\\hbar",
+        "meaning": "reduced Planck constant"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Uncertainty_principle"
+  },
+  {
+    "id": "henderson-hasselbalch",
+    "name": "Henderson–Hasselbalch Equation",
+    "aliases": [
+      "buffer equation",
+      "henderson hasselbalch",
+      "pH of a buffer"
+    ],
+    "domain": "chemistry",
+    "subdomain": "acids and bases",
+    "tags": [
+      "buffer",
+      "pKa",
+      "equilibrium",
+      "acid"
+    ],
+    "latex": "\\mathrm{pH} = \\mathrm{p}K_a + \\log_{10}\\frac{[\\text{A}^-]}{[\\text{HA}]}",
+    "description": "Relates the pH of a buffer to the acid dissociation constant and the ratio of conjugate base to acid.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation"
+  },
+  {
+    "id": "hookes-law",
+    "name": "Hooke's Law",
+    "aliases": [
+      "spring force",
+      "F=-kx",
+      "elastic force"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "spring",
+      "elasticity",
+      "restoring force",
+      "oscillation"
+    ],
+    "latex": "F = -kx",
+    "description": "Restoring force of an ideal spring, proportional and opposite to its displacement.",
+    "variables": [
+      {
+        "symbol": "k",
+        "meaning": "spring constant",
+        "unit": "N/m"
+      },
+      {
+        "symbol": "x",
+        "meaning": "displacement from equilibrium",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Hooke%27s_law"
+  },
+  {
+    "id": "hubbles-law",
+    "name": "Hubble's Law",
+    "aliases": [
+      "hubble law",
+      "cosmic expansion",
+      "recession velocity"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "cosmology",
+    "tags": [
+      "expansion",
+      "redshift",
+      "distance",
+      "cosmology"
+    ],
+    "latex": "v = H_0 d",
+    "description": "The recession velocity of a distant galaxy is proportional to its distance, evidence for cosmic expansion.",
+    "variables": [
+      {
+        "symbol": "v",
+        "meaning": "recession velocity",
+        "unit": "km/s"
+      },
+      {
+        "symbol": "H_0",
+        "meaning": "Hubble constant",
+        "unit": "km/s/Mpc"
+      },
+      {
+        "symbol": "d",
+        "meaning": "proper distance",
+        "unit": "Mpc"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Hubble%27s_law"
+  },
+  {
+    "id": "ideal-gas-law",
+    "name": "Ideal Gas Law",
+    "aliases": [
+      "PV=nRT",
+      "PV = nRT",
+      "equation of state",
+      "ideal gas equation"
+    ],
+    "domain": "physics",
+    "subdomain": "thermodynamics",
+    "tags": [
+      "gas",
+      "pressure",
+      "volume",
+      "temperature",
+      "moles"
+    ],
+    "latex": "PV = nRT",
+    "description": "Relates pressure, volume, temperature, and amount of an ideal gas.",
+    "variables": [
+      {
+        "key": "P",
+        "symbol": "P",
+        "meaning": "pressure",
+        "unit": "Pa"
+      },
+      {
+        "key": "V",
+        "symbol": "V",
+        "meaning": "volume",
+        "unit": "m^3"
+      },
+      {
+        "key": "n",
+        "symbol": "n",
+        "meaning": "amount of substance",
+        "unit": "mol"
+      },
+      {
+        "key": "R",
+        "symbol": "R",
+        "meaning": "gas constant",
+        "unit": "J/(mol K)"
+      },
+      {
+        "key": "T",
+        "symbol": "T",
+        "meaning": "absolute temperature",
+        "unit": "K"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ideal_gas_law",
+    "relation": "P * V = n * R * T",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "impulse-momentum-theorem",
+    "name": "Impulse",
+    "aliases": [
+      "impulse momentum theorem",
+      "change in momentum",
+      "J = F t"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "momentum",
+      "force",
+      "time",
+      "collision"
+    ],
+    "latex": "\\vec{J} = \\vec{F}\\,\\Delta t = \\Delta \\vec{p}",
+    "description": "Impulse equals force times the time interval and equals the change in momentum.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Impulse_(physics)"
+  },
+  {
+    "id": "integration-by-parts",
+    "name": "Integration by Parts",
+    "aliases": [
+      "parts integration",
+      "IBP"
+    ],
+    "domain": "math",
+    "subdomain": "calculus",
+    "tags": [
+      "integral",
+      "product rule",
+      "antiderivative"
+    ],
+    "latex": "\\int u\\,dv = uv - \\int v\\,du",
+    "description": "Integration analogue of the product rule, used to integrate products of functions.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Integration_by_parts"
+  },
+  {
+    "id": "keplers-third-law",
+    "name": "Kepler's Third Law",
+    "aliases": [
+      "law of periods",
+      "orbital period law",
+      "kepler"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "orbital mechanics",
+    "tags": [
+      "orbit",
+      "period",
+      "semi-major axis",
+      "planets"
+    ],
+    "latex": "T^{2} = \\frac{4\\pi^{2}}{GM}\\,a^{3}",
+    "description": "Square of an orbital period is proportional to the cube of the orbit's semi-major axis.",
+    "variables": [
+      {
+        "symbol": "T",
+        "meaning": "orbital period",
+        "unit": "s"
+      },
+      {
+        "symbol": "a",
+        "meaning": "semi-major axis",
+        "unit": "m"
+      },
+      {
+        "symbol": "M",
+        "meaning": "central mass",
+        "unit": "kg"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"
+  },
+  {
+    "id": "kinematic-displacement",
+    "name": "Kinematic Equation (Displacement)",
+    "aliases": [
+      "s = ut + half a t squared",
+      "SUVAT displacement",
+      "second kinematic equation"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "kinematics",
+      "displacement",
+      "acceleration",
+      "motion",
+      "suvat"
+    ],
+    "latex": "s = ut + \\tfrac{1}{2} a t^{2}",
+    "description": "Displacement under constant acceleration from initial velocity over time t.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Equations_of_motion"
+  },
+  {
+    "id": "kinematic-velocity",
+    "name": "Kinematic Equation (Velocity)",
+    "aliases": [
+      "v = u + at",
+      "SUVAT",
+      "equation of motion",
+      "first kinematic equation"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "kinematics",
+      "acceleration",
+      "velocity",
+      "motion",
+      "suvat"
+    ],
+    "latex": "v = u + at",
+    "description": "Final velocity under constant acceleration, given initial velocity and elapsed time.",
+    "variables": [
+      {
+        "key": "v",
+        "symbol": "v",
+        "meaning": "final velocity",
+        "unit": "m/s"
+      },
+      {
+        "key": "u",
+        "symbol": "u",
+        "meaning": "initial velocity",
+        "unit": "m/s"
+      },
+      {
+        "key": "a",
+        "symbol": "a",
+        "meaning": "acceleration",
+        "unit": "m/s^2"
+      },
+      {
+        "key": "t",
+        "symbol": "t",
+        "meaning": "time",
+        "unit": "s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Equations_of_motion",
+    "relation": "v = u + a * t",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "kinetic-energy",
+    "name": "Kinetic Energy",
+    "aliases": [
+      "KE",
+      "translational kinetic energy",
+      "energy of motion",
+      "one half m v squared"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "energy",
+      "motion",
+      "mass",
+      "velocity"
+    ],
+    "latex": "E_k = \\tfrac{1}{2} m v^{2}",
+    "description": "Energy a body possesses due to its translational motion.",
+    "variables": [
+      {
+        "key": "E_k",
+        "symbol": "E_k",
+        "meaning": "kinetic energy",
+        "unit": "J"
+      },
+      {
+        "key": "m",
+        "symbol": "m",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "key": "v",
+        "symbol": "v",
+        "meaning": "speed",
+        "unit": "m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+    "relation": "E_k = 1/2 * m * v^2",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "law-of-cosines",
+    "name": "Law of Cosines",
+    "aliases": [
+      "cosine rule",
+      "generalized pythagorean theorem"
+    ],
+    "domain": "math",
+    "subdomain": "trigonometry",
+    "tags": [
+      "triangle",
+      "angle",
+      "side length"
+    ],
+    "latex": "c^{2} = a^{2} + b^{2} - 2ab\\cos C",
+    "description": "Relates the lengths of a triangle's sides to the cosine of one of its angles.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Law_of_cosines"
+  },
+  {
+    "id": "law-of-sines",
+    "name": "Law of Sines",
+    "aliases": [
+      "sine rule",
+      "sine law"
+    ],
+    "domain": "math",
+    "subdomain": "trigonometry",
+    "tags": [
+      "triangle",
+      "angle",
+      "side length",
+      "circumradius"
+    ],
+    "latex": "\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}",
+    "description": "The ratio of a triangle's side length to the sine of its opposite angle is constant.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Law_of_sines"
+  },
+  {
+    "id": "linear-momentum",
+    "name": "Linear Momentum",
+    "aliases": [
+      "momentum",
+      "p=mv"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "momentum",
+      "mass",
+      "velocity",
+      "conservation"
+    ],
+    "latex": "\\vec{p} = m\\vec{v}",
+    "description": "Momentum of a body as the product of its mass and velocity.",
+    "variables": [
+      {
+        "key": "p",
+        "symbol": "\\vec{p}",
+        "meaning": "momentum",
+        "unit": "kg m/s"
+      },
+      {
+        "key": "m",
+        "symbol": "m",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "key": "v",
+        "symbol": "\\vec{v}",
+        "meaning": "velocity",
+        "unit": "m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Momentum",
+    "relation": "p = m * v",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "logarithm-change-of-base",
+    "name": "Change of Base Formula",
+    "aliases": [
+      "change of base",
+      "log base conversion"
+    ],
+    "domain": "math",
+    "subdomain": "algebra",
+    "tags": [
+      "logarithm",
+      "base"
+    ],
+    "latex": "\\log_{b} x = \\frac{\\log_{k} x}{\\log_{k} b}",
+    "description": "Converts a logarithm in one base to a ratio of logarithms in any other base k.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Logarithm"
+  },
+  {
+    "id": "lorentz-factor",
+    "name": "Lorentz Factor",
+    "aliases": [
+      "gamma factor",
+      "time dilation factor",
+      "relativistic factor"
+    ],
+    "domain": "physics",
+    "subdomain": "relativity",
+    "tags": [
+      "relativity",
+      "velocity",
+      "speed of light",
+      "time dilation"
+    ],
+    "latex": "\\gamma = \\frac{1}{\\sqrt{1 - \\dfrac{v^{2}}{c^{2}}}}",
+    "description": "The factor by which time, length, and relativistic mass change for an object in motion.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Lorentz_factor"
+  },
+  {
+    "id": "lorentz-force",
+    "name": "Lorentz Force",
+    "aliases": [
+      "electromagnetic force",
+      "force on a moving charge"
+    ],
+    "domain": "physics",
+    "subdomain": "electromagnetism",
+    "tags": [
+      "electric field",
+      "magnetic field",
+      "charge",
+      "force"
+    ],
+    "latex": "\\vec{F} = q\\left(\\vec{E} + \\vec{v} \\times \\vec{B}\\right)",
+    "description": "Total electromagnetic force on a point charge moving through electric and magnetic fields.",
+    "variables": [
+      {
+        "symbol": "q",
+        "meaning": "charge",
+        "unit": "C"
+      },
+      {
+        "symbol": "\\vec{E}",
+        "meaning": "electric field",
+        "unit": "V/m"
+      },
+      {
+        "symbol": "\\vec{B}",
+        "meaning": "magnetic field",
+        "unit": "T"
+      },
+      {
+        "symbol": "\\vec{v}",
+        "meaning": "velocity",
+        "unit": "m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Lorentz_force"
+  },
+  {
+    "id": "luminosity-distance-flux",
+    "name": "Flux–Luminosity Relation",
+    "aliases": [
+      "inverse square law of light",
+      "apparent brightness",
+      "flux"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "observational",
+    "tags": [
+      "luminosity",
+      "flux",
+      "distance",
+      "brightness",
+      "inverse square"
+    ],
+    "latex": "F = \\frac{L}{4\\pi d^{2}}",
+    "description": "Observed flux of a source falls off with the inverse square of its distance from its luminosity.",
+    "variables": [
+      {
+        "symbol": "F",
+        "meaning": "flux",
+        "unit": "W/m^2"
+      },
+      {
+        "symbol": "L",
+        "meaning": "luminosity",
+        "unit": "W"
+      },
+      {
+        "symbol": "d",
+        "meaning": "distance",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Luminosity"
+  },
+  {
+    "id": "mass-energy-equivalence",
+    "name": "Mass–Energy Equivalence",
+    "aliases": [
+      "E=mc^2",
+      "E = mc2",
+      "einstein energy",
+      "rest energy"
+    ],
+    "domain": "physics",
+    "subdomain": "relativity",
+    "tags": [
+      "energy",
+      "mass",
+      "relativity",
+      "speed of light"
+    ],
+    "latex": "E = mc^{2}",
+    "description": "Rest energy of a body equals its mass times the speed of light squared.",
+    "variables": [
+      {
+        "symbol": "E",
+        "meaning": "energy",
+        "unit": "J"
+      },
+      {
+        "symbol": "m",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "symbol": "c",
+        "meaning": "speed of light",
+        "unit": "m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence"
+  },
+  {
+    "id": "nernst-equation",
+    "name": "Nernst Equation",
+    "aliases": [
+      "cell potential",
+      "electrode potential",
+      "nernst"
+    ],
+    "domain": "chemistry",
+    "subdomain": "electrochemistry",
+    "tags": [
+      "electrochemistry",
+      "redox",
+      "potential",
+      "equilibrium"
+    ],
+    "latex": "E = E^{\\circ} - \\frac{RT}{nF}\\ln Q",
+    "description": "Gives the potential of an electrochemical cell away from standard conditions via the reaction quotient.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Nernst_equation"
+  },
+  {
+    "id": "neutralization-reaction",
+    "name": "Acid–Base Neutralization",
+    "aliases": [
+      "neutralization",
+      "acid base reaction",
+      "HCl + NaOH"
+    ],
+    "domain": "chemistry",
+    "subdomain": "reactions",
+    "tags": [
+      "acid",
+      "base",
+      "salt",
+      "neutralization"
+    ],
+    "latex": "\\ce{HCl + NaOH -> NaCl + H2O}",
+    "description": "A strong acid and strong base react to form a salt and water.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Neutralization_(chemistry)"
+  },
+  {
+    "id": "newtons-law-of-gravitation",
+    "name": "Newton's Law of Universal Gravitation",
+    "aliases": [
+      "universal gravitation",
+      "gravitational force",
+      "gravity between two masses"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "gravity",
+      "force",
+      "mass",
+      "inverse square"
+    ],
+    "latex": "F = G\\,\\frac{m_1 m_2}{r^{2}}",
+    "description": "Attractive gravitational force between two point masses, inversely proportional to the square of their separation.",
+    "variables": [
+      {
+        "symbol": "G",
+        "meaning": "gravitational constant",
+        "unit": "N·m^2/kg^2"
+      },
+      {
+        "symbol": "m_1, m_2",
+        "meaning": "the two masses",
+        "unit": "kg"
+      },
+      {
+        "symbol": "r",
+        "meaning": "separation",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation"
+  },
+  {
+    "id": "newtons-second-law",
+    "name": "Newton's Second Law",
+    "aliases": [
+      "F=ma",
+      "force equals mass times acceleration",
+      "second law of motion"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "force",
+      "mass",
+      "acceleration",
+      "dynamics"
+    ],
+    "latex": "\\vec{F} = m\\vec{a}",
+    "description": "The net force on a body equals its mass times its acceleration.",
+    "variables": [
+      {
+        "key": "F",
+        "symbol": "\\vec{F}",
+        "meaning": "net force",
+        "unit": "N"
+      },
+      {
+        "key": "m",
+        "symbol": "m",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "key": "a",
+        "symbol": "\\vec{a}",
+        "meaning": "acceleration",
+        "unit": "m/s^2"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
+    "relation": "F = m * a",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "normal-distribution-pdf",
+    "name": "Normal Distribution",
+    "aliases": [
+      "gaussian distribution",
+      "gaussian pdf",
+      "bell curve",
+      "normal density"
+    ],
+    "domain": "math",
+    "subdomain": "statistics",
+    "tags": [
+      "probability density",
+      "gaussian",
+      "mean",
+      "variance"
+    ],
+    "latex": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\, e^{-\\frac{(x-\\mu)^{2}}{2\\sigma^{2}}}",
+    "description": "Probability density function of a normal (Gaussian) distribution with mean mu and standard deviation sigma.",
+    "variables": [
+      {
+        "symbol": "\\mu",
+        "meaning": "mean"
+      },
+      {
+        "symbol": "\\sigma",
+        "meaning": "standard deviation"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Normal_distribution"
+  },
+  {
+    "id": "ohms-law",
+    "name": "Ohm's Law",
+    "aliases": [
+      "V=IR",
+      "voltage current resistance",
+      "ohms law"
+    ],
+    "domain": "physics",
+    "subdomain": "electromagnetism",
+    "tags": [
+      "voltage",
+      "current",
+      "resistance",
+      "circuit"
+    ],
+    "latex": "V = IR",
+    "description": "Voltage across a resistor equals the current through it times its resistance.",
+    "variables": [
+      {
+        "key": "V",
+        "symbol": "V",
+        "meaning": "voltage",
+        "unit": "V"
+      },
+      {
+        "key": "I",
+        "symbol": "I",
+        "meaning": "current",
+        "unit": "A"
+      },
+      {
+        "key": "R",
+        "symbol": "R",
+        "meaning": "resistance",
+        "unit": "ohm"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ohm%27s_law",
+    "relation": "V = I * R",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "ph-definition",
+    "name": "pH Definition",
+    "aliases": [
+      "pH",
+      "hydrogen ion concentration",
+      "acidity"
+    ],
+    "domain": "chemistry",
+    "subdomain": "acids and bases",
+    "tags": [
+      "acid",
+      "base",
+      "logarithm",
+      "concentration"
+    ],
+    "latex": "\\mathrm{pH} = -\\log_{10}[\\ce{H+}]",
+    "description": "The pH of a solution as the negative base-10 logarithm of the hydrogen ion activity.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/PH"
+  },
+  {
+    "id": "photon-energy",
+    "name": "Photon Energy",
+    "aliases": [
+      "E=hf",
+      "planck relation",
+      "quantum of energy",
+      "E = h nu"
+    ],
+    "domain": "physics",
+    "subdomain": "quantum",
+    "tags": [
+      "photon",
+      "energy",
+      "frequency",
+      "planck constant"
+    ],
+    "latex": "E = hf",
+    "description": "Energy of a photon is proportional to its frequency via the Planck constant.",
+    "variables": [
+      {
+        "key": "E",
+        "symbol": "E",
+        "meaning": "photon energy",
+        "unit": "J"
+      },
+      {
+        "key": "h",
+        "symbol": "h",
+        "meaning": "Planck constant",
+        "unit": "J s"
+      },
+      {
+        "key": "f",
+        "symbol": "f",
+        "meaning": "frequency",
+        "unit": "Hz"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Photon_energy",
+    "relation": "E = h * f",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "photosynthesis-net",
+    "name": "Photosynthesis (Net Reaction)",
+    "aliases": [
+      "photosynthesis equation",
+      "carbon fixation",
+      "glucose synthesis"
+    ],
+    "domain": "chemistry",
+    "subdomain": "reactions",
+    "tags": [
+      "biochemistry",
+      "glucose",
+      "carbon dioxide",
+      "light"
+    ],
+    "latex": "\\ce{6 CO2 + 6 H2O ->[light] C6H12O6 + 6 O2}",
+    "description": "Net reaction of photosynthesis: carbon dioxide and water become glucose and oxygen using light energy.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Photosynthesis"
+  },
+  {
+    "id": "product-rule",
+    "name": "Product Rule",
+    "aliases": [
+      "derivative of a product",
+      "Leibniz product rule"
+    ],
+    "domain": "math",
+    "subdomain": "calculus",
+    "tags": [
+      "differentiation",
+      "derivative"
+    ],
+    "latex": "(uv)' = u'v + uv'",
+    "description": "Derivative of the product of two functions.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Product_rule"
+  },
+  {
+    "id": "pythagorean-theorem",
+    "name": "Pythagorean Theorem",
+    "aliases": [
+      "pythagoras",
+      "a^2 + b^2 = c^2",
+      "right triangle theorem"
+    ],
+    "domain": "math",
+    "subdomain": "geometry",
+    "tags": [
+      "triangle",
+      "right angle",
+      "hypotenuse",
+      "distance"
+    ],
+    "latex": "a^{2} + b^{2} = c^{2}",
+    "description": "In a right triangle, the square of the hypotenuse equals the sum of squares of the legs.",
+    "variables": [
+      {
+        "symbol": "a",
+        "meaning": "leg"
+      },
+      {
+        "symbol": "b",
+        "meaning": "leg"
+      },
+      {
+        "symbol": "c",
+        "meaning": "hypotenuse"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pythagorean_theorem"
+  },
+  {
+    "id": "pythagorean-trig-identity",
+    "name": "Pythagorean Trigonometric Identity",
+    "aliases": [
+      "sin^2 + cos^2 = 1",
+      "fundamental trig identity"
+    ],
+    "domain": "math",
+    "subdomain": "trigonometry",
+    "tags": [
+      "identity",
+      "sine",
+      "cosine"
+    ],
+    "latex": "\\sin^{2}\\theta + \\cos^{2}\\theta = 1",
+    "description": "The fundamental relationship between sine and cosine of the same angle.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Pythagorean_trigonometric_identity"
+  },
+  {
+    "id": "quadratic-formula",
+    "name": "Quadratic Formula",
+    "aliases": [
+      "quadratic roots",
+      "roots of a quadratic",
+      "ax^2+bx+c"
+    ],
+    "domain": "math",
+    "subdomain": "algebra",
+    "tags": [
+      "polynomial",
+      "roots",
+      "discriminant",
+      "second degree"
+    ],
+    "latex": "x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}",
+    "description": "Roots of a quadratic equation ax^2 + bx + c = 0 in terms of its coefficients.",
+    "variables": [
+      {
+        "symbol": "x",
+        "meaning": "solutions (roots)"
+      },
+      {
+        "symbol": "a",
+        "meaning": "quadratic coefficient"
+      },
+      {
+        "symbol": "b",
+        "meaning": "linear coefficient"
+      },
+      {
+        "symbol": "c",
+        "meaning": "constant term"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Quadratic_formula"
+  },
+  {
+    "id": "rotational-kinetic-energy",
+    "name": "Rotational Kinetic Energy",
+    "aliases": [
+      "rotational KE",
+      "angular kinetic energy",
+      "energy of a rotating body",
+      "energy of a spinning object"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "energy",
+      "rotation",
+      "moment of inertia",
+      "rigid body",
+      "angular velocity"
+    ],
+    "latex": "E_k = \\tfrac{1}{2} I \\omega^{2}",
+    "description": "Kinetic energy of a rigid body rotating about a fixed axis, in terms of its moment of inertia and angular velocity.",
+    "variables": [
+      {
+        "key": "E_k",
+        "symbol": "E_k",
+        "meaning": "rotational kinetic energy",
+        "unit": "J"
+      },
+      {
+        "key": "I",
+        "symbol": "I",
+        "meaning": "moment of inertia",
+        "unit": "kg m^2"
+      },
+      {
+        "key": "omega",
+        "symbol": "\\omega",
+        "meaning": "angular velocity",
+        "unit": "rad/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Rotational_energy",
+    "relation": "E_k = 1/2 * I * omega^2",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "schrodinger-equation-time-dependent",
+    "name": "Time-Dependent Schrödinger Equation",
+    "aliases": [
+      "schrodinger equation",
+      "wave function evolution",
+      "quantum state equation"
+    ],
+    "domain": "physics",
+    "subdomain": "quantum",
+    "tags": [
+      "quantum",
+      "wave function",
+      "hamiltonian",
+      "evolution"
+    ],
+    "latex": "i\\hbar\\,\\frac{\\partial}{\\partial t}\\Psi = \\hat{H}\\Psi",
+    "description": "Governs the time evolution of the quantum wave function under the Hamiltonian operator.",
+    "variables": [
+      {
+        "symbol": "\\Psi",
+        "meaning": "wave function"
+      },
+      {
+        "symbol": "\\hat{H}",
+        "meaning": "Hamiltonian operator"
+      },
+      {
+        "symbol": "\\hbar",
+        "meaning": "reduced Planck constant"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation"
+  },
+  {
+    "id": "schwarzschild-radius",
+    "name": "Schwarzschild Radius",
+    "aliases": [
+      "event horizon radius",
+      "black hole radius",
+      "schwarzschild"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "relativity",
+    "tags": [
+      "black hole",
+      "event horizon",
+      "general relativity",
+      "gravity"
+    ],
+    "latex": "r_s = \\frac{2GM}{c^{2}}",
+    "description": "Radius of the event horizon of a non-rotating black hole of mass M.",
+    "variables": [
+      {
+        "symbol": "r_s",
+        "meaning": "Schwarzschild radius",
+        "unit": "m"
+      },
+      {
+        "symbol": "G",
+        "meaning": "gravitational constant"
+      },
+      {
+        "symbol": "M",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "symbol": "c",
+        "meaning": "speed of light",
+        "unit": "m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Schwarzschild_radius"
+  },
+  {
+    "id": "simple-pendulum-period",
+    "name": "Period of a Simple Pendulum",
+    "aliases": [
+      "pendulum period",
+      "simple harmonic pendulum",
+      "swing period"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "oscillation",
+      "pendulum",
+      "period",
+      "simple harmonic motion"
+    ],
+    "latex": "T = 2\\pi \\sqrt{\\frac{L}{g}}",
+    "description": "Period of small-amplitude oscillations of a simple pendulum of length L.",
+    "variables": [
+      {
+        "symbol": "T",
+        "meaning": "period",
+        "unit": "s"
+      },
+      {
+        "symbol": "L",
+        "meaning": "pendulum length",
+        "unit": "m"
+      },
+      {
+        "symbol": "g",
+        "meaning": "gravitational acceleration",
+        "unit": "m/s^2"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pendulum"
+  },
+  {
+    "id": "snells-law",
+    "name": "Snell's Law",
+    "aliases": [
+      "law of refraction",
+      "snell law",
+      "refraction angles"
+    ],
+    "domain": "physics",
+    "subdomain": "optics",
+    "tags": [
+      "refraction",
+      "light",
+      "index of refraction",
+      "angle"
+    ],
+    "latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
+    "description": "Relates the angles of incidence and refraction to the refractive indices of two media.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Snell%27s_law"
+  },
+  {
+    "id": "standard-deviation",
+    "name": "Standard Deviation",
+    "aliases": [
+      "population standard deviation",
+      "sigma",
+      "spread"
+    ],
+    "domain": "math",
+    "subdomain": "statistics",
+    "tags": [
+      "variance",
+      "dispersion",
+      "mean"
+    ],
+    "latex": "\\sigma = \\sqrt{\\frac{1}{N}\\sum_{i=1}^{N}(x_i - \\mu)^{2}}",
+    "description": "Population standard deviation, the root-mean-square deviation from the mean.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Standard_deviation"
+  },
+  {
+    "id": "stefan-boltzmann-law",
+    "name": "Stefan–Boltzmann Law",
+    "aliases": [
+      "blackbody radiated power",
+      "stefan boltzmann",
+      "radiated power"
+    ],
+    "domain": "physics",
+    "subdomain": "thermodynamics",
+    "tags": [
+      "radiation",
+      "blackbody",
+      "temperature",
+      "power",
+      "luminosity"
+    ],
+    "latex": "j^{\\star} = \\sigma T^{4}",
+    "description": "Power radiated per unit area by a black body scales with the fourth power of its temperature.",
+    "variables": [
+      {
+        "symbol": "j^{\\star}",
+        "meaning": "radiant emittance",
+        "unit": "W/m^2"
+      },
+      {
+        "symbol": "\\sigma",
+        "meaning": "Stefan–Boltzmann constant"
+      },
+      {
+        "symbol": "T",
+        "meaning": "absolute temperature",
+        "unit": "K"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law"
+  },
+  {
+    "id": "taylor-series",
+    "name": "Taylor Series",
+    "aliases": [
+      "taylor expansion",
+      "power series expansion",
+      "maclaurin series"
+    ],
+    "domain": "math",
+    "subdomain": "calculus",
+    "tags": [
+      "series",
+      "approximation",
+      "expansion",
+      "analytic function"
+    ],
+    "latex": "f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}\\,(x-a)^{n}",
+    "description": "Represents an infinitely differentiable function as an infinite sum of terms about a point a.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Taylor_series"
+  },
+  {
+    "id": "thin-lens-equation",
+    "name": "Thin Lens Equation",
+    "aliases": [
+      "lens equation",
+      "focal length",
+      "object image distance"
+    ],
+    "domain": "physics",
+    "subdomain": "optics",
+    "tags": [
+      "lens",
+      "focal length",
+      "optics",
+      "image"
+    ],
+    "latex": "\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}",
+    "description": "Relates the focal length of a thin lens to the object and image distances.",
+    "variables": [
+      {
+        "symbol": "f",
+        "meaning": "focal length"
+      },
+      {
+        "symbol": "d_o",
+        "meaning": "object distance"
+      },
+      {
+        "symbol": "d_i",
+        "meaning": "image distance"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Lens"
+  },
+  {
+    "id": "torque",
+    "name": "Torque",
+    "aliases": [
+      "moment of force",
+      "rotational force",
+      "tau = r F"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "rotation",
+      "force",
+      "lever arm",
+      "moment"
+    ],
+    "latex": "\\vec{\\tau} = \\vec{r} \\times \\vec{F}",
+    "description": "Rotational analogue of force, the cross product of the lever arm and the applied force.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Torque"
+  },
+  {
+    "id": "water-formation",
+    "name": "Formation of Water",
+    "aliases": [
+      "hydrogen oxygen reaction",
+      "water synthesis",
+      "2H2 + O2"
+    ],
+    "domain": "chemistry",
+    "subdomain": "reactions",
+    "tags": [
+      "synthesis",
+      "combustion",
+      "hydrogen",
+      "oxygen"
+    ],
+    "latex": "\\ce{2 H2 + O2 -> 2 H2O}",
+    "description": "Synthesis of water from hydrogen and oxygen gas.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Water"
+  },
+  {
+    "id": "wave-speed",
+    "name": "Wave Speed",
+    "aliases": [
+      "v = f lambda",
+      "wave equation",
+      "frequency wavelength"
+    ],
+    "domain": "physics",
+    "subdomain": "waves",
+    "tags": [
+      "wave",
+      "frequency",
+      "wavelength",
+      "speed"
+    ],
+    "latex": "v = f\\lambda",
+    "description": "Speed of a wave as the product of its frequency and wavelength.",
+    "variables": [
+      {
+        "key": "v",
+        "symbol": "v",
+        "meaning": "wave speed",
+        "unit": "m/s"
+      },
+      {
+        "key": "f",
+        "symbol": "f",
+        "meaning": "frequency",
+        "unit": "Hz"
+      },
+      {
+        "key": "lambda",
+        "symbol": "\\lambda",
+        "meaning": "wavelength",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Wavelength",
+    "relation": "v = f * lambda",
+    "dimCheck": "consistent"
+  },
+  {
+    "id": "wiens-displacement-law",
+    "name": "Wien's Displacement Law",
+    "aliases": [
+      "wien law",
+      "peak wavelength",
+      "blackbody peak"
+    ],
+    "domain": "astrophysics",
+    "subdomain": "radiation",
+    "tags": [
+      "blackbody",
+      "temperature",
+      "wavelength",
+      "radiation",
+      "spectrum"
+    ],
+    "latex": "\\lambda_{\\max} = \\frac{b}{T}",
+    "description": "The wavelength of peak emission from a black body is inversely proportional to its temperature.",
+    "variables": [
+      {
+        "symbol": "\\lambda_{\\max}",
+        "meaning": "peak wavelength",
+        "unit": "m"
+      },
+      {
+        "symbol": "b",
+        "meaning": "Wien's displacement constant"
+      },
+      {
+        "symbol": "T",
+        "meaning": "temperature",
+        "unit": "K"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law"
+  },
+  {
+    "id": "work-done",
+    "name": "Work Done by a Force",
+    "aliases": [
+      "work",
+      "mechanical work",
+      "force times distance"
+    ],
+    "domain": "physics",
+    "subdomain": "mechanics",
+    "tags": [
+      "energy",
+      "force",
+      "displacement"
+    ],
+    "latex": "W = \\vec{F} \\cdot \\vec{d} = Fd\\cos\\theta",
+    "description": "Work done by a constant force over a displacement, depending on the angle between them.",
+    "variables": [],
+    "source": "https://en.wikipedia.org/wiki/Work_(physics)"
+  }
+]

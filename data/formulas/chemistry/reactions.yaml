@@ -1,0 +1,56 @@
+# Chemistry — reactions & equations (rendered via the mhchem \ce extension)
+
+- id: combustion-of-methane
+  name: Combustion of Methane
+  aliases: [methane burning, CH4 combustion, natural gas combustion]
+  domain: chemistry
+  subdomain: reactions
+  tags: [combustion, hydrocarbon, redox, oxidation]
+  latex: "\\ce{CH4 + 2 O2 -> CO2 + 2 H2O}"
+  description: >
+    Complete combustion of methane in oxygen, producing carbon dioxide and water.
+  source: https://en.wikipedia.org/wiki/Methane
+
+- id: water-formation
+  name: Formation of Water
+  aliases: [hydrogen oxygen reaction, water synthesis, 2H2 + O2]
+  domain: chemistry
+  subdomain: reactions
+  tags: [synthesis, combustion, hydrogen, oxygen]
+  latex: "\\ce{2 H2 + O2 -> 2 H2O}"
+  description: >
+    Synthesis of water from hydrogen and oxygen gas.
+  source: https://en.wikipedia.org/wiki/Water
+
+- id: photosynthesis-net
+  name: Photosynthesis (Net Reaction)
+  aliases: [photosynthesis equation, carbon fixation, glucose synthesis]
+  domain: chemistry
+  subdomain: reactions
+  tags: [biochemistry, glucose, carbon dioxide, light]
+  latex: "\\ce{6 CO2 + 6 H2O ->[light] C6H12O6 + 6 O2}"
+  description: >
+    Net reaction of photosynthesis: carbon dioxide and water become glucose and oxygen using light energy.
+  source: https://en.wikipedia.org/wiki/Photosynthesis
+
+- id: ammonia-synthesis
+  name: Haber Process (Ammonia Synthesis)
+  aliases: [haber bosch, ammonia synthesis, nitrogen fixation, N2 + 3H2]
+  domain: chemistry
+  subdomain: reactions
+  tags: [equilibrium, catalysis, ammonia, industrial]
+  latex: "\\ce{N2 + 3 H2 <=> 2 NH3}"
+  description: >
+    Reversible industrial synthesis of ammonia from nitrogen and hydrogen gas.
+  source: https://en.wikipedia.org/wiki/Haber_process
+
+- id: neutralization-reaction
+  name: Acid–Base Neutralization
+  aliases: [neutralization, acid base reaction, HCl + NaOH]
+  domain: chemistry
+  subdomain: reactions
+  tags: [acid, base, salt, neutralization]
+  latex: "\\ce{HCl + NaOH -> NaCl + H2O}"
+  description: >
+    A strong acid and strong base react to form a salt and water.
+  source: https://en.wikipedia.org/wiki/Neutralization_(chemistry)
