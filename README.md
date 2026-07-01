@@ -86,6 +86,18 @@ const png = await getFormat(results[0].formula, 'png');      // { blob, mime, ..
 what powers the "works before the model loads" behavior for free. Use `createEmbedder()` to
 spin up the Web Worker that backs `embedQuery` in the browser.
 
+### Editable Word (.docx) export — optional
+
+Formulyze is 100% MIT with no copyleft dependencies. Word export therefore ships **no**
+MathML→OMML converter by default and falls back to a `.docx` containing the formula as text.
+To get *editable* Word equations, install a converter (e.g. the LGPL `mathml2omml`) and inject it:
+
+```ts
+import { mml2omml } from 'mathml2omml';        // you install this; it is LGPL-3.0
+import { setOmmlConverter } from 'formulyze';
+setOmmlConverter({ toOmml: (mathml) => mml2omml(mathml) });
+```
+
 ## Adding formulas
 
 The source of truth is **one YAML entry per formula** under `data/formulas/<domain>/`.

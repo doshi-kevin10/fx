@@ -17,11 +17,16 @@ export interface OmmlConverter {
   toOmml(mathml: string): Promise<string> | string;
 }
 
-// Default converter: lazy-imports the LGPL library only when Word export runs.
+// No converter ships by default — this keeps the package fully MIT (no LGPL
+// dependency). To enable editable Word equations, inject a converter via
+// setOmmlConverter(...), e.g. one backed by `mathml2omml` (LGPL-3.0), which the
+// consumer installs themselves. Without one, Word export cleanly falls back to
+// a .docx containing the formula as text.
 let converter: OmmlConverter = {
-  async toOmml(mathml: string): Promise<string> {
-    const mod = await import('mathml2omml');
-    return mod.mml2omml(mathml);
+  toOmml(): string {
+    throw new Error(
+      'No OMML converter configured. Call setOmmlConverter(...) to enable editable Word equations.'
+    );
   },
 };
 

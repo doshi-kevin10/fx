@@ -17,7 +17,6 @@ const externalPrefixes = [
   'fuse.js',
   'mathjax-full',
   '@huggingface/transformers',
-  'mathml2omml', // LGPL — kept external, never statically bundled into MIT core
   'fflate',
   'mathjs', // build-time only, but externalize defensively
 ];
@@ -28,7 +27,13 @@ const isExternal = (id: string) =>
 export default defineConfig({
   plugins: [
     react(),
-    dts({ include: ['src'], exclude: ['**/*.test.{ts,tsx}'], entryRoot: 'src', outDir: 'dist/lib' }),
+    dts({
+      include: ['src'],
+      exclude: ['**/*.test.{ts,tsx}'],
+      entryRoot: 'src',
+      outDir: 'dist/lib',
+      compilerOptions: { declarationMap: false }, // no .d.ts.map in the tarball
+    }),
     {
       // Ship the stylesheet alongside the JS (it isn't imported by any module).
       name: 'copy-css',
@@ -51,7 +56,7 @@ export default defineConfig({
   build: {
     outDir: 'dist/lib',
     emptyOutDir: true,
-    sourcemap: true,
+    sourcemap: false, // keep the tarball lean and free of embedded URL fragments
     lib: {
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
