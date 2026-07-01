@@ -1,5 +1,5 @@
 {
-  "name": "formulize",
+  "name": "formulyze",
   "version": "0.1.0",
   "description": "Local-first, open-source name→LaTeX formula search. Type a concept, get correct LaTeX + a rendered image, instantly, offline, free. Math, physics, astrophysics, chemistry.",
   "type": "module",
@@ -35,9 +35,16 @@
   "files": [
     "dist/lib",
     "dist/index.json",
-    "README.md"
+    "dist/quantities.json",
+    "README.md",
+    "NOTICE",
+    "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "prepublishOnly": "npm run build:data -- --no-embeddings && npm run build:lib",
     "validate": "tsx scripts/validate.ts",
     "build:data": "tsx scripts/build-index.ts",
     "build:quantities": "tsx scripts/build-quantities.ts",

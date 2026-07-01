@@ -20,7 +20,7 @@ rendered image, across **math, physics, astrophysics, and chemistry**.
 ## Install
 
 ```bash
-npm install formulize
+npm install formulyze
 ```
 
 `react` / `react-dom` are peer dependencies. `katex`, `mathjax-full`, `fuse.js`, and
@@ -29,10 +29,10 @@ npm install formulize
 ## Usage — React component
 
 ```tsx
-import { FormulaSearch } from 'formulize';
-import index from 'formulize/dist/index.json';       // the curated formula database
+import { FormulaSearch } from 'formulyze';
+import index from 'formulyze/dist/index.json';       // the curated formula database
 import 'katex/dist/katex.min.css';                    // math styles
-import 'formulize/styles.css';                         // component styles
+import 'formulyze/styles.css';                         // component styles
 
 export function Example() {
   return (
@@ -49,7 +49,7 @@ export function Example() {
 To enable **semantic search**, also pass precomputed embeddings:
 
 ```tsx
-import embeddings from './embeddings.json'; // built via `formulize` build (see below)
+import embeddings from './embeddings.json'; // built via `formulyze` build (see below)
 <FormulaSearch index={index} embeddings={embeddings} />
 ```
 
@@ -72,14 +72,14 @@ Keyword search works immediately with no embeddings; semantic is pure progressiv
 ## Usage — framework-agnostic core
 
 ```ts
-import { createSearchEngine, renderToString, toPNG } from 'formulize/core';
+import { createSearchEngine, renderToString, getFormat } from 'formulyze/core';
 
 const engine = createSearchEngine({ index, embeddings, embedQuery });
 const results = await engine.search('energy of a spinning object'); // fused
 const instant = engine.searchKeyword('KE');                          // synchronous
 
-const html = renderToString(results[0].formula.latex);   // KaTeX preview
-const png = await toPNG(results[0].formula.latex);        // MathJax → PNG Blob
+const html = renderToString(results[0].formula.latex);       // KaTeX preview
+const png = await getFormat(results[0].formula, 'png');      // { blob, mime, ... } (MathJax, lazy)
 ```
 
 `createSearchEngine` works keyword-only if `embeddings`/`embedQuery` are omitted, which is
