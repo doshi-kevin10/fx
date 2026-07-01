@@ -6,8 +6,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   root: 'demo',
-  // Served under a subpath on GitHub Pages; override with `--base=/` locally.
-  base: process.env.DEMO_BASE ?? '/formulize/',
+  // Served under the repo subpath on GitHub Pages (github.com/doshi-kevin10/fx
+  // → doshi-kevin10.github.io/fx/). Override with DEMO_BASE=/ for local/root.
+  base: process.env.DEMO_BASE ?? '/fx/',
   plugins: [react()],
   worker: { format: 'es' },
   // The demo imports the generated dist/*.json which live above the demo root.
