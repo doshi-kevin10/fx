@@ -1,6 +1,6 @@
 {
   "name": "formulyze",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Local-first, open-source name→LaTeX formula search. Type a concept, get correct LaTeX + a rendered image, instantly, offline, free. Math, physics, astrophysics, chemistry.",
   "type": "module",
   "license": "MIT",
