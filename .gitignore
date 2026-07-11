@@ -2,6 +2,7 @@ node_modules/
 dist/lib/
 dist/embeddings.json
 demo/dist/
+extension/dist/
 *.log
 .DS_Store
 .vite/

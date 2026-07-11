@@ -47,11 +47,25 @@ const COPY_FORMATS: { kind: FormatKind; label: string; title: string }[] = [
   { kind: 'unicode', label: 'Uni~', title: 'Copy Unicode (approximate)' },
 ];
 
+function blobToDataUrl(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
+}
+
 function matchesHotkey(e: KeyboardEvent, hotkey: string): boolean {
   const parts = hotkey.toLowerCase().split('+');
   const key = parts[parts.length - 1];
   const mod = e.metaKey || e.ctrlKey;
-  return e.key.toLowerCase() === key && (!parts.includes('mod') || mod) && (!parts.includes('shift') || e.shiftKey);
+  return (
+    e.key.toLowerCase() === key &&
+    (!parts.includes('mod') || mod) &&
+    (!parts.includes('shift') || e.shiftKey) &&
+    (!parts.includes('alt') || e.altKey)
+  );
 }
 
 export function FormulaDock({
@@ -81,6 +95,8 @@ export function FormulaDock({
   const [showCalc, setShowCalc] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [fallbackText, setFallbackText] = useState<string | null>(null);
+  // PNG data URL of the selected formula, used for drag-and-drop into docs.
+  const [dragImg, setDragImg] = useState<string | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -131,6 +147,29 @@ export function FormulaDock({
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [hotkey]);
+
+  // Render a PNG of the selected formula so it can be dragged into Word/Docs.
+  useEffect(() => {
+    if (!enableImageExport || !selected) {
+      setDragImg(null);
+      return;
+    }
+    let alive = true;
+    setDragImg(null);
+    void (async () => {
+      try {
+        const { toPNG } = await import('../core/exportImage.js');
+        const blob = await toPNG(selected.latex, { scale: 3, background: '#ffffff' });
+        const dataUrl = await blobToDataUrl(blob);
+        if (alive) setDragImg(dataUrl);
+      } catch {
+        if (alive) setDragImg(null);
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [selected, enableImageExport]);
 
   useEffect(() => {
     if (open && view === 'search' && mode === 'name') requestAnimationFrame(() => inputRef.current?.focus());
@@ -348,6 +387,24 @@ export function FormulaDock({
                   {selected.dimCheck === 'consistent' && <span className="fzd-verified" title="Both sides reduce to the same physical dimension">✓ verified</span>}
                 </div>
                 <div className="fzd-preview-render"><Tex latex={selected.latex} display /></div>
+                {enableImageExport && dragImg && (
+                  <div className="fzd-drag">
+                    <img
+                      className="fzd-drag-img"
+                      src={dragImg}
+                      alt={selected.name}
+                      draggable
+                      onDragStart={(e) => {
+                        const filename = `${selected.id}.png`;
+                        e.dataTransfer.setData('DownloadURL', `image/png:${filename}:${dragImg}`);
+                        e.dataTransfer.setData('text/plain', selected.latex);
+                        e.dataTransfer.effectAllowed = 'copy';
+                      }}
+                      title="Drag me into Word, Google Docs, or any editor"
+                    />
+                    <span className="fzd-drag-hint">⤴ Drag into your document</span>
+                  </div>
+                )}
                 <div className="fzd-fmts">
                   <span className="fzd-fmts-label">Copy</span>
                   {COPY_FORMATS.map((f) => (

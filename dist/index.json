@@ -1110,8 +1110,35 @@
     ],
     "latex": "s = ut + \\tfrac{1}{2} a t^{2}",
     "description": "Displacement under constant acceleration from initial velocity over time t.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Equations_of_motion"
+    "variables": [
+      {
+        "key": "s",
+        "symbol": "s",
+        "meaning": "displacement",
+        "unit": "m"
+      },
+      {
+        "key": "u",
+        "symbol": "u",
+        "meaning": "initial velocity",
+        "unit": "m/s"
+      },
+      {
+        "key": "a",
+        "symbol": "a",
+        "meaning": "acceleration",
+        "unit": "m/s^2"
+      },
+      {
+        "key": "t",
+        "symbol": "t",
+        "meaning": "time",
+        "unit": "s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Equations_of_motion",
+    "relation": "s = u * t + 0.5 * a * t^2",
+    "dimCheck": "consistent"
   },
   {
     "id": "kinematic-velocity",

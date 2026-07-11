@@ -4,8 +4,13 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createSearchEngine } from '../core/searchEngine.js';
-import { createEmbedder, type Embedder } from '../core/embedder.js';
 import type { Domain, Formula, SearchResult, Weights } from '../core/types.js';
+
+type EmbedderHandle = {
+  embed(text: string): Promise<number[]>;
+  ready(): Promise<string>;
+  dispose(): void;
+};
 
 export type ModelStatus = 'disabled' | 'idle' | 'loading' | 'ready' | 'error';
 
@@ -50,26 +55,38 @@ export function useFormulaSearch(opts: UseFormulaSearchOptions): UseFormulaSearc
   const semanticWanted = enableSemantic && Boolean(embeddings);
 
   // Lazily-created embedder, kept in a ref so it survives re-renders.
-  const embedderRef = useRef<Embedder | null>(null);
+  const embedderRef = useRef<EmbedderHandle | null>(null);
 
   // Create the embedder once (if semantic is wanted). We start it eagerly so the
   // model warms in the background while the user is still typing keyword queries.
   useEffect(() => {
     if (!semanticWanted || embedderRef.current) return;
+    let cancelled = false;
+    let embedder: EmbedderHandle | null = null;
     setModelStatus('loading');
-    const embedder = createEmbedder({
-      onProgress: (_status, progress) => {
-        if (typeof progress === 'number') setModelProgress(progress);
-      },
-      onReady: () => {
-        setModelProgress(100);
-        setModelStatus('ready');
-      },
-    });
-    embedder.ready().catch(() => setModelStatus('error'));
-    embedderRef.current = embedder;
+
+    void import('../core/embedder.js')
+      .then(({ createEmbedder }) => {
+        if (cancelled) return;
+        embedder = createEmbedder({
+          onProgress: (_status, progress) => {
+            if (typeof progress === 'number') setModelProgress(progress);
+          },
+          onReady: () => {
+            setModelProgress(100);
+            setModelStatus('ready');
+          },
+        });
+        embedderRef.current = embedder;
+        return embedder.ready();
+      })
+      .catch(() => {
+        if (!cancelled) setModelStatus('error');
+      });
+
     return () => {
-      embedder.dispose();
+      cancelled = true;
+      embedder?.dispose();
       embedderRef.current = null;
     };
   }, [semanticWanted]);

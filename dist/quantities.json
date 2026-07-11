@@ -88,6 +88,7 @@
     {
       "id": "LENGTH",
       "labels": [
+        "displacement",
         "displacement from equilibrium",
         "distance",
         "height",
@@ -103,6 +104,7 @@
         "gravitational-potential-energy",
         "hookes-law",
         "keplers-third-law",
+        "kinematic-displacement",
         "luminosity-distance-flux",
         "newtons-law-of-gravitation",
         "schwarzschild-radius",
@@ -142,6 +144,7 @@
       ],
       "formulaIds": [
         "hubbles-law",
+        "kinematic-displacement",
         "kinematic-velocity",
         "kinetic-energy",
         "linear-momentum",
@@ -159,6 +162,7 @@
       ],
       "formulaIds": [
         "gravitational-potential-energy",
+        "kinematic-displacement",
         "kinematic-velocity",
         "newtons-second-law",
         "simple-pendulum-period"
@@ -307,6 +311,7 @@
       ],
       "formulaIds": [
         "keplers-third-law",
+        "kinematic-displacement",
         "kinematic-velocity",
         "simple-pendulum-period"
       ]
@@ -369,6 +374,12 @@
     "keplers-third-law": [
       "LENGTH",
       "MASS",
+      "TIME"
+    ],
+    "kinematic-displacement": [
+      "LENGTH",
+      "LENGTH TIME^-1",
+      "LENGTH TIME^-2",
       "TIME"
     ],
     "kinematic-velocity": [

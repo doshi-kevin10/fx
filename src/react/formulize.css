@@ -410,6 +410,30 @@
   overflow-x: auto;
   font-size: 0.95rem;
 }
+.fzd-drag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+.fzd-drag-img {
+  max-width: 100%;
+  max-height: 84px;
+  padding: 0.4rem 0.6rem;
+  background: #ffffff;
+  border: 1px dashed var(--fzd-primary);
+  border-radius: 10px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: element;
+}
+.fzd-drag-img:active { cursor: grabbing; }
+.fzd-drag-hint {
+  font-size: 0.68rem;
+  color: var(--fzd-primary);
+  font-weight: 600;
+}
 .fzd-preview-actions { display: flex; gap: 0.35rem; margin-top: 0.5rem; }
 .fzd-btn {
   padding: 0.35rem 0.55rem;
