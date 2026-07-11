@@ -28,10 +28,10 @@ Load `extension/dist` as unpacked, or zip it for the Chrome Web Store.
 
 - Keyword + quantity search (offline)
 - Smart insert into `input`, `textarea`, and `contenteditable`
-- Custom formulas (saved in extension `localStorage`)
+- Custom formulas (saved in `chrome.storage.local` — shared across every site)
 - **Not yet:** semantic search, PNG/SVG export (stubs keep the bundle lean)
 
 ## Permissions
 
-- `storage` — custom formulas
+- `storage` — custom formulas (`chrome.storage.local`, shared across all sites)
 - `<all_urls>` — inject the content script

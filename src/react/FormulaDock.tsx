@@ -11,7 +11,7 @@ import { takenNames } from '../core/customFormulas.js';
 import { getFormat, copyResult, downloadResult, type FormatKind } from '../core/formats.js';
 import { createQuantityIndex } from '../core/quantitySearch.js';
 import { useFormulaSearch } from './useFormulaSearch.js';
-import { useCustomFormulas } from './useCustomFormulas.js';
+import { useCustomFormulas, type CustomFormulaStore } from './useCustomFormulas.js';
 import { QuantityChips } from './QuantityChips.js';
 import { CalculatorPanel } from './CalculatorPanel.js';
 import { Tex } from './Tex.js';
@@ -27,6 +27,8 @@ export interface FormulaDockProps {
   enableImageExport?: boolean;
   enableCustom?: boolean;
   storageKey?: string;
+  /** Custom persistence backend. Overrides `storageKey` (e.g. chrome.storage). */
+  customStore?: CustomFormulaStore;
   weights?: Partial<Weights>;
   limit?: number;
   placeholder?: string;
@@ -78,6 +80,7 @@ export function FormulaDock({
   enableImageExport = true,
   enableCustom = true,
   storageKey,
+  customStore,
   weights,
   limit = 6,
   placeholder = 'Search a formula…',
@@ -103,7 +106,7 @@ export function FormulaDock({
   const listRef = useRef<HTMLUListElement>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const { custom, merged, add, remove } = useCustomFormulas(index, storageKey);
+  const { custom, merged, add, remove } = useCustomFormulas(index, storageKey, customStore);
 
   // Entry point 1 — by name.
   const { query, setQuery, results: nameResults, modelStatus } = useFormulaSearch({
@@ -159,7 +162,9 @@ export function FormulaDock({
     void (async () => {
       try {
         const { toPNG } = await import('../core/exportImage.js');
-        const blob = await toPNG(selected.latex, { scale: 3, background: '#ffffff' });
+        // Transparent + tight to the formula's own bounding box — drops as just
+        // the glyphs, not a white rectangle. (Word page shows through as white.)
+        const blob = await toPNG(selected.latex, { scale: 3 });
         const dataUrl = await blobToDataUrl(blob);
         if (alive) setDragImg(dataUrl);
       } catch {
@@ -400,9 +405,9 @@ export function FormulaDock({
                         e.dataTransfer.setData('text/plain', selected.latex);
                         e.dataTransfer.effectAllowed = 'copy';
                       }}
-                      title="Drag me into Word, Google Docs, or any editor"
+                      title="Drag into Google Docs or a web editor. For desktop Word, use “Img” below to copy, then paste."
                     />
-                    <span className="fzd-drag-hint">⤴ Drag into your document</span>
+                    <span className="fzd-drag-hint">⤴ Drag into Docs — for Word, Copy “Img” then paste</span>
                   </div>
                 )}
                 <div className="fzd-fmts">
