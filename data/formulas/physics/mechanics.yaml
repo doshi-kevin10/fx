@@ -74,6 +74,12 @@
   latex: "W = \\vec{F} \\cdot \\vec{d} = Fd\\cos\\theta"
   description: >
     Work done by a constant force over a displacement, depending on the angle between them.
+  relation: "W = F * d * cos(theta)"
+  variables:
+    - { key: W, symbol: "W", meaning: work, unit: J }
+    - { key: F, symbol: "F", meaning: force magnitude, unit: N }
+    - { key: d, symbol: "d", meaning: displacement magnitude, unit: m }
+    - { key: theta, symbol: "\\theta", meaning: angle between force and displacement, unit: rad }
   source: https://en.wikipedia.org/wiki/Work_(physics)
 
 - id: linear-momentum
@@ -101,6 +107,11 @@
   latex: "\\vec{J} = \\vec{F}\\,\\Delta t = \\Delta \\vec{p}"
   description: >
     Impulse equals force times the time interval and equals the change in momentum.
+  relation: "J = F * t"
+  variables:
+    - { key: J, symbol: "\\vec{J}", meaning: impulse, unit: "N*s" }
+    - { key: F, symbol: "\\vec{F}", meaning: force, unit: N }
+    - { key: t, symbol: "t", meaning: time interval, unit: s }
   source: https://en.wikipedia.org/wiki/Impulse_(physics)
 
 - id: hookes-law
@@ -112,9 +123,11 @@
   latex: "F = -kx"
   description: >
     Restoring force of an ideal spring, proportional and opposite to its displacement.
+  relation: "F = -k * x"
   variables:
-    - { symbol: "k", meaning: spring constant, unit: "N/m" }
-    - { symbol: "x", meaning: displacement from equilibrium, unit: m }
+    - { key: F, symbol: "F", meaning: restoring force, unit: N }
+    - { key: k, symbol: "k", meaning: spring constant, unit: "N/m" }
+    - { key: x, symbol: "x", meaning: displacement from equilibrium, unit: m }
   source: https://en.wikipedia.org/wiki/Hooke%27s_law
 
 - id: newtons-law-of-gravitation
@@ -126,10 +139,13 @@
   latex: "F = G\\,\\frac{m_1 m_2}{r^{2}}"
   description: >
     Attractive gravitational force between two point masses, inversely proportional to the square of their separation.
+  relation: "F = G * m1 * m2 / r^2"
   variables:
-    - { symbol: "G", meaning: gravitational constant, unit: "N·m^2/kg^2" }
-    - { symbol: "m_1, m_2", meaning: the two masses, unit: kg }
-    - { symbol: "r", meaning: separation, unit: m }
+    - { key: F, symbol: "F", meaning: gravitational force, unit: N }
+    - { key: G, symbol: "G", meaning: gravitational constant, unit: "N*m^2/kg^2" }
+    - { key: m1, symbol: "m_1", meaning: first mass, unit: kg }
+    - { key: m2, symbol: "m_2", meaning: second mass, unit: kg }
+    - { key: r, symbol: "r", meaning: separation, unit: m }
   source: https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation
 
 - id: centripetal-acceleration
@@ -141,6 +157,11 @@
   latex: "a_c = \\frac{v^{2}}{r}"
   description: >
     Center-directed acceleration of a body in uniform circular motion.
+  relation: "a_c = v^2 / r"
+  variables:
+    - { key: a_c, symbol: "a_c", meaning: centripetal acceleration, unit: "m/s^2" }
+    - { key: v, symbol: "v", meaning: speed, unit: "m/s" }
+    - { key: r, symbol: "r", meaning: radius, unit: m }
   source: https://en.wikipedia.org/wiki/Centripetal_force
 
 - id: torque
@@ -152,6 +173,12 @@
   latex: "\\vec{\\tau} = \\vec{r} \\times \\vec{F}"
   description: >
     Rotational analogue of force, the cross product of the lever arm and the applied force.
+  relation: "tau = r * F * sin(theta)"
+  variables:
+    - { key: tau, symbol: "\\tau", meaning: torque magnitude, unit: "N*m" }
+    - { key: r, symbol: "r", meaning: lever arm length, unit: m }
+    - { key: F, symbol: "F", meaning: force magnitude, unit: N }
+    - { key: theta, symbol: "\\theta", meaning: angle between r and F, unit: rad }
   source: https://en.wikipedia.org/wiki/Torque
 
 - id: angular-momentum
@@ -163,6 +190,11 @@
   latex: "L = I\\omega"
   description: >
     Angular momentum of a rigid body as the product of its moment of inertia and angular velocity.
+  relation: "L = I * omega"
+  variables:
+    - { key: L, symbol: "L", meaning: angular momentum, unit: "kg*m^2/s" }
+    - { key: I, symbol: "I", meaning: moment of inertia, unit: "kg*m^2" }
+    - { key: omega, symbol: "\\omega", meaning: angular velocity, unit: "rad/s" }
   source: https://en.wikipedia.org/wiki/Angular_momentum
 
 - id: kinematic-velocity
@@ -208,8 +240,9 @@
   latex: "T = 2\\pi \\sqrt{\\frac{L}{g}}"
   description: >
     Period of small-amplitude oscillations of a simple pendulum of length L.
+  relation: "T = 2 * pi * sqrt(L / g)"
   variables:
-    - { symbol: "T", meaning: period, unit: s }
-    - { symbol: "L", meaning: pendulum length, unit: m }
-    - { symbol: "g", meaning: gravitational acceleration, unit: "m/s^2" }
+    - { key: T, symbol: "T", meaning: period, unit: s }
+    - { key: L, symbol: "L", meaning: pendulum length, unit: m }
+    - { key: g, symbol: "g", meaning: gravitational acceleration, unit: "m/s^2" }
   source: https://en.wikipedia.org/wiki/Pendulum

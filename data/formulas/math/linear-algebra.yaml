@@ -9,6 +9,12 @@
   latex: "\\vec{a} \\cdot \\vec{b} = |\\vec{a}|\\,|\\vec{b}|\\cos\\theta"
   description: >
     Scalar product of two vectors, equal to the product of their magnitudes and the cosine of the angle between them.
+  relation: "d = a*b*cos(theta)"
+  variables:
+    - { key: d, symbol: "\\vec{a}\\cdot\\vec{b}", meaning: dot product }
+    - { key: a, symbol: "|\\vec{a}|", meaning: magnitude of a }
+    - { key: b, symbol: "|\\vec{b}|", meaning: magnitude of b }
+    - { key: theta, symbol: "\\theta", meaning: angle between vectors (radians) }
   source: https://en.wikipedia.org/wiki/Dot_product
 
 - id: cross-product-magnitude
@@ -20,6 +26,12 @@
   latex: "|\\vec{a} \\times \\vec{b}| = |\\vec{a}|\\,|\\vec{b}|\\sin\\theta"
   description: >
     Magnitude of the cross product of two vectors, equal to the area of the parallelogram they span.
+  relation: "m = a*b*sin(theta)"
+  variables:
+    - { key: m, symbol: "|\\vec{a}\\times\\vec{b}|", meaning: cross product magnitude }
+    - { key: a, symbol: "|\\vec{a}|", meaning: magnitude of a }
+    - { key: b, symbol: "|\\vec{b}|", meaning: magnitude of b }
+    - { key: theta, symbol: "\\theta", meaning: angle between vectors (radians) }
   source: https://en.wikipedia.org/wiki/Cross_product
 
 - id: determinant-2x2
@@ -31,6 +43,13 @@
   latex: "\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc"
   description: >
     Determinant of a 2x2 matrix; nonzero iff the matrix is invertible.
+  relation: "det = a*d - b*c"
+  variables:
+    - { key: det, symbol: "\\det", meaning: determinant }
+    - { key: a, symbol: "a", meaning: "entry (1,1)" }
+    - { key: b, symbol: "b", meaning: "entry (1,2)" }
+    - { key: c, symbol: "c", meaning: "entry (2,1)" }
+    - { key: d, symbol: "d", meaning: "entry (2,2)" }
   source: https://en.wikipedia.org/wiki/Determinant
 
 - id: eigenvalue-equation

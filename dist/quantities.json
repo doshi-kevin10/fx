@@ -24,6 +24,7 @@
         "current"
       ],
       "formulaIds": [
+        "electric-power",
         "ohms-law"
       ]
     },
@@ -31,9 +32,12 @@
       "id": "CURRENT TIME",
       "labels": [
         "charge",
-        "the two charges"
+        "first charge",
+        "second charge",
+        "stored charge"
       ],
       "formulaIds": [
+        "capacitance",
         "coulombs-law",
         "lorentz-force"
       ]
@@ -63,6 +67,8 @@
         "voltage"
       ],
       "formulaIds": [
+        "capacitance",
+        "electric-power",
         "faradays-law-induction",
         "ohms-law"
       ]
@@ -86,54 +92,125 @@
       ]
     },
     {
+      "id": "CURRENT^-2 LENGTH^3 MASS TIME^-4",
+      "labels": [
+        "coulomb constant"
+      ],
+      "formulaIds": [
+        "coulombs-law"
+      ]
+    },
+    {
+      "id": "CURRENT^2 LENGTH^-2 MASS^-1 TIME^4",
+      "labels": [
+        "capacitance"
+      ],
+      "formulaIds": [
+        "capacitance"
+      ]
+    },
+    {
+      "id": "DIMENSIONLESS",
+      "labels": [
+        "angle between force and displacement",
+        "angle between r and f",
+        "angle of incidence",
+        "angle of refraction"
+      ],
+      "formulaIds": [
+        "snells-law",
+        "torque",
+        "work-done"
+      ]
+    },
+    {
       "id": "LENGTH",
       "labels": [
         "displacement",
         "displacement from equilibrium",
+        "displacement magnitude",
         "distance",
+        "distance from center",
+        "focal length",
         "height",
+        "image distance",
+        "lever arm length",
+        "object distance",
         "peak wavelength",
         "pendulum length",
+        "proper distance",
+        "radius",
         "schwarzschild radius",
         "semi-major axis",
         "separation",
         "wavelength"
       ],
       "formulaIds": [
+        "centripetal-acceleration",
         "coulombs-law",
+        "de-broglie-wavelength",
+        "escape-velocity",
         "gravitational-potential-energy",
         "hookes-law",
+        "hubbles-law",
         "keplers-third-law",
         "kinematic-displacement",
         "luminosity-distance-flux",
         "newtons-law-of-gravitation",
         "schwarzschild-radius",
         "simple-pendulum-period",
+        "thin-lens-equation",
+        "torque",
         "wave-speed",
-        "wiens-displacement-law"
+        "wiens-displacement-law",
+        "work-done"
       ]
     },
     {
       "id": "LENGTH MASS TIME^-1",
       "labels": [
+        "impulse",
         "momentum"
       ],
       "formulaIds": [
+        "de-broglie-wavelength",
+        "impulse-momentum-theorem",
         "linear-momentum"
       ]
     },
     {
       "id": "LENGTH MASS TIME^-2",
       "labels": [
-        "net force"
+        "electrostatic force",
+        "force",
+        "force magnitude",
+        "gravitational force",
+        "net force",
+        "restoring force"
       ],
       "formulaIds": [
-        "newtons-second-law"
+        "coulombs-law",
+        "hookes-law",
+        "impulse-momentum-theorem",
+        "newtons-law-of-gravitation",
+        "newtons-second-law",
+        "torque",
+        "work-done"
+      ]
+    },
+    {
+      "id": "LENGTH TEMPERATURE",
+      "labels": [
+        "wien's displacement constant"
+      ],
+      "formulaIds": [
+        "wiens-displacement-law"
       ]
     },
     {
       "id": "LENGTH TIME^-1",
       "labels": [
+        "escape velocity",
         "final velocity",
         "initial velocity",
         "recession velocity",
@@ -143,11 +220,14 @@
         "wave speed"
       ],
       "formulaIds": [
+        "centripetal-acceleration",
+        "escape-velocity",
         "hubbles-law",
         "kinematic-displacement",
         "kinematic-velocity",
         "kinetic-energy",
         "linear-momentum",
+        "lorentz-factor",
         "lorentz-force",
         "mass-energy-equivalence",
         "schwarzschild-radius",
@@ -158,9 +238,11 @@
       "id": "LENGTH TIME^-2",
       "labels": [
         "acceleration",
+        "centripetal acceleration",
         "gravitational acceleration"
       ],
       "formulaIds": [
+        "centripetal-acceleration",
         "gravitational-potential-energy",
         "kinematic-displacement",
         "kinematic-velocity",
@@ -183,6 +265,7 @@
         "moment of inertia"
       ],
       "formulaIds": [
+        "angular-momentum",
         "rotational-kinetic-energy"
       ]
     },
@@ -198,9 +281,12 @@
     {
       "id": "LENGTH^2 MASS TIME^-1",
       "labels": [
+        "angular momentum",
         "planck constant"
       ],
       "formulaIds": [
+        "angular-momentum",
+        "de-broglie-wavelength",
         "photon-energy"
       ]
     },
@@ -217,6 +303,8 @@
         "photon energy",
         "potential energy",
         "rotational kinetic energy",
+        "torque magnitude",
+        "work",
         "work done by the system"
       ],
       "formulaIds": [
@@ -227,16 +315,29 @@
         "kinetic-energy",
         "mass-energy-equivalence",
         "photon-energy",
-        "rotational-kinetic-energy"
+        "rotational-kinetic-energy",
+        "torque",
+        "work-done"
       ]
     },
     {
       "id": "LENGTH^2 MASS TIME^-3",
       "labels": [
-        "luminosity"
+        "luminosity",
+        "power"
       ],
       "formulaIds": [
+        "electric-power",
         "luminosity-distance-flux"
+      ]
+    },
+    {
+      "id": "LENGTH^2 TEMPERATURE^-1 TIME^-2",
+      "labels": [
+        "specific heat capacity"
+      ],
+      "formulaIds": [
+        "heat-conduction-fourier"
       ]
     },
     {
@@ -249,13 +350,27 @@
       ]
     },
     {
+      "id": "LENGTH^3 MASS^-1 TIME^-2",
+      "labels": [
+        "gravitational constant"
+      ],
+      "formulaIds": [
+        "escape-velocity",
+        "keplers-third-law",
+        "newtons-law-of-gravitation",
+        "schwarzschild-radius"
+      ]
+    },
+    {
       "id": "MASS",
       "labels": [
         "central mass",
+        "first mass",
         "mass",
-        "the two masses"
+        "second mass"
       ],
       "formulaIds": [
+        "escape-velocity",
         "gravitational-potential-energy",
         "heat-conduction-fourier",
         "keplers-third-law",
@@ -265,6 +380,15 @@
         "newtons-law-of-gravitation",
         "newtons-second-law",
         "schwarzschild-radius"
+      ]
+    },
+    {
+      "id": "MASS TEMPERATURE^-4 TIME^-3",
+      "labels": [
+        "stefan–boltzmann constant"
+      ],
+      "formulaIds": [
+        "stefan-boltzmann-law"
       ]
     },
     {
@@ -307,9 +431,11 @@
       "labels": [
         "orbital period",
         "period",
-        "time"
+        "time",
+        "time interval"
       ],
       "formulaIds": [
+        "impulse-momentum-theorem",
         "keplers-third-law",
         "kinematic-displacement",
         "kinematic-velocity",
@@ -320,9 +446,12 @@
       "id": "TIME^-1",
       "labels": [
         "angular velocity",
-        "frequency"
+        "frequency",
+        "hubble constant"
       ],
       "formulaIds": [
+        "angular-momentum",
+        "hubbles-law",
         "photon-energy",
         "rotational-kinetic-energy",
         "wave-speed"
@@ -330,9 +459,42 @@
     }
   ],
   "fingerprints": {
+    "angular-momentum": [
+      "LENGTH^2 MASS",
+      "LENGTH^2 MASS TIME^-1",
+      "TIME^-1"
+    ],
+    "capacitance": [
+      "CURRENT TIME",
+      "CURRENT^-1 LENGTH^2 MASS TIME^-3",
+      "CURRENT^2 LENGTH^-2 MASS^-1 TIME^4"
+    ],
+    "centripetal-acceleration": [
+      "LENGTH",
+      "LENGTH TIME^-1",
+      "LENGTH TIME^-2"
+    ],
     "coulombs-law": [
       "CURRENT TIME",
-      "LENGTH"
+      "CURRENT^-2 LENGTH^3 MASS TIME^-4",
+      "LENGTH",
+      "LENGTH MASS TIME^-2"
+    ],
+    "de-broglie-wavelength": [
+      "LENGTH",
+      "LENGTH MASS TIME^-1",
+      "LENGTH^2 MASS TIME^-1"
+    ],
+    "electric-power": [
+      "CURRENT",
+      "CURRENT^-1 LENGTH^2 MASS TIME^-3",
+      "LENGTH^2 MASS TIME^-3"
+    ],
+    "escape-velocity": [
+      "LENGTH",
+      "LENGTH TIME^-1",
+      "LENGTH^3 MASS^-1 TIME^-2",
+      "MASS"
     ],
     "faradays-law-induction": [
       "CURRENT^-1 LENGTH^2 MASS TIME^-2",
@@ -354,15 +516,19 @@
     ],
     "heat-conduction-fourier": [
       "LENGTH^2 MASS TIME^-2",
+      "LENGTH^2 TEMPERATURE^-1 TIME^-2",
       "MASS",
       "TEMPERATURE"
     ],
     "hookes-law": [
       "LENGTH",
+      "LENGTH MASS TIME^-2",
       "MASS TIME^-2"
     ],
     "hubbles-law": [
-      "LENGTH TIME^-1"
+      "LENGTH",
+      "LENGTH TIME^-1",
+      "TIME^-1"
     ],
     "ideal-gas-law": [
       "AMOUNT_OF_SUBSTANCE",
@@ -371,8 +537,14 @@
       "LENGTH^3",
       "TEMPERATURE"
     ],
+    "impulse-momentum-theorem": [
+      "LENGTH MASS TIME^-1",
+      "LENGTH MASS TIME^-2",
+      "TIME"
+    ],
     "keplers-third-law": [
       "LENGTH",
+      "LENGTH^3 MASS^-1 TIME^-2",
       "MASS",
       "TIME"
     ],
@@ -397,6 +569,9 @@
       "LENGTH TIME^-1",
       "MASS"
     ],
+    "lorentz-factor": [
+      "LENGTH TIME^-1"
+    ],
     "lorentz-force": [
       "CURRENT TIME",
       "CURRENT^-1 LENGTH MASS TIME^-3",
@@ -415,6 +590,8 @@
     ],
     "newtons-law-of-gravitation": [
       "LENGTH",
+      "LENGTH MASS TIME^-2",
+      "LENGTH^3 MASS^-1 TIME^-2",
       "MASS"
     ],
     "newtons-second-law": [
@@ -440,6 +617,7 @@
     "schwarzschild-radius": [
       "LENGTH",
       "LENGTH TIME^-1",
+      "LENGTH^3 MASS^-1 TIME^-2",
       "MASS"
     ],
     "simple-pendulum-period": [
@@ -447,9 +625,22 @@
       "LENGTH TIME^-2",
       "TIME"
     ],
+    "snells-law": [
+      "DIMENSIONLESS"
+    ],
     "stefan-boltzmann-law": [
+      "MASS TEMPERATURE^-4 TIME^-3",
       "MASS TIME^-3",
       "TEMPERATURE"
+    ],
+    "thin-lens-equation": [
+      "LENGTH"
+    ],
+    "torque": [
+      "DIMENSIONLESS",
+      "LENGTH",
+      "LENGTH MASS TIME^-2",
+      "LENGTH^2 MASS TIME^-2"
     ],
     "wave-speed": [
       "LENGTH",
@@ -458,7 +649,14 @@
     ],
     "wiens-displacement-law": [
       "LENGTH",
+      "LENGTH TEMPERATURE",
       "TEMPERATURE"
+    ],
+    "work-done": [
+      "DIMENSIONLESS",
+      "LENGTH",
+      "LENGTH MASS TIME^-2",
+      "LENGTH^2 MASS TIME^-2"
     ]
   }
 }

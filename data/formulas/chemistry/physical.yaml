@@ -9,6 +9,10 @@
   latex: "\\mathrm{pH} = -\\log_{10}[\\ce{H+}]"
   description: >
     The pH of a solution as the negative base-10 logarithm of the hydrogen ion activity.
+  relation: "pH = -log(H, 10)"
+  variables:
+    - { key: pH, symbol: "\\mathrm{pH}", meaning: pH value }
+    - { key: H, symbol: "[\\ce{H+}]", meaning: hydrogen ion concentration }
   source: https://en.wikipedia.org/wiki/PH
 
 - id: henderson-hasselbalch
@@ -20,6 +24,12 @@
   latex: "\\mathrm{pH} = \\mathrm{p}K_a + \\log_{10}\\frac{[\\text{A}^-]}{[\\text{HA}]}"
   description: >
     Relates the pH of a buffer to the acid dissociation constant and the ratio of conjugate base to acid.
+  relation: "pH = pKa + log(A / HA, 10)"
+  variables:
+    - { key: pH, symbol: "\\mathrm{pH}", meaning: buffer pH }
+    - { key: pKa, symbol: "\\mathrm{p}K_a", meaning: acid dissociation constant }
+    - { key: A, symbol: "[\\text{A}^-]", meaning: conjugate base concentration }
+    - { key: HA, symbol: "[\\text{HA}]", meaning: weak acid concentration }
   source: https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation
 
 - id: gibbs-free-energy
@@ -31,11 +41,12 @@
   latex: "\\Delta G = \\Delta H - T\\,\\Delta S"
   description: >
     Change in Gibbs free energy predicts reaction spontaneity from enthalpy, temperature, and entropy.
+  relation: "dG = dH - T * dS"
   variables:
-    - { symbol: "\\Delta G", meaning: change in Gibbs free energy, unit: J }
-    - { symbol: "\\Delta H", meaning: change in enthalpy, unit: J }
-    - { symbol: "T", meaning: absolute temperature, unit: K }
-    - { symbol: "\\Delta S", meaning: change in entropy, unit: "J/K" }
+    - { key: dG, symbol: "\\Delta G", meaning: change in Gibbs free energy, unit: J }
+    - { key: dH, symbol: "\\Delta H", meaning: change in enthalpy, unit: J }
+    - { key: T, symbol: "T", meaning: absolute temperature, unit: K }
+    - { key: dS, symbol: "\\Delta S", meaning: change in entropy, unit: "J/K" }
   source: https://en.wikipedia.org/wiki/Gibbs_free_energy
 
 - id: nernst-equation
@@ -47,4 +58,12 @@
   latex: "E = E^{\\circ} - \\frac{RT}{nF}\\ln Q"
   description: >
     Gives the potential of an electrochemical cell away from standard conditions via the reaction quotient.
-  source: https://en.wikipedia.org/wiki/Nernst_equation
+  relation: "E = E0 - (R * T / (n * F)) * log(Q)"
+  variables:
+    - { key: E, symbol: "E", meaning: cell potential }
+    - { key: E0, symbol: "E^{\\circ}", meaning: standard cell potential }
+    - { key: R, symbol: "R", meaning: gas constant }
+    - { key: T, symbol: "T", meaning: absolute temperature }
+    - { key: n, symbol: "n", meaning: electrons transferred }
+    - { key: F, symbol: "F", meaning: Faraday constant }
+    - { key: Q, symbol: "Q", meaning: reaction quotient }

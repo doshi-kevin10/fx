@@ -9,10 +9,11 @@
   latex: "E = mc^{2}"
   description: >
     Rest energy of a body equals its mass times the speed of light squared.
+  relation: "E = m * c^2"
   variables:
-    - { symbol: "E", meaning: energy, unit: J }
-    - { symbol: "m", meaning: mass, unit: kg }
-    - { symbol: "c", meaning: speed of light, unit: "m/s" }
+    - { key: E, symbol: "E", meaning: energy, unit: J }
+    - { key: m, symbol: "m", meaning: mass, unit: kg }
+    - { key: c, symbol: "c", meaning: speed of light, unit: "m/s" }
   source: https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence
 
 - id: photon-energy
@@ -40,6 +41,11 @@
   latex: "\\lambda = \\frac{h}{p}"
   description: >
     Wavelength associated with a particle of momentum p, foundational to wave–particle duality.
+  relation: "lambda = h / p"
+  variables:
+    - { key: lambda, symbol: "\\lambda", meaning: wavelength, unit: m }
+    - { key: h, symbol: "h", meaning: Planck constant, unit: "J*s" }
+    - { key: p, symbol: "p", meaning: momentum, unit: "kg*m/s" }
   source: https://en.wikipedia.org/wiki/Matter_wave
 
 - id: heisenberg-uncertainty
@@ -81,4 +87,9 @@
   latex: "\\gamma = \\frac{1}{\\sqrt{1 - \\dfrac{v^{2}}{c^{2}}}}"
   description: >
     The factor by which time, length, and relativistic mass change for an object in motion.
+  relation: "gamma = 1 / sqrt(1 - v^2 / c^2)"
+  variables:
+    - { key: gamma, symbol: "\\gamma", meaning: Lorentz factor }
+    - { key: v, symbol: "v", meaning: speed, unit: "m/s" }
+    - { key: c, symbol: "c", meaning: speed of light, unit: "m/s" }
   source: https://en.wikipedia.org/wiki/Lorentz_factor

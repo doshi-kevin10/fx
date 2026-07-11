@@ -39,8 +39,29 @@
     ],
     "latex": "L = I\\omega",
     "description": "Angular momentum of a rigid body as the product of its moment of inertia and angular velocity.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Angular_momentum"
+    "variables": [
+      {
+        "key": "L",
+        "symbol": "L",
+        "meaning": "angular momentum",
+        "unit": "kg*m^2/s"
+      },
+      {
+        "key": "I",
+        "symbol": "I",
+        "meaning": "moment of inertia",
+        "unit": "kg*m^2"
+      },
+      {
+        "key": "omega",
+        "symbol": "\\omega",
+        "meaning": "angular velocity",
+        "unit": "rad/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Angular_momentum",
+    "relation": "L = I * omega",
+    "dimCheck": "consistent"
   },
   {
     "id": "area-of-circle",
@@ -60,15 +81,18 @@
     "description": "Area enclosed by a circle of radius r.",
     "variables": [
       {
+        "key": "A",
         "symbol": "A",
         "meaning": "area"
       },
       {
+        "key": "r",
         "symbol": "r",
         "meaning": "radius"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Area_of_a_circle"
+    "source": "https://en.wikipedia.org/wiki/Area_of_a_circle",
+    "relation": "A = pi * r^2"
   },
   {
     "id": "arithmetic-series-sum",
@@ -87,8 +111,20 @@
     ],
     "latex": "\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}",
     "description": "Sum of the first n positive integers; the simplest arithmetic series.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Arithmetic_progression"
+    "variables": [
+      {
+        "key": "S",
+        "symbol": "S",
+        "meaning": "sum of first n integers"
+      },
+      {
+        "key": "n",
+        "symbol": "n",
+        "meaning": "number of terms"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Arithmetic_progression",
+    "relation": "S = n * (n + 1) / 2"
   },
   {
     "id": "bayes-theorem",
@@ -108,8 +144,30 @@
     ],
     "latex": "P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}",
     "description": "Updates the probability of A given observed evidence B from the reverse conditional and priors.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Bayes%27_theorem"
+    "variables": [
+      {
+        "key": "posterior",
+        "symbol": "P(A \\mid B)",
+        "meaning": "posterior probability"
+      },
+      {
+        "key": "likelihood",
+        "symbol": "P(B \\mid A)",
+        "meaning": "likelihood"
+      },
+      {
+        "key": "prior",
+        "symbol": "P(A)",
+        "meaning": "prior probability"
+      },
+      {
+        "key": "evidence",
+        "symbol": "P(B)",
+        "meaning": "evidence"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bayes%27_theorem",
+    "relation": "posterior = (likelihood * prior) / evidence"
   },
   {
     "id": "binomial-coefficient",
@@ -168,8 +226,29 @@
     ],
     "latex": "C = \\frac{Q}{V}",
     "description": "Capacitance as the ratio of stored charge to the voltage across a capacitor.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Capacitance"
+    "variables": [
+      {
+        "key": "C",
+        "symbol": "C",
+        "meaning": "capacitance",
+        "unit": "F"
+      },
+      {
+        "key": "Q",
+        "symbol": "Q",
+        "meaning": "stored charge",
+        "unit": "C"
+      },
+      {
+        "key": "V",
+        "symbol": "V",
+        "meaning": "voltage",
+        "unit": "V"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Capacitance",
+    "relation": "C = Q / V",
+    "dimCheck": "consistent"
   },
   {
     "id": "centripetal-acceleration",
@@ -188,8 +267,29 @@
     ],
     "latex": "a_c = \\frac{v^{2}}{r}",
     "description": "Center-directed acceleration of a body in uniform circular motion.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Centripetal_force"
+    "variables": [
+      {
+        "key": "a_c",
+        "symbol": "a_c",
+        "meaning": "centripetal acceleration",
+        "unit": "m/s^2"
+      },
+      {
+        "key": "v",
+        "symbol": "v",
+        "meaning": "speed",
+        "unit": "m/s"
+      },
+      {
+        "key": "r",
+        "symbol": "r",
+        "meaning": "radius",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Centripetal_force",
+    "relation": "a_c = v^2 / r",
+    "dimCheck": "consistent"
   },
   {
     "id": "chain-rule",
@@ -271,21 +371,39 @@
     "description": "Electrostatic force between two point charges, inversely proportional to the square of their separation.",
     "variables": [
       {
-        "symbol": "k_e",
-        "meaning": "Coulomb constant"
+        "key": "F",
+        "symbol": "F",
+        "meaning": "electrostatic force",
+        "unit": "N"
       },
       {
-        "symbol": "q_1, q_2",
-        "meaning": "the two charges",
+        "key": "ke",
+        "symbol": "k_e",
+        "meaning": "Coulomb constant",
+        "unit": "N*m^2/C^2"
+      },
+      {
+        "key": "q1",
+        "symbol": "q_1",
+        "meaning": "first charge",
         "unit": "C"
       },
       {
+        "key": "q2",
+        "symbol": "q_2",
+        "meaning": "second charge",
+        "unit": "C"
+      },
+      {
+        "key": "r",
         "symbol": "r",
         "meaning": "separation",
         "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Coulomb%27s_law"
+    "source": "https://en.wikipedia.org/wiki/Coulomb%27s_law",
+    "relation": "F = ke * q1 * q2 / r^2",
+    "dimCheck": "consistent"
   },
   {
     "id": "cross-product-magnitude",
@@ -303,8 +421,30 @@
     ],
     "latex": "|\\vec{a} \\times \\vec{b}| = |\\vec{a}|\\,|\\vec{b}|\\sin\\theta",
     "description": "Magnitude of the cross product of two vectors, equal to the area of the parallelogram they span.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Cross_product"
+    "variables": [
+      {
+        "key": "m",
+        "symbol": "|\\vec{a}\\times\\vec{b}|",
+        "meaning": "cross product magnitude"
+      },
+      {
+        "key": "a",
+        "symbol": "|\\vec{a}|",
+        "meaning": "magnitude of a"
+      },
+      {
+        "key": "b",
+        "symbol": "|\\vec{b}|",
+        "meaning": "magnitude of b"
+      },
+      {
+        "key": "theta",
+        "symbol": "\\theta",
+        "meaning": "angle between vectors (radians)"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cross_product",
+    "relation": "m = a*b*sin(theta)"
   },
   {
     "id": "de-broglie-wavelength",
@@ -324,8 +464,29 @@
     ],
     "latex": "\\lambda = \\frac{h}{p}",
     "description": "Wavelength associated with a particle of momentum p, foundational to wave–particle duality.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Matter_wave"
+    "variables": [
+      {
+        "key": "lambda",
+        "symbol": "\\lambda",
+        "meaning": "wavelength",
+        "unit": "m"
+      },
+      {
+        "key": "h",
+        "symbol": "h",
+        "meaning": "Planck constant",
+        "unit": "J*s"
+      },
+      {
+        "key": "p",
+        "symbol": "p",
+        "meaning": "momentum",
+        "unit": "kg*m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Matter_wave",
+    "relation": "lambda = h / p",
+    "dimCheck": "consistent"
   },
   {
     "id": "derivative-definition",
@@ -364,8 +525,35 @@
     ],
     "latex": "\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc",
     "description": "Determinant of a 2x2 matrix; nonzero iff the matrix is invertible.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Determinant"
+    "variables": [
+      {
+        "key": "det",
+        "symbol": "\\det",
+        "meaning": "determinant"
+      },
+      {
+        "key": "a",
+        "symbol": "a",
+        "meaning": "entry (1,1)"
+      },
+      {
+        "key": "b",
+        "symbol": "b",
+        "meaning": "entry (1,2)"
+      },
+      {
+        "key": "c",
+        "symbol": "c",
+        "meaning": "entry (2,1)"
+      },
+      {
+        "key": "d",
+        "symbol": "d",
+        "meaning": "entry (2,2)"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Determinant",
+    "relation": "det = a*d - b*c"
   },
   {
     "id": "distance-formula",
@@ -383,8 +571,35 @@
     ],
     "latex": "d = \\sqrt{(x_2 - x_1)^{2} + (y_2 - y_1)^{2}}",
     "description": "Straight-line distance between two points in the Cartesian plane.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Distance"
+    "variables": [
+      {
+        "key": "d",
+        "symbol": "d",
+        "meaning": "distance"
+      },
+      {
+        "key": "x1",
+        "symbol": "x_1",
+        "meaning": "x-coordinate of first point"
+      },
+      {
+        "key": "y1",
+        "symbol": "y_1",
+        "meaning": "y-coordinate of first point"
+      },
+      {
+        "key": "x2",
+        "symbol": "x_2",
+        "meaning": "x-coordinate of second point"
+      },
+      {
+        "key": "y2",
+        "symbol": "y_2",
+        "meaning": "y-coordinate of second point"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Distance",
+    "relation": "d = sqrt((x2 - x1)^2 + (y2 - y1)^2)"
   },
   {
     "id": "doppler-effect",
@@ -424,8 +639,30 @@
     ],
     "latex": "\\vec{a} \\cdot \\vec{b} = |\\vec{a}|\\,|\\vec{b}|\\cos\\theta",
     "description": "Scalar product of two vectors, equal to the product of their magnitudes and the cosine of the angle between them.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Dot_product"
+    "variables": [
+      {
+        "key": "d",
+        "symbol": "\\vec{a}\\cdot\\vec{b}",
+        "meaning": "dot product"
+      },
+      {
+        "key": "a",
+        "symbol": "|\\vec{a}|",
+        "meaning": "magnitude of a"
+      },
+      {
+        "key": "b",
+        "symbol": "|\\vec{b}|",
+        "meaning": "magnitude of b"
+      },
+      {
+        "key": "theta",
+        "symbol": "\\theta",
+        "meaning": "angle between vectors (radians)"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Dot_product",
+    "relation": "d = a*b*cos(theta)"
   },
   {
     "id": "eigenvalue-equation",
@@ -466,8 +703,29 @@
     ],
     "latex": "P = IV = I^{2}R",
     "description": "Power delivered to or dissipated by an electrical component.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Electric_power"
+    "variables": [
+      {
+        "key": "P",
+        "symbol": "P",
+        "meaning": "power",
+        "unit": "W"
+      },
+      {
+        "key": "I",
+        "symbol": "I",
+        "meaning": "current",
+        "unit": "A"
+      },
+      {
+        "key": "V",
+        "symbol": "V",
+        "meaning": "voltage",
+        "unit": "V"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Electric_power",
+    "relation": "P = I * V",
+    "dimCheck": "consistent"
   },
   {
     "id": "entropy-change",
@@ -507,8 +765,35 @@
     ],
     "latex": "v_e = \\sqrt{\\frac{2GM}{r}}",
     "description": "Minimum speed needed to escape a body's gravitational field without further propulsion.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Escape_velocity"
+    "variables": [
+      {
+        "key": "v_e",
+        "symbol": "v_e",
+        "meaning": "escape velocity",
+        "unit": "m/s"
+      },
+      {
+        "key": "G",
+        "symbol": "G",
+        "meaning": "gravitational constant",
+        "unit": "N*m^2/kg^2"
+      },
+      {
+        "key": "M",
+        "symbol": "M",
+        "meaning": "mass",
+        "unit": "kg"
+      },
+      {
+        "key": "r",
+        "symbol": "r",
+        "meaning": "distance from center",
+        "unit": "m"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Escape_velocity",
+    "relation": "v_e = sqrt(2 * G * M / r)",
+    "dimCheck": "consistent"
   },
   {
     "id": "eulers-formula",
@@ -625,22 +910,27 @@
     "description": "Change in a system's internal energy equals heat added to it minus work done by it.",
     "variables": [
       {
+        "key": "dU",
         "symbol": "\\Delta U",
         "meaning": "change in internal energy",
         "unit": "J"
       },
       {
+        "key": "Q",
         "symbol": "Q",
         "meaning": "heat added to the system",
         "unit": "J"
       },
       {
+        "key": "W",
         "symbol": "W",
         "meaning": "work done by the system",
         "unit": "J"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/First_law_of_thermodynamics"
+    "source": "https://en.wikipedia.org/wiki/First_law_of_thermodynamics",
+    "relation": "dU = Q - W",
+    "dimCheck": "consistent"
   },
   {
     "id": "fundamental-theorem-of-calculus",
@@ -688,19 +978,28 @@
     "description": "Closed form for the sum of the first n terms of a geometric series with ratio r not equal to 1.",
     "variables": [
       {
+        "key": "S",
+        "symbol": "S_n",
+        "meaning": "sum of first n terms"
+      },
+      {
+        "key": "a",
         "symbol": "a",
         "meaning": "first term"
       },
       {
+        "key": "r",
         "symbol": "r",
         "meaning": "common ratio"
       },
       {
+        "key": "n",
         "symbol": "n",
         "meaning": "number of terms"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Geometric_series"
+    "source": "https://en.wikipedia.org/wiki/Geometric_series",
+    "relation": "S = a * (1 - r^n) / (1 - r)"
   },
   {
     "id": "gibbs-free-energy",
@@ -722,27 +1021,33 @@
     "description": "Change in Gibbs free energy predicts reaction spontaneity from enthalpy, temperature, and entropy.",
     "variables": [
       {
+        "key": "dG",
         "symbol": "\\Delta G",
         "meaning": "change in Gibbs free energy",
         "unit": "J"
       },
       {
+        "key": "dH",
         "symbol": "\\Delta H",
         "meaning": "change in enthalpy",
         "unit": "J"
       },
       {
+        "key": "T",
         "symbol": "T",
         "meaning": "absolute temperature",
         "unit": "K"
       },
       {
+        "key": "dS",
         "symbol": "\\Delta S",
         "meaning": "change in entropy",
         "unit": "J/K"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Gibbs_free_energy"
+    "source": "https://en.wikipedia.org/wiki/Gibbs_free_energy",
+    "relation": "dG = dH - T * dS",
+    "dimCheck": "consistent"
   },
   {
     "id": "gravitational-potential-energy",
@@ -812,27 +1117,33 @@
     "description": "Heat required to change the temperature of a mass with specific heat capacity c.",
     "variables": [
       {
+        "key": "Q",
         "symbol": "Q",
         "meaning": "heat",
         "unit": "J"
       },
       {
+        "key": "m",
         "symbol": "m",
         "meaning": "mass",
         "unit": "kg"
       },
       {
+        "key": "c",
         "symbol": "c",
         "meaning": "specific heat capacity",
-        "unit": "J/(kg·K)"
+        "unit": "J/(kg*K)"
       },
       {
+        "key": "dT",
         "symbol": "\\Delta T",
         "meaning": "temperature change",
         "unit": "K"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Heat_capacity"
+    "source": "https://en.wikipedia.org/wiki/Heat_capacity",
+    "relation": "Q = m * c * dT",
+    "dimCheck": "consistent"
   },
   {
     "id": "heisenberg-uncertainty",
@@ -886,8 +1197,30 @@
     ],
     "latex": "\\mathrm{pH} = \\mathrm{p}K_a + \\log_{10}\\frac{[\\text{A}^-]}{[\\text{HA}]}",
     "description": "Relates the pH of a buffer to the acid dissociation constant and the ratio of conjugate base to acid.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation"
+    "variables": [
+      {
+        "key": "pH",
+        "symbol": "\\mathrm{pH}",
+        "meaning": "buffer pH"
+      },
+      {
+        "key": "pKa",
+        "symbol": "\\mathrm{p}K_a",
+        "meaning": "acid dissociation constant"
+      },
+      {
+        "key": "A",
+        "symbol": "[\\text{A}^-]",
+        "meaning": "conjugate base concentration"
+      },
+      {
+        "key": "HA",
+        "symbol": "[\\text{HA}]",
+        "meaning": "weak acid concentration"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation",
+    "relation": "pH = pKa + log(A / HA, 10)"
   },
   {
     "id": "hookes-law",
@@ -909,17 +1242,27 @@
     "description": "Restoring force of an ideal spring, proportional and opposite to its displacement.",
     "variables": [
       {
+        "key": "F",
+        "symbol": "F",
+        "meaning": "restoring force",
+        "unit": "N"
+      },
+      {
+        "key": "k",
         "symbol": "k",
         "meaning": "spring constant",
         "unit": "N/m"
       },
       {
+        "key": "x",
         "symbol": "x",
         "meaning": "displacement from equilibrium",
         "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Hooke%27s_law"
+    "source": "https://en.wikipedia.org/wiki/Hooke%27s_law",
+    "relation": "F = -k * x",
+    "dimCheck": "consistent"
   },
   {
     "id": "hubbles-law",
@@ -941,22 +1284,27 @@
     "description": "The recession velocity of a distant galaxy is proportional to its distance, evidence for cosmic expansion.",
     "variables": [
       {
+        "key": "v",
         "symbol": "v",
         "meaning": "recession velocity",
-        "unit": "km/s"
+        "unit": "m/s"
       },
       {
+        "key": "H_0",
         "symbol": "H_0",
         "meaning": "Hubble constant",
-        "unit": "km/s/Mpc"
+        "unit": "1/s"
       },
       {
+        "key": "d",
         "symbol": "d",
         "meaning": "proper distance",
-        "unit": "Mpc"
+        "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Hubble%27s_law"
+    "source": "https://en.wikipedia.org/wiki/Hubble%27s_law",
+    "relation": "v = H_0 * d",
+    "dimCheck": "consistent"
   },
   {
     "id": "ideal-gas-law",
@@ -1032,8 +1380,29 @@
     ],
     "latex": "\\vec{J} = \\vec{F}\\,\\Delta t = \\Delta \\vec{p}",
     "description": "Impulse equals force times the time interval and equals the change in momentum.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Impulse_(physics)"
+    "variables": [
+      {
+        "key": "J",
+        "symbol": "\\vec{J}",
+        "meaning": "impulse",
+        "unit": "N*s"
+      },
+      {
+        "key": "F",
+        "symbol": "\\vec{F}",
+        "meaning": "force",
+        "unit": "N"
+      },
+      {
+        "key": "t",
+        "symbol": "t",
+        "meaning": "time interval",
+        "unit": "s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Impulse_(physics)",
+    "relation": "J = F * t",
+    "dimCheck": "consistent"
   },
   {
     "id": "integration-by-parts",
@@ -1074,22 +1443,33 @@
     "description": "Square of an orbital period is proportional to the cube of the orbit's semi-major axis.",
     "variables": [
       {
+        "key": "T",
         "symbol": "T",
         "meaning": "orbital period",
         "unit": "s"
       },
       {
-        "symbol": "a",
-        "meaning": "semi-major axis",
-        "unit": "m"
+        "key": "G",
+        "symbol": "G",
+        "meaning": "gravitational constant",
+        "unit": "N*m^2/kg^2"
       },
       {
+        "key": "M",
         "symbol": "M",
         "meaning": "central mass",
         "unit": "kg"
+      },
+      {
+        "key": "a",
+        "symbol": "a",
+        "meaning": "semi-major axis",
+        "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"
+    "source": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+    "relation": "T^2 = 4 * pi^2 / (G * M) * a^3",
+    "dimCheck": "consistent"
   },
   {
     "id": "kinematic-displacement",
@@ -1249,8 +1629,30 @@
     ],
     "latex": "c^{2} = a^{2} + b^{2} - 2ab\\cos C",
     "description": "Relates the lengths of a triangle's sides to the cosine of one of its angles.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Law_of_cosines"
+    "variables": [
+      {
+        "key": "c",
+        "symbol": "c",
+        "meaning": "side opposite angle C"
+      },
+      {
+        "key": "a",
+        "symbol": "a",
+        "meaning": "side length"
+      },
+      {
+        "key": "b",
+        "symbol": "b",
+        "meaning": "side length"
+      },
+      {
+        "key": "C",
+        "symbol": "C",
+        "meaning": "angle between sides a and b"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Law_of_cosines",
+    "relation": "c^2 = a^2 + b^2 - 2*a*b*cos(C)"
   },
   {
     "id": "law-of-sines",
@@ -1328,8 +1730,25 @@
     ],
     "latex": "\\log_{b} x = \\frac{\\log_{k} x}{\\log_{k} b}",
     "description": "Converts a logarithm in one base to a ratio of logarithms in any other base k.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Logarithm"
+    "variables": [
+      {
+        "key": "y",
+        "symbol": "\\log_b x",
+        "meaning": "logarithm of x in base b"
+      },
+      {
+        "key": "x",
+        "symbol": "x",
+        "meaning": "argument"
+      },
+      {
+        "key": "b",
+        "symbol": "b",
+        "meaning": "base"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Logarithm",
+    "relation": "y = log(x) / log(b)"
   },
   {
     "id": "lorentz-factor",
@@ -1349,8 +1768,27 @@
     ],
     "latex": "\\gamma = \\frac{1}{\\sqrt{1 - \\dfrac{v^{2}}{c^{2}}}}",
     "description": "The factor by which time, length, and relativistic mass change for an object in motion.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Lorentz_factor"
+    "variables": [
+      {
+        "key": "gamma",
+        "symbol": "\\gamma",
+        "meaning": "Lorentz factor"
+      },
+      {
+        "key": "v",
+        "symbol": "v",
+        "meaning": "speed",
+        "unit": "m/s"
+      },
+      {
+        "key": "c",
+        "symbol": "c",
+        "meaning": "speed of light",
+        "unit": "m/s"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Lorentz_factor",
+    "relation": "gamma = 1 / sqrt(1 - v^2 / c^2)"
   },
   {
     "id": "lorentz-force",
@@ -1414,22 +1852,27 @@
     "description": "Observed flux of a source falls off with the inverse square of its distance from its luminosity.",
     "variables": [
       {
+        "key": "F",
         "symbol": "F",
         "meaning": "flux",
         "unit": "W/m^2"
       },
       {
+        "key": "L",
         "symbol": "L",
         "meaning": "luminosity",
         "unit": "W"
       },
       {
+        "key": "d",
         "symbol": "d",
         "meaning": "distance",
         "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Luminosity"
+    "source": "https://en.wikipedia.org/wiki/Luminosity",
+    "relation": "F = L / (4 * pi * d^2)",
+    "dimCheck": "consistent"
   },
   {
     "id": "mass-energy-equivalence",
@@ -1452,22 +1895,27 @@
     "description": "Rest energy of a body equals its mass times the speed of light squared.",
     "variables": [
       {
+        "key": "E",
         "symbol": "E",
         "meaning": "energy",
         "unit": "J"
       },
       {
+        "key": "m",
         "symbol": "m",
         "meaning": "mass",
         "unit": "kg"
       },
       {
+        "key": "c",
         "symbol": "c",
         "meaning": "speed of light",
         "unit": "m/s"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence"
+    "source": "https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence",
+    "relation": "E = m * c^2",
+    "dimCheck": "consistent"
   },
   {
     "id": "nernst-equation",
@@ -1487,8 +1935,44 @@
     ],
     "latex": "E = E^{\\circ} - \\frac{RT}{nF}\\ln Q",
     "description": "Gives the potential of an electrochemical cell away from standard conditions via the reaction quotient.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Nernst_equation"
+    "variables": [
+      {
+        "key": "E",
+        "symbol": "E",
+        "meaning": "cell potential"
+      },
+      {
+        "key": "E0",
+        "symbol": "E^{\\circ}",
+        "meaning": "standard cell potential"
+      },
+      {
+        "key": "R",
+        "symbol": "R",
+        "meaning": "gas constant"
+      },
+      {
+        "key": "T",
+        "symbol": "T",
+        "meaning": "absolute temperature"
+      },
+      {
+        "key": "n",
+        "symbol": "n",
+        "meaning": "electrons transferred"
+      },
+      {
+        "key": "F",
+        "symbol": "F",
+        "meaning": "Faraday constant"
+      },
+      {
+        "key": "Q",
+        "symbol": "Q",
+        "meaning": "reaction quotient"
+      }
+    ],
+    "relation": "E = E0 - (R * T / (n * F)) * log(Q)"
   },
   {
     "id": "neutralization-reaction",
@@ -1531,22 +2015,39 @@
     "description": "Attractive gravitational force between two point masses, inversely proportional to the square of their separation.",
     "variables": [
       {
-        "symbol": "G",
-        "meaning": "gravitational constant",
-        "unit": "N·m^2/kg^2"
+        "key": "F",
+        "symbol": "F",
+        "meaning": "gravitational force",
+        "unit": "N"
       },
       {
-        "symbol": "m_1, m_2",
-        "meaning": "the two masses",
+        "key": "G",
+        "symbol": "G",
+        "meaning": "gravitational constant",
+        "unit": "N*m^2/kg^2"
+      },
+      {
+        "key": "m1",
+        "symbol": "m_1",
+        "meaning": "first mass",
         "unit": "kg"
       },
       {
+        "key": "m2",
+        "symbol": "m_2",
+        "meaning": "second mass",
+        "unit": "kg"
+      },
+      {
+        "key": "r",
         "symbol": "r",
         "meaning": "separation",
         "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation"
+    "source": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation",
+    "relation": "F = G * m1 * m2 / r^2",
+    "dimCheck": "consistent"
   },
   {
     "id": "newtons-second-law",
@@ -1611,15 +2112,28 @@
     "description": "Probability density function of a normal (Gaussian) distribution with mean mu and standard deviation sigma.",
     "variables": [
       {
+        "key": "f",
+        "symbol": "f(x)",
+        "meaning": "probability density"
+      },
+      {
+        "key": "x",
+        "symbol": "x",
+        "meaning": "value"
+      },
+      {
+        "key": "mu",
         "symbol": "\\mu",
         "meaning": "mean"
       },
       {
+        "key": "sigma",
         "symbol": "\\sigma",
         "meaning": "standard deviation"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Normal_distribution"
+    "source": "https://en.wikipedia.org/wiki/Normal_distribution",
+    "relation": "f = (1 / (sigma * sqrt(2 * pi))) * exp(-((x - mu)^2) / (2 * sigma^2))"
   },
   {
     "id": "ohms-law",
@@ -1681,8 +2195,20 @@
     ],
     "latex": "\\mathrm{pH} = -\\log_{10}[\\ce{H+}]",
     "description": "The pH of a solution as the negative base-10 logarithm of the hydrogen ion activity.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/PH"
+    "variables": [
+      {
+        "key": "pH",
+        "symbol": "\\mathrm{pH}",
+        "meaning": "pH value"
+      },
+      {
+        "key": "H",
+        "symbol": "[\\ce{H+}]",
+        "meaning": "hydrogen ion concentration"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/PH",
+    "relation": "pH = -log(H, 10)"
   },
   {
     "id": "photon-energy",
@@ -1786,19 +2312,23 @@
     "description": "In a right triangle, the square of the hypotenuse equals the sum of squares of the legs.",
     "variables": [
       {
+        "key": "a",
         "symbol": "a",
         "meaning": "leg"
       },
       {
+        "key": "b",
         "symbol": "b",
         "meaning": "leg"
       },
       {
+        "key": "c",
         "symbol": "c",
         "meaning": "hypotenuse"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Pythagorean_theorem"
+    "source": "https://en.wikipedia.org/wiki/Pythagorean_theorem",
+    "relation": "a^2 + b^2 = c^2"
   },
   {
     "id": "pythagorean-trig-identity",
@@ -1839,23 +2369,28 @@
     "description": "Roots of a quadratic equation ax^2 + bx + c = 0 in terms of its coefficients.",
     "variables": [
       {
+        "key": "x",
         "symbol": "x",
-        "meaning": "solutions (roots)"
+        "meaning": "root (+ branch)"
       },
       {
+        "key": "a",
         "symbol": "a",
         "meaning": "quadratic coefficient"
       },
       {
+        "key": "b",
         "symbol": "b",
         "meaning": "linear coefficient"
       },
       {
+        "key": "c",
         "symbol": "c",
         "meaning": "constant term"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Quadratic_formula"
+    "source": "https://en.wikipedia.org/wiki/Quadratic_formula",
+    "relation": "x = (-b + sqrt(b^2 - 4 * a * c)) / (2 * a)"
   },
   {
     "id": "rotational-kinetic-energy",
@@ -1955,26 +2490,33 @@
     "description": "Radius of the event horizon of a non-rotating black hole of mass M.",
     "variables": [
       {
+        "key": "r_s",
         "symbol": "r_s",
         "meaning": "Schwarzschild radius",
         "unit": "m"
       },
       {
+        "key": "G",
         "symbol": "G",
-        "meaning": "gravitational constant"
+        "meaning": "gravitational constant",
+        "unit": "N*m^2/kg^2"
       },
       {
+        "key": "M",
         "symbol": "M",
         "meaning": "mass",
         "unit": "kg"
       },
       {
+        "key": "c",
         "symbol": "c",
         "meaning": "speed of light",
         "unit": "m/s"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Schwarzschild_radius"
+    "source": "https://en.wikipedia.org/wiki/Schwarzschild_radius",
+    "relation": "r_s = 2 * G * M / c^2",
+    "dimCheck": "consistent"
   },
   {
     "id": "simple-pendulum-period",
@@ -1996,22 +2538,27 @@
     "description": "Period of small-amplitude oscillations of a simple pendulum of length L.",
     "variables": [
       {
+        "key": "T",
         "symbol": "T",
         "meaning": "period",
         "unit": "s"
       },
       {
+        "key": "L",
         "symbol": "L",
         "meaning": "pendulum length",
         "unit": "m"
       },
       {
+        "key": "g",
         "symbol": "g",
         "meaning": "gravitational acceleration",
         "unit": "m/s^2"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Pendulum"
+    "source": "https://en.wikipedia.org/wiki/Pendulum",
+    "relation": "T = 2 * pi * sqrt(L / g)",
+    "dimCheck": "consistent"
   },
   {
     "id": "snells-law",
@@ -2031,8 +2578,32 @@
     ],
     "latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "description": "Relates the angles of incidence and refraction to the refractive indices of two media.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Snell%27s_law"
+    "variables": [
+      {
+        "key": "n_1",
+        "symbol": "n_1",
+        "meaning": "refractive index of medium 1"
+      },
+      {
+        "key": "theta_1",
+        "symbol": "\\theta_1",
+        "meaning": "angle of incidence",
+        "unit": "rad"
+      },
+      {
+        "key": "n_2",
+        "symbol": "n_2",
+        "meaning": "refractive index of medium 2"
+      },
+      {
+        "key": "theta_2",
+        "symbol": "\\theta_2",
+        "meaning": "angle of refraction",
+        "unit": "rad"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Snell%27s_law",
+    "relation": "n_1 * sin(theta_1) = n_2 * sin(theta_2)"
   },
   {
     "id": "standard-deviation",
@@ -2075,21 +2646,27 @@
     "description": "Power radiated per unit area by a black body scales with the fourth power of its temperature.",
     "variables": [
       {
+        "key": "j",
         "symbol": "j^{\\star}",
         "meaning": "radiant emittance",
         "unit": "W/m^2"
       },
       {
+        "key": "sigma",
         "symbol": "\\sigma",
-        "meaning": "Stefan–Boltzmann constant"
+        "meaning": "Stefan–Boltzmann constant",
+        "unit": "W/(m^2*K^4)"
       },
       {
+        "key": "T",
         "symbol": "T",
         "meaning": "absolute temperature",
         "unit": "K"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law"
+    "source": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law",
+    "relation": "j = sigma * T^4",
+    "dimCheck": "consistent"
   },
   {
     "id": "taylor-series",
@@ -2132,19 +2709,27 @@
     "description": "Relates the focal length of a thin lens to the object and image distances.",
     "variables": [
       {
+        "key": "f",
         "symbol": "f",
-        "meaning": "focal length"
+        "meaning": "focal length",
+        "unit": "m"
       },
       {
+        "key": "d_o",
         "symbol": "d_o",
-        "meaning": "object distance"
+        "meaning": "object distance",
+        "unit": "m"
       },
       {
+        "key": "d_i",
         "symbol": "d_i",
-        "meaning": "image distance"
+        "meaning": "image distance",
+        "unit": "m"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Lens"
+    "source": "https://en.wikipedia.org/wiki/Lens",
+    "relation": "1/f = 1/d_o + 1/d_i",
+    "dimCheck": "consistent"
   },
   {
     "id": "torque",
@@ -2164,8 +2749,35 @@
     ],
     "latex": "\\vec{\\tau} = \\vec{r} \\times \\vec{F}",
     "description": "Rotational analogue of force, the cross product of the lever arm and the applied force.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Torque"
+    "variables": [
+      {
+        "key": "tau",
+        "symbol": "\\tau",
+        "meaning": "torque magnitude",
+        "unit": "N*m"
+      },
+      {
+        "key": "r",
+        "symbol": "r",
+        "meaning": "lever arm length",
+        "unit": "m"
+      },
+      {
+        "key": "F",
+        "symbol": "F",
+        "meaning": "force magnitude",
+        "unit": "N"
+      },
+      {
+        "key": "theta",
+        "symbol": "\\theta",
+        "meaning": "angle between r and F",
+        "unit": "rad"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Torque",
+    "relation": "tau = r * F * sin(theta)",
+    "dimCheck": "consistent"
   },
   {
     "id": "water-formation",
@@ -2251,21 +2863,27 @@
     "description": "The wavelength of peak emission from a black body is inversely proportional to its temperature.",
     "variables": [
       {
+        "key": "lambda_max",
         "symbol": "\\lambda_{\\max}",
         "meaning": "peak wavelength",
         "unit": "m"
       },
       {
+        "key": "b",
         "symbol": "b",
-        "meaning": "Wien's displacement constant"
+        "meaning": "Wien's displacement constant",
+        "unit": "m*K"
       },
       {
+        "key": "T",
         "symbol": "T",
         "meaning": "temperature",
         "unit": "K"
       }
     ],
-    "source": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law"
+    "source": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law",
+    "relation": "lambda_max = b / T",
+    "dimCheck": "consistent"
   },
   {
     "id": "work-done",
@@ -2284,7 +2902,34 @@
     ],
     "latex": "W = \\vec{F} \\cdot \\vec{d} = Fd\\cos\\theta",
     "description": "Work done by a constant force over a displacement, depending on the angle between them.",
-    "variables": [],
-    "source": "https://en.wikipedia.org/wiki/Work_(physics)"
+    "variables": [
+      {
+        "key": "W",
+        "symbol": "W",
+        "meaning": "work",
+        "unit": "J"
+      },
+      {
+        "key": "F",
+        "symbol": "F",
+        "meaning": "force magnitude",
+        "unit": "N"
+      },
+      {
+        "key": "d",
+        "symbol": "d",
+        "meaning": "displacement magnitude",
+        "unit": "m"
+      },
+      {
+        "key": "theta",
+        "symbol": "\\theta",
+        "meaning": "angle between force and displacement",
+        "unit": "rad"
+      }
+    ],
+    "source": "https://en.wikipedia.org/wiki/Work_(physics)",
+    "relation": "W = F * d * cos(theta)",
+    "dimCheck": "consistent"
   }
 ]

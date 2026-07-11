@@ -27,10 +27,11 @@
   latex: "\\Delta U = Q - W"
   description: >
     Change in a system's internal energy equals heat added to it minus work done by it.
+  relation: "dU = Q - W"
   variables:
-    - { symbol: "\\Delta U", meaning: change in internal energy, unit: J }
-    - { symbol: "Q", meaning: heat added to the system, unit: J }
-    - { symbol: "W", meaning: work done by the system, unit: J }
+    - { key: dU, symbol: "\\Delta U", meaning: change in internal energy, unit: J }
+    - { key: Q, symbol: "Q", meaning: heat added to the system, unit: J }
+    - { key: W, symbol: "W", meaning: work done by the system, unit: J }
   source: https://en.wikipedia.org/wiki/First_law_of_thermodynamics
 
 - id: entropy-change
@@ -53,10 +54,11 @@
   latex: "j^{\\star} = \\sigma T^{4}"
   description: >
     Power radiated per unit area by a black body scales with the fourth power of its temperature.
+  relation: "j = sigma * T^4"
   variables:
-    - { symbol: "j^{\\star}", meaning: radiant emittance, unit: "W/m^2" }
-    - { symbol: "\\sigma", meaning: Stefan–Boltzmann constant }
-    - { symbol: "T", meaning: absolute temperature, unit: K }
+    - { key: j, symbol: "j^{\\star}", meaning: radiant emittance, unit: "W/m^2" }
+    - { key: sigma, symbol: "\\sigma", meaning: Stefan–Boltzmann constant, unit: "W/(m^2*K^4)" }
+    - { key: T, symbol: "T", meaning: absolute temperature, unit: K }
   source: https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law
 
 - id: heat-conduction-fourier
@@ -68,9 +70,10 @@
   latex: "Q = mc\\,\\Delta T"
   description: >
     Heat required to change the temperature of a mass with specific heat capacity c.
+  relation: "Q = m * c * dT"
   variables:
-    - { symbol: "Q", meaning: heat, unit: J }
-    - { symbol: "m", meaning: mass, unit: kg }
-    - { symbol: "c", meaning: specific heat capacity, unit: "J/(kg·K)" }
-    - { symbol: "\\Delta T", meaning: temperature change, unit: K }
+    - { key: Q, symbol: "Q", meaning: heat, unit: J }
+    - { key: m, symbol: "m", meaning: mass, unit: kg }
+    - { key: c, symbol: "c", meaning: specific heat capacity, unit: "J/(kg*K)" }
+    - { key: dT, symbol: "\\Delta T", meaning: temperature change, unit: K }
   source: https://en.wikipedia.org/wiki/Heat_capacity

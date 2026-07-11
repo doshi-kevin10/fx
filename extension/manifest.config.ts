@@ -15,6 +15,10 @@ export default defineManifest({
       128: 'extension/public/icons/icon.svg',
     },
   },
+  background: {
+    service_worker: 'extension/src/background.ts',
+    type: 'module',
+  },
   content_scripts: [
     {
       matches: ['<all_urls>'],
@@ -22,6 +26,6 @@ export default defineManifest({
       run_at: 'document_idle',
     },
   ],
-  permissions: ['storage'],
+  permissions: ['storage', 'offscreen'],
   host_permissions: ['<all_urls>'],
 });

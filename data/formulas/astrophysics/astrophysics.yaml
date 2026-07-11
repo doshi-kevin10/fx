@@ -9,11 +9,12 @@
   latex: "r_s = \\frac{2GM}{c^{2}}"
   description: >
     Radius of the event horizon of a non-rotating black hole of mass M.
+  relation: "r_s = 2 * G * M / c^2"
   variables:
-    - { symbol: "r_s", meaning: Schwarzschild radius, unit: m }
-    - { symbol: "G", meaning: gravitational constant }
-    - { symbol: "M", meaning: mass, unit: kg }
-    - { symbol: "c", meaning: speed of light, unit: "m/s" }
+    - { key: r_s, symbol: "r_s", meaning: Schwarzschild radius, unit: m }
+    - { key: G, symbol: "G", meaning: gravitational constant, unit: "N*m^2/kg^2" }
+    - { key: M, symbol: "M", meaning: mass, unit: kg }
+    - { key: c, symbol: "c", meaning: speed of light, unit: "m/s" }
   source: https://en.wikipedia.org/wiki/Schwarzschild_radius
 
 - id: hubbles-law
@@ -25,10 +26,11 @@
   latex: "v = H_0 d"
   description: >
     The recession velocity of a distant galaxy is proportional to its distance, evidence for cosmic expansion.
+  relation: "v = H_0 * d"
   variables:
-    - { symbol: "v", meaning: recession velocity, unit: "km/s" }
-    - { symbol: "H_0", meaning: Hubble constant, unit: "km/s/Mpc" }
-    - { symbol: "d", meaning: proper distance, unit: Mpc }
+    - { key: v, symbol: "v", meaning: recession velocity, unit: "m/s" }
+    - { key: H_0, symbol: "H_0", meaning: Hubble constant, unit: "1/s" }
+    - { key: d, symbol: "d", meaning: proper distance, unit: m }
   source: https://en.wikipedia.org/wiki/Hubble%27s_law
 
 - id: keplers-third-law
@@ -40,10 +42,12 @@
   latex: "T^{2} = \\frac{4\\pi^{2}}{GM}\\,a^{3}"
   description: >
     Square of an orbital period is proportional to the cube of the orbit's semi-major axis.
+  relation: "T^2 = 4 * pi^2 / (G * M) * a^3"
   variables:
-    - { symbol: "T", meaning: orbital period, unit: s }
-    - { symbol: "a", meaning: semi-major axis, unit: m }
-    - { symbol: "M", meaning: central mass, unit: kg }
+    - { key: T, symbol: "T", meaning: orbital period, unit: s }
+    - { key: G, symbol: "G", meaning: gravitational constant, unit: "N*m^2/kg^2" }
+    - { key: M, symbol: "M", meaning: central mass, unit: kg }
+    - { key: a, symbol: "a", meaning: semi-major axis, unit: m }
   source: https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion
 
 - id: escape-velocity
@@ -55,6 +59,12 @@
   latex: "v_e = \\sqrt{\\frac{2GM}{r}}"
   description: >
     Minimum speed needed to escape a body's gravitational field without further propulsion.
+  relation: "v_e = sqrt(2 * G * M / r)"
+  variables:
+    - { key: v_e, symbol: "v_e", meaning: escape velocity, unit: "m/s" }
+    - { key: G, symbol: "G", meaning: gravitational constant, unit: "N*m^2/kg^2" }
+    - { key: M, symbol: "M", meaning: mass, unit: kg }
+    - { key: r, symbol: "r", meaning: distance from center, unit: m }
   source: https://en.wikipedia.org/wiki/Escape_velocity
 
 - id: chandrasekhar-mass
@@ -77,10 +87,11 @@
   latex: "F = \\frac{L}{4\\pi d^{2}}"
   description: >
     Observed flux of a source falls off with the inverse square of its distance from its luminosity.
+  relation: "F = L / (4 * pi * d^2)"
   variables:
-    - { symbol: "F", meaning: flux, unit: "W/m^2" }
-    - { symbol: "L", meaning: luminosity, unit: W }
-    - { symbol: "d", meaning: distance, unit: m }
+    - { key: F, symbol: "F", meaning: flux, unit: "W/m^2" }
+    - { key: L, symbol: "L", meaning: luminosity, unit: W }
+    - { key: d, symbol: "d", meaning: distance, unit: m }
   source: https://en.wikipedia.org/wiki/Luminosity
 
 - id: wiens-displacement-law
@@ -92,8 +103,9 @@
   latex: "\\lambda_{\\max} = \\frac{b}{T}"
   description: >
     The wavelength of peak emission from a black body is inversely proportional to its temperature.
+  relation: "lambda_max = b / T"
   variables:
-    - { symbol: "\\lambda_{\\max}", meaning: peak wavelength, unit: m }
-    - { symbol: "b", meaning: Wien's displacement constant }
-    - { symbol: "T", meaning: temperature, unit: K }
+    - { key: lambda_max, symbol: "\\lambda_{\\max}", meaning: peak wavelength, unit: m }
+    - { key: b, symbol: "b", meaning: Wien's displacement constant, unit: "m*K" }
+    - { key: T, symbol: "T", meaning: temperature, unit: K }
   source: https://en.wikipedia.org/wiki/Wien%27s_displacement_law

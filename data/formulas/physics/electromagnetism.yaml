@@ -25,10 +25,13 @@
   latex: "F = k_e\\,\\frac{q_1 q_2}{r^{2}}"
   description: >
     Electrostatic force between two point charges, inversely proportional to the square of their separation.
+  relation: "F = ke * q1 * q2 / r^2"
   variables:
-    - { symbol: "k_e", meaning: Coulomb constant }
-    - { symbol: "q_1, q_2", meaning: the two charges, unit: C }
-    - { symbol: "r", meaning: separation, unit: m }
+    - { key: F, symbol: "F", meaning: electrostatic force, unit: N }
+    - { key: ke, symbol: "k_e", meaning: Coulomb constant, unit: "N*m^2/C^2" }
+    - { key: q1, symbol: "q_1", meaning: first charge, unit: C }
+    - { key: q2, symbol: "q_2", meaning: second charge, unit: C }
+    - { key: r, symbol: "r", meaning: separation, unit: m }
   source: https://en.wikipedia.org/wiki/Coulomb%27s_law
 
 - id: electric-power
@@ -40,6 +43,11 @@
   latex: "P = IV = I^{2}R"
   description: >
     Power delivered to or dissipated by an electrical component.
+  relation: "P = I * V"
+  variables:
+    - { key: P, symbol: "P", meaning: power, unit: W }
+    - { key: I, symbol: "I", meaning: current, unit: A }
+    - { key: V, symbol: "V", meaning: voltage, unit: V }
   source: https://en.wikipedia.org/wiki/Electric_power
 
 - id: lorentz-force
@@ -67,6 +75,11 @@
   latex: "C = \\frac{Q}{V}"
   description: >
     Capacitance as the ratio of stored charge to the voltage across a capacitor.
+  relation: "C = Q / V"
+  variables:
+    - { key: C, symbol: "C", meaning: capacitance, unit: F }
+    - { key: Q, symbol: "Q", meaning: stored charge, unit: C }
+    - { key: V, symbol: "V", meaning: voltage, unit: V }
   source: https://en.wikipedia.org/wiki/Capacitance
 
 - id: faradays-law-induction

@@ -424,7 +424,7 @@
   background: #ffffff;
   border: 1px dashed var(--fzd-primary);
   border-radius: 10px;
-  cursor: grab;
+  cursor: copy;
   user-select: none;
   -webkit-user-drag: element;
 }

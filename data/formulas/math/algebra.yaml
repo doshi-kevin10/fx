@@ -10,11 +10,12 @@
   latex: "x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}"
   description: >
     Roots of a quadratic equation ax^2 + bx + c = 0 in terms of its coefficients.
+  relation: "x = (-b + sqrt(b^2 - 4 * a * c)) / (2 * a)"
   variables:
-    - { symbol: "x", meaning: solutions (roots) }
-    - { symbol: "a", meaning: quadratic coefficient }
-    - { symbol: "b", meaning: linear coefficient }
-    - { symbol: "c", meaning: constant term }
+    - { key: x, symbol: "x", meaning: root (+ branch) }
+    - { key: a, symbol: "a", meaning: quadratic coefficient }
+    - { key: b, symbol: "b", meaning: linear coefficient }
+    - { key: c, symbol: "c", meaning: constant term }
   source: https://en.wikipedia.org/wiki/Quadratic_formula
 
 - id: binomial-theorem
@@ -37,10 +38,12 @@
   latex: "\\sum_{k=0}^{n-1} ar^{k} = a\\,\\frac{1 - r^{n}}{1 - r}"
   description: >
     Closed form for the sum of the first n terms of a geometric series with ratio r not equal to 1.
+  relation: "S = a * (1 - r^n) / (1 - r)"
   variables:
-    - { symbol: "a", meaning: first term }
-    - { symbol: "r", meaning: common ratio }
-    - { symbol: "n", meaning: number of terms }
+    - { key: S, symbol: "S_n", meaning: sum of first n terms }
+    - { key: a, symbol: "a", meaning: first term }
+    - { key: r, symbol: "r", meaning: common ratio }
+    - { key: n, symbol: "n", meaning: number of terms }
   source: https://en.wikipedia.org/wiki/Geometric_series
 
 - id: arithmetic-series-sum
@@ -52,6 +55,10 @@
   latex: "\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}"
   description: >
     Sum of the first n positive integers; the simplest arithmetic series.
+  relation: "S = n * (n + 1) / 2"
+  variables:
+    - { key: S, symbol: "S", meaning: sum of first n integers }
+    - { key: n, symbol: "n", meaning: number of terms }
   source: https://en.wikipedia.org/wiki/Arithmetic_progression
 
 - id: eulers-identity
@@ -85,4 +92,9 @@
   latex: "\\log_{b} x = \\frac{\\log_{k} x}{\\log_{k} b}"
   description: >
     Converts a logarithm in one base to a ratio of logarithms in any other base k.
+  relation: "y = log(x) / log(b)"
+  variables:
+    - { key: y, symbol: "\\log_b x", meaning: logarithm of x in base b }
+    - { key: x, symbol: "x", meaning: argument }
+    - { key: b, symbol: "b", meaning: base }
   source: https://en.wikipedia.org/wiki/Logarithm

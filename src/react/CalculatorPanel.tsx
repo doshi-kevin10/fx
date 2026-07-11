@@ -35,6 +35,7 @@ export function CalculatorPanel({ formula, className }: CalculatorPanelProps) {
 
   const solveRef = useRef<{ solve: SolveFn; formatValue: FormatFn } | null>(null);
   const [ready, setReady] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   // Reset when the formula changes.
   useEffect(() => {
@@ -46,11 +47,17 @@ export function CalculatorPanel({ formula, className }: CalculatorPanelProps) {
   // Lazy-load the calculator engine (math.js) on first open.
   useEffect(() => {
     let alive = true;
-    void import('../core/calculator.js').then((mod) => {
-      if (!alive) return;
-      solveRef.current = { solve: mod.solve, formatValue: mod.formatValue };
-      setReady(true);
-    });
+    import('../core/calculator.js')
+      .then((mod) => {
+        if (!alive) return;
+        solveRef.current = { solve: mod.solve, formatValue: mod.formatValue };
+        setReady(true);
+      })
+      .catch((err) => {
+        // Otherwise the panel just says "loading calculator…" forever.
+        console.error('[Formulyze] calculator engine failed to load', err);
+        if (alive) setLoadError(err instanceof Error ? err.message : String(err));
+      });
     return () => {
       alive = false;
     };
@@ -65,14 +72,19 @@ export function CalculatorPanel({ formula, className }: CalculatorPanelProps) {
       const raw = values[v.key!];
       if (raw !== undefined && raw.trim() !== '') known[v.key!] = Number(raw);
     }
-    setResult(
-      solveRef.current.solve({
-        relation: formula.relation,
-        variables: variables.map((v) => ({ key: v.key!, unit: v.unit })),
-        known,
-        target,
-      })
-    );
+    try {
+      setResult(
+        solveRef.current.solve({
+          relation: formula.relation,
+          variables: variables.map((v) => ({ key: v.key!, unit: v.unit })),
+          known,
+          target,
+        })
+      );
+    } catch (err) {
+      // e.g. a unit math.js can't parse throws before solve's own try block.
+      setResult({ ok: false, error: err instanceof Error ? err.message : 'Calculation failed.' });
+    }
   }, [ready, values, target, variables, formula.relation]);
 
   const fmt = solveRef.current?.formatValue ?? ((n: number) => String(n));
@@ -125,7 +137,8 @@ export function CalculatorPanel({ formula, className }: CalculatorPanelProps) {
       {result?.ok && result.method === 'numeric' && (
         <div className="fzk-note">solved numerically</div>
       )}
-      {!ready && <div className="fzk-msg">loading calculator…</div>}
+      {!ready && !loadError && <div className="fzk-msg">loading calculator…</div>}
+      {loadError && <div className="fzk-msg">Calculator failed to load: {loadError}</div>}
     </div>
   );
 }

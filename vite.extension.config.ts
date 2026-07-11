@@ -49,6 +49,11 @@ export default defineConfig({
   build: {
     outDir: 'extension/dist',
     emptyOutDir: true,
+    rollupOptions: {
+      // crxjs only builds manifest-referenced HTML; the offscreen document is
+      // loaded at runtime via chrome.offscreen, so add it as an explicit input.
+      input: { offscreen: resolve(__dirname, 'extension/offscreen.html') },
+    },
   },
   server: {
     fs: { allow: ['.'] },

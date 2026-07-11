@@ -9,10 +9,11 @@
   latex: "a^{2} + b^{2} = c^{2}"
   description: >
     In a right triangle, the square of the hypotenuse equals the sum of squares of the legs.
+  relation: "a^2 + b^2 = c^2"
   variables:
-    - { symbol: "a", meaning: leg }
-    - { symbol: "b", meaning: leg }
-    - { symbol: "c", meaning: hypotenuse }
+    - { key: a, symbol: "a", meaning: leg }
+    - { key: b, symbol: "b", meaning: leg }
+    - { key: c, symbol: "c", meaning: hypotenuse }
   source: https://en.wikipedia.org/wiki/Pythagorean_theorem
 
 - id: law-of-cosines
@@ -24,6 +25,12 @@
   latex: "c^{2} = a^{2} + b^{2} - 2ab\\cos C"
   description: >
     Relates the lengths of a triangle's sides to the cosine of one of its angles.
+  relation: "c^2 = a^2 + b^2 - 2*a*b*cos(C)"
+  variables:
+    - { key: c, symbol: "c", meaning: side opposite angle C }
+    - { key: a, symbol: "a", meaning: side length }
+    - { key: b, symbol: "b", meaning: side length }
+    - { key: C, symbol: "C", meaning: angle between sides a and b }
   source: https://en.wikipedia.org/wiki/Law_of_cosines
 
 - id: law-of-sines
@@ -57,9 +64,10 @@
   latex: "A = \\pi r^{2}"
   description: >
     Area enclosed by a circle of radius r.
+  relation: "A = pi * r^2"
   variables:
-    - { symbol: "A", meaning: area }
-    - { symbol: "r", meaning: radius }
+    - { key: A, symbol: "A", meaning: area }
+    - { key: r, symbol: "r", meaning: radius }
   source: https://en.wikipedia.org/wiki/Area_of_a_circle
 
 - id: distance-formula
@@ -71,4 +79,11 @@
   latex: "d = \\sqrt{(x_2 - x_1)^{2} + (y_2 - y_1)^{2}}"
   description: >
     Straight-line distance between two points in the Cartesian plane.
+  relation: "d = sqrt((x2 - x1)^2 + (y2 - y1)^2)"
+  variables:
+    - { key: d, symbol: "d", meaning: distance }
+    - { key: x1, symbol: "x_1", meaning: x-coordinate of first point }
+    - { key: y1, symbol: "y_1", meaning: y-coordinate of first point }
+    - { key: x2, symbol: "x_2", meaning: x-coordinate of second point }
+    - { key: y2, symbol: "y_2", meaning: y-coordinate of second point }
   source: https://en.wikipedia.org/wiki/Distance

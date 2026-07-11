@@ -16,6 +16,8 @@ import { QuantityChips } from './QuantityChips.js';
 import { CalculatorPanel } from './CalculatorPanel.js';
 import { Tex } from './Tex.js';
 
+export type Corner = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+
 export interface FormulaDockProps {
   index: Formula[];
   embeddings?: Record<string, number[]>;
@@ -25,6 +27,12 @@ export interface FormulaDockProps {
   domains?: Domain[];
   enableSemantic?: boolean;
   enableImageExport?: boolean;
+  /**
+   * Render a formula PNG. Defaults to in-page rasterization (fine on normal
+   * pages). The extension passes an offscreen-document renderer so it works on
+   * strict-CSP sites (e.g. Google Docs) where in-page canvas is blocked.
+   */
+  renderPng?: (latex: string, scale?: number) => Promise<Blob>;
   enableCustom?: boolean;
   storageKey?: string;
   /** Custom persistence backend. Overrides `storageKey` (e.g. chrome.storage). */
@@ -32,7 +40,9 @@ export interface FormulaDockProps {
   weights?: Partial<Weights>;
   limit?: number;
   placeholder?: string;
-  corner?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+  corner?: Corner;
+  /** Persist a corner the user picked (defaults become the initial corner). */
+  onCornerChange?: (corner: Corner) => void;
   defaultOpen?: boolean;
   hotkey?: string | null;
   pillLabel?: string;
@@ -78,19 +88,68 @@ export function FormulaDock({
   domains,
   enableSemantic = true,
   enableImageExport = true,
+  renderPng,
   enableCustom = true,
   storageKey,
   customStore,
   weights,
   limit = 6,
   placeholder = 'Search a formula…',
-  corner = 'top-right',
+  corner: cornerProp = 'top-right',
+  onCornerChange,
   defaultOpen = false,
   hotkey = 'mod+k',
   pillLabel = 'ƒx',
   className,
 }: FormulaDockProps) {
   const [open, setOpen] = useState(defaultOpen);
+  // Corner is local state seeded by the prop; adopt the prop when it changes
+  // (e.g. the extension's persisted value arrives async after mount).
+  const [corner, setCorner] = useState<Corner>(cornerProp);
+  useEffect(() => setCorner(cornerProp), [cornerProp]);
+  const cycleCorner = useCallback(() => {
+    const order: Corner[] = ['top-right', 'bottom-right', 'bottom-left', 'top-left'];
+    setCorner((c) => {
+      const next = order[(order.indexOf(c) + 1) % order.length];
+      onCornerChange?.(next);
+      return next;
+    });
+  }, [onCornerChange]);
+
+  // Drag the closed pill anywhere; on release it snaps to the nearest corner
+  // (which the layout is built around) and persists via onCornerChange.
+  const [dragPos, setDragPos] = useState<{ x: number; y: number } | null>(null);
+  const dragRef = useRef<{ startX: number; startY: number; moved: boolean } | null>(null);
+  const onPillPointerDown = useCallback((e: React.PointerEvent) => {
+    dragRef.current = { startX: e.clientX, startY: e.clientY, moved: false };
+    e.currentTarget.setPointerCapture?.(e.pointerId); // absent in jsdom
+  }, []);
+  const onPillPointerMove = useCallback((e: React.PointerEvent) => {
+    const d = dragRef.current;
+    if (!d) return;
+    if (!d.moved && Math.abs(e.clientX - d.startX) < 6 && Math.abs(e.clientY - d.startY) < 6) return;
+    d.moved = true;
+    setDragPos({ x: e.clientX, y: e.clientY });
+  }, []);
+  const onPillPointerUp = useCallback(
+    (e: React.PointerEvent) => {
+      const d = dragRef.current;
+      dragRef.current = null;
+      setDragPos(null);
+      if (!d) return;
+      if (!d.moved) {
+        setOpen(true); // a plain click opens the dock
+        return;
+      }
+      const vertical = e.clientY < window.innerHeight / 2 ? 'top' : 'bottom';
+      const horizontal = e.clientX < window.innerWidth / 2 ? 'left' : 'right';
+      const next = `${vertical}-${horizontal}` as Corner;
+      setCorner(next);
+      onCornerChange?.(next);
+    },
+    [onCornerChange]
+  );
+
   const [view, setView] = useState<View>('search');
   const [mode, setMode] = useState<Mode>('name');
   const [active, setActive] = useState(0);
@@ -100,6 +159,9 @@ export function FormulaDock({
   const [fallbackText, setFallbackText] = useState<string | null>(null);
   // PNG data URL of the selected formula, used for drag-and-drop into docs.
   const [dragImg, setDragImg] = useState<string | null>(null);
+  // The rendered PNG behind dragImg, kept for click-to-copy / download (no
+  // re-rasterizing on the host page, which strict-CSP sites block).
+  const dragBlobRef = useRef<Blob | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -107,6 +169,31 @@ export function FormulaDock({
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const { custom, merged, add, remove } = useCustomFormulas(index, storageKey, customStore);
+
+  // Render a formula PNG. Prefer renderPng (offscreen, CSP-immune) when given,
+  // but fall back to in-page rasterization if it errors — so we get an image by
+  // whichever path works.
+  const renderFormulaPng = useCallback(
+    async (latex: string): Promise<Blob> => {
+      const inPage = async () => (await import('../core/exportImage.js')).toPNG(latex, { scale: 3 });
+      if (!renderPng) return inPage();
+      try {
+        return await renderPng(latex, 3);
+      } catch (offscreenErr) {
+        console.error('[Formulyze] OFFSCREEN render failed', offscreenErr);
+        try {
+          return await inPage();
+        } catch {
+          // In-page can't work on strict-CSP sites; surface the OFFSCREEN error,
+          // which is the one that actually needs fixing.
+          throw offscreenErr instanceof Error
+            ? new Error(`offscreen: ${offscreenErr.message}`)
+            : new Error(`offscreen: ${String(offscreenErr)}`);
+        }
+      }
+    },
+    [renderPng]
+  );
 
   // Entry point 1 — by name.
   const { query, setQuery, results: nameResults, modelStatus } = useFormulaSearch({
@@ -151,30 +238,35 @@ export function FormulaDock({
     return () => window.removeEventListener('keydown', handler);
   }, [hotkey]);
 
-  // Render a PNG of the selected formula so it can be dragged into Word/Docs.
+  // Render a PNG of the selected formula for the drag handle + click-to-copy.
   useEffect(() => {
     if (!enableImageExport || !selected) {
       setDragImg(null);
+      dragBlobRef.current = null;
       return;
     }
     let alive = true;
     setDragImg(null);
+    dragBlobRef.current = null;
     void (async () => {
       try {
-        const { toPNG } = await import('../core/exportImage.js');
         // Transparent + tight to the formula's own bounding box — drops as just
         // the glyphs, not a white rectangle. (Word page shows through as white.)
-        const blob = await toPNG(selected.latex, { scale: 3 });
+        const blob = await renderFormulaPng(selected.latex);
         const dataUrl = await blobToDataUrl(blob);
-        if (alive) setDragImg(dataUrl);
-      } catch {
+        if (alive) {
+          dragBlobRef.current = blob;
+          setDragImg(dataUrl);
+        }
+      } catch (err) {
+        console.error('[Formulyze] drag image failed', err);
         if (alive) setDragImg(null);
       }
     })();
     return () => {
       alive = false;
     };
-  }, [selected, enableImageExport]);
+  }, [selected, enableImageExport, renderFormulaPng]);
 
   useEffect(() => {
     if (open && view === 'search' && mode === 'name') requestAnimationFrame(() => inputRef.current?.focus());
@@ -236,12 +328,48 @@ export function FormulaDock({
             setFallbackText(out.fallbackText ?? null);
           }
         }
-      } catch {
+      } catch (err) {
+        console.error('[Formulyze] format failed', kind, err);
         flash('Could not produce that format');
       }
     },
     [flash]
   );
+
+  // Image copy/download reuse the pre-rendered blob (dragBlobRef); if it isn't
+  // ready yet (or that render failed), render on demand and SURFACE the real
+  // error — rendering happens off the host page via renderPng in the extension.
+  const ensureImageBlob = useCallback(async (): Promise<Blob | null> => {
+    if (dragBlobRef.current) return dragBlobRef.current;
+    if (!selected) return null;
+    try {
+      const blob = await renderFormulaPng(selected.latex);
+      dragBlobRef.current = blob;
+      return blob;
+    } catch (err) {
+      console.error('[Formulyze] image render failed', err);
+      flash(`Render failed: ${err instanceof Error ? err.message : String(err)}`);
+      return null;
+    }
+  }, [selected, renderFormulaPng, flash]);
+
+  const copyImage = useCallback(async () => {
+    const blob = await ensureImageBlob();
+    if (!blob) return;
+    const out = await copyResult({ kind: 'png', tier: 'guaranteed', mime: 'image/png', blob });
+    if (out.ok) flash('Image copied — paste (⌘/Ctrl+V) into your doc');
+    else {
+      setToast(out.note ?? 'Copy blocked');
+      setFallbackText(null);
+    }
+  }, [ensureImageBlob, flash]);
+
+  const downloadImage = useCallback(async () => {
+    const blob = await ensureImageBlob();
+    if (!blob) return;
+    downloadResult({ kind: 'png', tier: 'guaranteed', mime: 'image/png', blob, filename: `${selected?.id ?? 'formula'}.png` });
+    flash('Saved PNG');
+  }, [ensureImageBlob, flash, selected]);
 
   const onNameKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -286,10 +414,15 @@ export function FormulaDock({
   const rootCls = ['fzd', `fzd-${corner}`, open ? 'fzd-open' : 'fzd-closed', className].filter(Boolean).join(' ');
 
   if (!open) {
+    // While dragging, pin the pill to the cursor; otherwise the corner class positions it.
+    const dragStyle = dragPos
+      ? ({ top: dragPos.y, left: dragPos.x, right: 'auto', bottom: 'auto', transform: 'translate(-50%, -50%)' } as const)
+      : undefined;
     return (
-      <div className={rootCls}>
-        <button className="fzd-pill" onClick={() => setOpen(true)} aria-label="Open formula search"
-          title={hotkey ? `Formulas (${hotkey.replace('mod', '⌘/Ctrl')})` : 'Formulas'}>
+      <div className={rootCls} style={dragStyle}>
+        <button className="fzd-pill" aria-label="Open formula search (drag to move)"
+          onPointerDown={onPillPointerDown} onPointerMove={onPillPointerMove} onPointerUp={onPillPointerUp}
+          title={`Drag to move · click to open${hotkey ? ` (${hotkey.replace('mod', '⌘/Ctrl')})` : ''}`}>
           <span className="fzd-pill-ripple" aria-hidden="true" />
           <svg className="fzd-pill-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             {/* stylized ƒ(x): a function curve through light axes */}
@@ -319,6 +452,7 @@ export function FormulaDock({
               )}
               <div className="fzd-head-actions">
                 {enableCustom && <button className="fzd-add-btn" onClick={() => openAdd()} title="Add your own formula">+ New</button>}
+                <button className="fzd-x" onClick={cycleCorner} title={`Move to another corner (now: ${corner.replace('-', ' ')})`} aria-label="Move to another corner">⤢</button>
                 <button className="fzd-x" onClick={() => setOpen(false)} aria-label="Collapse">×</button>
               </div>
             </div>
@@ -399,15 +533,24 @@ export function FormulaDock({
                       src={dragImg}
                       alt={selected.name}
                       draggable
+                      // Click = copy to clipboard: the ONE path that works into
+                      // Google Docs and Word (both reject dragged images — Docs'
+                      // canvas editor and native Word only take a paste).
+                      onClick={copyImage}
                       onDragStart={(e) => {
-                        const filename = `${selected.id}.png`;
-                        e.dataTransfer.setData('DownloadURL', `image/png:${filename}:${dragImg}`);
-                        e.dataTransfer.setData('text/plain', selected.latex);
-                        e.dataTransfer.effectAllowed = 'copy';
+                        // Stop the host page (e.g. Docs) from cancelling the drag.
+                        e.stopPropagation();
+                        const dt = e.dataTransfer;
+                        dt.effectAllowed = 'copy';
+                        // Editors that accept dropped HTML (Notion, Gmail, many
+                        // CMSs) get the image inline; others fall back to LaTeX.
+                        dt.setData('text/html', `<img src="${dragImg}" alt="">`);
+                        dt.setData('text/plain', selected.latex);
+                        dt.setData('DownloadURL', `image/png:${selected.id}.png:${dragImg}`);
                       }}
-                      title="Drag into Google Docs or a web editor. For desktop Word, use “Img” below to copy, then paste."
+                      title="Click to copy, then paste (⌘/Ctrl+V) into Docs or Word. Or drag into an editor that accepts images."
                     />
-                    <span className="fzd-drag-hint">⤴ Drag into Docs — for Word, Copy “Img” then paste</span>
+                    <span className="fzd-drag-hint">Click to copy → paste into Docs/Word · or drag into Notion/email</span>
                   </div>
                 )}
                 <div className="fzd-fmts">
@@ -415,12 +558,12 @@ export function FormulaDock({
                   {COPY_FORMATS.map((f) => (
                     <button key={f.kind} className="fzd-fmt" title={f.title} onClick={() => runFormat(selected, f.kind, 'copy')}>{f.label}</button>
                   ))}
-                  {enableImageExport && <button className="fzd-fmt" title="Copy image" onClick={() => runFormat(selected, 'png', 'copy')}>Img</button>}
+                  {enableImageExport && <button className="fzd-fmt" title="Copy image" onClick={copyImage}>Img</button>}
                 </div>
                 {enableImageExport && (
                   <div className="fzd-fmts">
                     <span className="fzd-fmts-label">Save</span>
-                    <button className="fzd-fmt" onClick={() => runFormat(selected, 'png', 'download')}>PNG</button>
+                    <button className="fzd-fmt" onClick={downloadImage}>PNG</button>
                     <button className="fzd-fmt" onClick={() => runFormat(selected, 'svg', 'download')}>SVG</button>
                     <button className="fzd-fmt fzd-fmt-effort" title="Editable Word equation (best-effort), with a text fallback" onClick={() => runFormat(selected, 'word', 'download')}>Word*</button>
                   </div>

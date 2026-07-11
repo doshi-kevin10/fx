@@ -9,6 +9,12 @@
   latex: "P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}"
   description: >
     Updates the probability of A given observed evidence B from the reverse conditional and priors.
+  relation: "posterior = (likelihood * prior) / evidence"
+  variables:
+    - { key: posterior, symbol: "P(A \\mid B)", meaning: posterior probability }
+    - { key: likelihood, symbol: "P(B \\mid A)", meaning: likelihood }
+    - { key: prior, symbol: "P(A)", meaning: prior probability }
+    - { key: evidence, symbol: "P(B)", meaning: evidence }
   source: https://en.wikipedia.org/wiki/Bayes%27_theorem
 
 - id: normal-distribution-pdf
@@ -20,9 +26,12 @@
   latex: "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\, e^{-\\frac{(x-\\mu)^{2}}{2\\sigma^{2}}}"
   description: >
     Probability density function of a normal (Gaussian) distribution with mean mu and standard deviation sigma.
+  relation: "f = (1 / (sigma * sqrt(2 * pi))) * exp(-((x - mu)^2) / (2 * sigma^2))"
   variables:
-    - { symbol: "\\mu", meaning: mean }
-    - { symbol: "\\sigma", meaning: standard deviation }
+    - { key: f, symbol: "f(x)", meaning: probability density }
+    - { key: x, symbol: "x", meaning: value }
+    - { key: mu, symbol: "\\mu", meaning: mean }
+    - { key: sigma, symbol: "\\sigma", meaning: standard deviation }
   source: https://en.wikipedia.org/wiki/Normal_distribution
 
 - id: binomial-coefficient

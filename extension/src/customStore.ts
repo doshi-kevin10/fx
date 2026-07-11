@@ -9,21 +9,19 @@
 import type { Formula } from '../../src/core/types.js';
 import type { CustomFormulaStore } from '../../src/react/useCustomFormulas.js';
 
-// Minimal ambient type for the calls we use — avoids pulling in @types/chrome.
-type StorageChange = { newValue?: unknown; oldValue?: unknown };
-type ChangeListener = (changes: Record<string, StorageChange>, areaName: string) => void;
-declare const chrome: {
-  storage: {
-    local: {
-      get(key: string): Promise<Record<string, unknown>>;
-      set(items: Record<string, unknown>): Promise<void>;
-    };
-    onChanged: {
-      addListener(cb: ChangeListener): void;
-      removeListener(cb: ChangeListener): void;
-    };
-  };
-};
+// chrome.* types come from chrome-ambient.d.ts.
+type ChangeListener = (changes: Record<string, FxStorageChange>, areaName: string) => void;
+
+/** Read a single stored preference (e.g. the dock corner), extension-wide. */
+export async function loadPref<T>(key: string, fallback: T): Promise<T> {
+  const got = await chrome.storage.local.get(key);
+  return (got[key] as T) ?? fallback;
+}
+
+/** Persist a single preference. Fire-and-forget. */
+export function savePref(key: string, value: unknown): void {
+  void chrome.storage.local.set({ [key]: value });
+}
 
 export function chromeStore(key: string): CustomFormulaStore {
   return {

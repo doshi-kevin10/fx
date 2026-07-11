@@ -25,6 +25,12 @@
   latex: "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2"
   description: >
     Relates the angles of incidence and refraction to the refractive indices of two media.
+  relation: "n_1 * sin(theta_1) = n_2 * sin(theta_2)"
+  variables:
+    - { key: n_1, symbol: "n_1", meaning: refractive index of medium 1 }
+    - { key: theta_1, symbol: "\\theta_1", meaning: angle of incidence, unit: rad }
+    - { key: n_2, symbol: "n_2", meaning: refractive index of medium 2 }
+    - { key: theta_2, symbol: "\\theta_2", meaning: angle of refraction, unit: rad }
   source: https://en.wikipedia.org/wiki/Snell%27s_law
 
 - id: thin-lens-equation
@@ -36,10 +42,11 @@
   latex: "\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}"
   description: >
     Relates the focal length of a thin lens to the object and image distances.
+  relation: "1/f = 1/d_o + 1/d_i"
   variables:
-    - { symbol: "f", meaning: focal length }
-    - { symbol: "d_o", meaning: object distance }
-    - { symbol: "d_i", meaning: image distance }
+    - { key: f, symbol: "f", meaning: focal length, unit: m }
+    - { key: d_o, symbol: "d_o", meaning: object distance, unit: m }
+    - { key: d_i, symbol: "d_i", meaning: image distance, unit: m }
   source: https://en.wikipedia.org/wiki/Lens
 
 - id: doppler-effect

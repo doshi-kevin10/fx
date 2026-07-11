@@ -23,13 +23,26 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe('<FormulaDock> (keyword-only, jsdom)', () => {
-  it('starts collapsed as a pill and expands on click', () => {
+  it('starts collapsed as a pill and expands on a tap (pointer down/up, no drag)', () => {
     render(<FormulaDock index={index} enableSemantic={false} />);
-    const pill = screen.getByLabelText('Open formula search');
+    const pill = screen.getByLabelText(/Open formula search/);
     expect(pill).toBeTruthy();
     expect(screen.queryByRole('combobox')).toBeNull();
-    fireEvent.click(pill);
+    fireEvent.pointerDown(pill, { clientX: 10, clientY: 10 });
+    fireEvent.pointerUp(pill, { clientX: 10, clientY: 10 });
     expect(screen.getByRole('combobox')).toBeTruthy();
+  });
+
+  it('dragging the pill snaps it to the nearest corner and persists', () => {
+    const onCornerChange = vi.fn();
+    // jsdom window is 1024x768; a drag ending near top-left should snap top-left.
+    render(<FormulaDock index={index} enableSemantic={false} corner="top-right" onCornerChange={onCornerChange} />);
+    const pill = screen.getByLabelText(/Open formula search/);
+    fireEvent.pointerDown(pill, { clientX: 900, clientY: 40 });
+    fireEvent.pointerMove(pill, { clientX: 50, clientY: 40 }); // move past the drag threshold
+    fireEvent.pointerUp(pill, { clientX: 50, clientY: 40 });   // release top-left
+    expect(onCornerChange).toHaveBeenCalledWith('top-left');
+    expect(screen.queryByRole('combobox')).toBeNull(); // a drag must NOT open the dock
   });
 
   it('single-click on a result copies its LaTeX and shows the preview', async () => {

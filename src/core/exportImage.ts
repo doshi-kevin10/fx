@@ -66,8 +66,15 @@ export function toSVG(latex: string, opts: ExportOptions = {}): string {
     svg = svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ');
   }
   const color = opts.color ?? '#111827';
-  // MathJax paints with currentColor; set it via a style on the root <svg>.
-  svg = svg.replace('<svg ', `<svg style="color:${color}" `);
+  // MathJax paints with currentColor; give the root <svg> a color via its style.
+  // It ALREADY has a style="vertical-align:…" attribute, so we must MERGE into it —
+  // a second style attribute makes the SVG invalid XML, so loading it as an <img>
+  // fails with "Failed to rasterize SVG".
+  if (/<svg\b[^>]*\sstyle="/.test(svg)) {
+    svg = svg.replace(/(<svg\b[^>]*\sstyle=")/, `$1color:${color};`);
+  } else {
+    svg = svg.replace('<svg ', `<svg style="color:${color};" `);
+  }
   return svg;
 }
 
@@ -81,38 +88,43 @@ function pixelSize(svg: string, scale: number): { width: number; height: number 
 /** Render LaTeX to a PNG Blob by rasterizing the SVG onto a canvas. */
 export async function toPNG(latex: string, opts: PngOptions = {}): Promise<Blob> {
   const scale = opts.scale ?? 3;
-  const svg = toSVG(latex, opts);
-  const { width, height } = pixelSize(svg, scale);
+  const svg0 = toSVG(latex, opts);
+  const { width, height } = pixelSize(svg0, scale);
 
-  const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  try {
-    const img = new Image();
-    img.width = width;
-    img.height = height;
-    await new Promise<void>((resolve, reject) => {
-      img.onload = () => resolve();
-      img.onerror = () => reject(new Error('Failed to rasterize SVG'));
-      img.src = url;
-    });
+  // Give the root <svg> explicit PIXEL width/height. MathJax sizes it in `ex`
+  // (font-relative), which an <img> can't resolve when decoding a standalone SVG
+  // — the load fails ("Failed to rasterize SVG"). Rewrite the root attrs to px.
+  const svg = svg0
+    .replace(/(<svg\b[^>]*?)\swidth="[^"]*"/, `$1 width="${width}"`)
+    .replace(/(<svg\b[^>]*?)\sheight="[^"]*"/, `$1 height="${height}"`);
 
-    const canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) throw new Error('Canvas 2D context unavailable');
-    if (opts.background) {
-      ctx.fillStyle = opts.background;
-      ctx.fillRect(0, 0, width, height);
-    }
-    ctx.drawImage(img, 0, 0, width, height);
+  // Inline data URL (not blob:) so there's no object-URL to clean up. The load
+  // is still subject to the page CSP in a content script, which is why the
+  // extension rasterizes in an offscreen document instead.
+  const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  const img = new Image();
+  img.width = width;
+  img.height = height;
+  await new Promise<void>((resolve, reject) => {
+    img.onload = () => resolve();
+    img.onerror = () => reject(new Error('Failed to rasterize SVG'));
+    img.src = url;
+  });
 
-    return await new Promise<Blob>((resolve, reject) => {
-      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('canvas.toBlob returned null'))), 'image/png');
-    });
-  } finally {
-    URL.revokeObjectURL(url);
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('Canvas 2D context unavailable');
+  if (opts.background) {
+    ctx.fillStyle = opts.background;
+    ctx.fillRect(0, 0, width, height);
   }
+  ctx.drawImage(img, 0, 0, width, height);
+
+  return await new Promise<Blob>((resolve, reject) => {
+    canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('canvas.toBlob returned null'))), 'image/png');
+  });
 }
 
 /** Convenience: trigger a browser download of a Blob under `filename`. */
